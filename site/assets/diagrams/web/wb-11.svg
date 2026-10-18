@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">WB11 · 활동 목록 바꾸기 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">활동 목록 바꾸기. ul 안에 li가 두 개이고 각 활동이 한 항목씩 있습니다. 교육용 도해 · 실제 화면 아님. 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">WB11</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">활동 목록 바꾸기</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">ul 안에 li가 두 개이고 각 활동이 한 항목씩 있습니다.</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / WB11</text>
+<circle cx="149" cy="260" r="82" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="149" y="272" font-size="47" fill="#fffdf8" font-weight="700" text-anchor="middle">ul</text>
+<path d="M235 259 H315 V182 H408 M315 259 V338 H408" fill="none" stroke="#51685e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="435" y="146" width="79" height="42" rx="21" fill="#dfaa55" stroke="none" stroke-width="2"/>
+<text x="474.5" y="175" font-size="26" fill="#173e35" font-weight="700" text-anchor="middle">li</text>
+<text x="542" y="177" font-size="31" fill="#173e35" font-weight="700" text-anchor="start">잎 관찰하기</text>
+<circle cx="417" cy="166" r="5" fill="#173e35" stroke="none" stroke-width="2"/>
+<rect x="435" y="303" width="79" height="42" rx="21" fill="#dfaa55" stroke="none" stroke-width="2"/>
+<text x="474.5" y="332" font-size="26" fill="#173e35" font-weight="700" text-anchor="middle">li</text>
+<text x="542" y="334" font-size="31" fill="#173e35" font-weight="700" text-anchor="start">물 주기</text>
+<circle cx="417" cy="323" r="5" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="299" y="404" font-size="29" fill="#173e35" font-weight="700" text-anchor="start">한 항목 = li 한 쌍</text>
+</g></svg>

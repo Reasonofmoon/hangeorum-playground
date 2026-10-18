@@ -1,0 +1,22 @@
+.hg-auth{position:fixed;left:12px;bottom:12px;z-index:50;display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.94);border:1px solid rgba(0,0,0,.12);font-size:13px;box-shadow:0 2px 10px rgba(0,0,0,.08);max-width:calc(100vw - 24px)}
+.hg-auth button{font:inherit;font-size:12px;padding:3px 10px;border-radius:999px;border:1px solid rgba(0,0,0,.2);background:#fff;cursor:pointer}
+.hg-auth:empty{display:none}
+.hg-watermark{position:fixed;inset:0;pointer-events:none;z-index:40;background-repeat:repeat}
+.hg-legal{margin:32px auto 72px;padding:16px;max-width:1100px;font-size:12px;color:#666;border-top:1px solid rgba(0,0,0,.1)}
+.hg-legal a{color:inherit}
+.hg-gate{padding:48px 16px;min-height:40vh}
+.hg-gate-eyebrow{font-size:12px;letter-spacing:.08em;color:#777;margin:0 0 8px}
+.hg-gate h1{margin:0 0 12px}
+.hg-gate-msg{font-size:16px;margin:0 0 16px}
+.hg-note{font-size:14px;color:#555}
+.hg-lock{margin:16px 0;padding:16px;border:1px dashed rgba(0,0,0,.25);border-radius:12px;background:rgba(0,0,0,.02)}
+.hg-lock strong{display:block;margin-bottom:6px}
+.step-media{margin:16px 0}
+.step-media img,.step-media video{max-width:100%;height:auto;border-radius:8px;border:1px solid rgba(0,0,0,.1)}
+.step-media iframe{width:100%;aspect-ratio:16/10;border:0;border-radius:8px}
+.step-media figcaption{font-size:13px;color:#666;margin-top:6px}
+.hg-resources{margin:16px 0}
+.hg-resources h3{font-size:15px;margin:0 0 6px}
+.hg-resources ul{margin:0;padding-left:18px}
+.cat-gws{background:#e8f0fe}
+@media print{body *{visibility:hidden}body::after{content:"인쇄가 제한된 자료입니다. 한 걸음 서재에서 학습해 주세요.";visibility:visible;position:fixed;top:40%;left:0;right:0;text-align:center}}

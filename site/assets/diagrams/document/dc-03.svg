@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">DC03 · 편집 원본을 저장하기 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">편집 원본을 저장하기. 2026-10-15_독서모임안내_v01.docx가 지정 폴더에 있습니다. 교육용 도해 · 실제 화면 아님. 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">DC03</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">편집 원본을 저장하기</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">2026-10-15_독서모임안내_v01.docx가 지정 폴더에 있습니다.</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / DC03</text>
+<path d="M59 141 H178 L202 165 V324 H59 Z" fill="#fffdf8" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M178 141 V165 H202" fill="none" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="130.5" y="245.31" font-size="28" fill="#173e35" font-weight="700" text-anchor="middle">.docx</text>
+<line x1="230" y1="232" x2="357" y2="232" stroke="#173e35" stroke-width="4" stroke-linecap="round"/>
+<path d="M 345.5 238.0 L 357 232 L 345.5 226.0" fill="none" stroke="#173e35" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M393 171 V156 Q393 151 400 151 H527.8199999999999 L559.9200000000001 171 H707 Q714 171 714 178 V327 Q714 334 707 334 H400 Q393 334 393 327 Z" fill="#dfaa55" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="553.5" y="277.27" font-size="28" fill="#173e35" font-weight="700" text-anchor="middle">문서편집</text>
+<text x="58" y="373" font-size="28" fill="#173e35" font-weight="400" text-anchor="start">2026-10-15_독서모임안내_v01.docx</text>
+<text x="58" y="409" font-size="26" fill="#173e35" font-weight="700" text-anchor="start">이름 + 형식 + 실제 저장 위치</text>
+</g></svg>

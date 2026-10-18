@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">KP14 · 글자 크기 바꿔 읽기 확인하기 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">글자 크기 바꿔 읽기 확인하기. 텍스트 누락과 줄 흐름 변화가 구별됩니다. 교육용 도해 · 실제 화면 아님. 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">KP14</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">글자 크기 바꿔 읽기 확인하기</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">텍스트 누락과 줄 흐름 변화가 구별됩니다.</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / KP14</text>
+<rect x="43" y="151" width="322" height="226" rx="10" fill="#fffdf8" stroke="#173e35" stroke-width="2"/>
+<rect x="431" y="151" width="322" height="226" rx="10" fill="#fffdf8" stroke="#173e35" stroke-width="2"/>
+<rect x="57" y="123" width="125" height="42" rx="21" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<text x="119.5" y="152" font-size="26" fill="#173e35" font-weight="700" text-anchor="middle">보통</text>
+<rect x="448" y="123" width="125" height="42" rx="21" fill="#dfaa55" stroke="none" stroke-width="2"/>
+<text x="510.5" y="152" font-size="26" fill="#173e35" font-weight="700" text-anchor="middle">크게</text>
+<text x="66" y="213" font-size="23" fill="#173e35" font-weight="400" text-anchor="start">Practice choosing pots,</text>
+<text x="66" y="247" font-size="23" fill="#173e35" font-weight="400" text-anchor="start">observing light, and</text>
+<text x="66" y="281" font-size="23" fill="#173e35" font-weight="400" text-anchor="start">keeping a watering</text>
+<text x="66" y="315" font-size="23" fill="#173e35" font-weight="400" text-anchor="start">record.</text>
+<text x="456" y="204" font-size="28" fill="#173e35" font-weight="400" text-anchor="start">Practice choosing</text>
+<text x="456" y="241" font-size="28" fill="#173e35" font-weight="400" text-anchor="start">pots, observing</text>
+<text x="456" y="278" font-size="28" fill="#173e35" font-weight="400" text-anchor="start">light, and keeping</text>
+<text x="456" y="315" font-size="28" fill="#173e35" font-weight="400" text-anchor="start">a watering</text>
+<text x="456" y="352" font-size="28" fill="#173e35" font-weight="400" text-anchor="start">record.</text>
+<line x1="65" y1="326" x2="151" y2="326" stroke="#dfaa55" stroke-width="5" stroke-linecap="round"/>
+<line x1="455" y1="360" x2="565" y2="360" stroke="#dfaa55" stroke-width="5" stroke-linecap="round"/>
+<text x="400" y="416" font-size="25" fill="#173e35" font-weight="700" text-anchor="middle">마지막 단어 record까지 보임</text>
+</g></svg>

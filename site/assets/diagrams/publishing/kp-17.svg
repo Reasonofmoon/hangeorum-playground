@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">KP17 · 새 책의 보류 사유 판단하기 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">새 책의 보류 사유 판단하기의 새 조건과 빈 기록란. 독립 과제의 정답은 표시하지 않음. 교육용 도해 · 실제 화면 아님. 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다. 독립 과제 조건만 제시하며 정답과 완성 결과는 숨겼습니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">KP17</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">새 책의 보류 사유 판단하기</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">새 조건을 읽고 직접 구성하세요. 정답은 도해에 표시하지 않습니다.</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / KP17</text>
+<path d="M45 136 H345 L369 160 V414 H45 Z" fill="#fffdf8" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M345 136 V160 H369" fill="none" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="70" y="180" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">새 책의 조건</text>
+<text x="70" y="226" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">Weekend Pencil</text>
+<text x="70" y="265" font-size="24" fill="#173e35" font-weight="400" text-anchor="start">Bada Lee · 부제 없음</text>
+<text x="70" y="306" font-size="25" fill="#173e35" font-weight="400" text-anchor="start">표지 출처 미확인</text>
+<text x="70" y="347" font-size="23" fill="#173e35" font-weight="400" text-anchor="start">목차가 다른 장으로 이동</text>
+<line x1="393" y1="268" x2="457" y2="268" stroke="#173e35" stroke-width="4" stroke-linecap="round" stroke-dasharray="7 7"/>
+<path d="M 445.5 274.0 L 457 268 L 445.5 262.0" fill="none" stroke="#173e35" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="495" y="168" font-size="27" fill="#173e35" font-weight="700" text-anchor="start">직접 판단하고 기록</text>
+<text x="491" y="226" font-size="26" fill="#173e35" font-weight="400" text-anchor="start">메타데이터</text>
+<line x1="491" y1="253" x2="744" y2="253" stroke="#173e35" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 7"/>
+<text x="491" y="302" font-size="26" fill="#173e35" font-weight="400" text-anchor="start">준비 상태</text>
+<line x1="491" y1="329" x2="744" y2="329" stroke="#173e35" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 7"/>
+<text x="491" y="378" font-size="26" fill="#173e35" font-weight="400" text-anchor="start">판단 이유</text>
+<line x1="491" y1="405" x2="744" y2="405" stroke="#173e35" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 7"/>
+</g></svg>

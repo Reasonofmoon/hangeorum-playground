@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">DC15 · 선택한 쪽만 PDF로 내보내기 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">선택한 쪽만 PDF로 내보내기. 진행 안내가 시작하는 물리적 한 쪽만 별도 PDF로 만들어집니다. 교육용 도해 · 실제 화면 아님. 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">DC15</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">선택한 쪽만 PDF로 내보내기</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">진행 안내가 시작하는 물리적 한 쪽만 별도 PDF로 만들어집니다.</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / DC15</text>
+<text x="54" y="145" font-size="29" fill="#173e35" font-weight="700" text-anchor="start">진행 안내가 시작하는 실제 쪽 = P</text>
+<path d="M54 196 H90 L114 220 V291 H54 Z" fill="#fffdf8" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M90 196 V220 H114" fill="none" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="84" y="252" font-size="26" fill="#173e35" font-weight="700" text-anchor="middle">·</text>
+<path d="M129 196 H165 L189 220 V291 H129 Z" fill="#fffdf8" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M165 196 V220 H189" fill="none" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="159" y="252" font-size="26" fill="#173e35" font-weight="700" text-anchor="middle">·</text>
+<path d="M204 196 H240 L264 220 V291 H204 Z" fill="#dfaa55" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M240 196 V220 H264" fill="none" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="234" y="252" font-size="26" fill="#173e35" font-weight="700" text-anchor="middle">P</text>
+<path d="M279 196 H315 L339 220 V291 H279 Z" fill="#fffdf8" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M315 196 V220 H339" fill="none" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="309" y="252" font-size="26" fill="#173e35" font-weight="700" text-anchor="middle">·</text>
+<path d="M354 196 H390 L414 220 V291 H354 Z" fill="#fffdf8" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M390 196 V220 H414" fill="none" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="384" y="252" font-size="26" fill="#173e35" font-weight="700" text-anchor="middle">·</text>
+<rect x="57" y="339" width="155" height="42" rx="21" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<text x="134.5" y="368" font-size="26" fill="#173e35" font-weight="700" text-anchor="middle">시작 P</text>
+<rect x="235" y="339" width="155" height="42" rx="21" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<text x="312.5" y="368" font-size="26" fill="#173e35" font-weight="700" text-anchor="middle">끝 P</text>
+<line x1="446" y1="259" x2="524" y2="259" stroke="#173e35" stroke-width="4" stroke-linecap="round"/>
+<path d="M 512.5 265.0 L 524 259 L 512.5 253.0" fill="none" stroke="#173e35" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M552 179 H701 L725 203 V381 H552 Z" fill="#fffdf8" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M701 179 V203 H725" fill="none" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="638.5" y="294.14" font-size="28" fill="#173e35" font-weight="700" text-anchor="middle">PDF</text>
+<rect x="574" y="348" width="127" height="42" rx="21" fill="#dfaa55" stroke="none" stroke-width="2"/>
+<text x="637.5" y="377" font-size="26" fill="#173e35" font-weight="700" text-anchor="middle">1쪽만</text>
+</g></svg>

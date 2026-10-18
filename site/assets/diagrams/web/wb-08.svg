@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">WB08 · 탭 제목 바꾸기 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">탭 제목 바꾸기. 편집기에 &lt;title&gt;작은 정원 소개&lt;/title&gt;가 보입니다. 교육용 도해 · 실제 화면 아님. 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">WB08</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">탭 제목 바꾸기</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">편집기에 &lt;title&gt;작은 정원 소개&lt;/title&gt;가 보입니다.</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / WB08</text>
+<rect x="49" y="133" width="285" height="42" rx="21" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<text x="191.5" y="162" font-size="26" fill="#173e35" font-weight="700" text-anchor="middle">head 안의 title</text>
+<text x="50" y="219" font-size="33" fill="#173e35" font-weight="400" text-anchor="start">&lt;title&gt;</text>
+<text x="50" y="277" font-size="42" fill="#173e35" font-weight="700" text-anchor="start">작은 정원 소개</text>
+<text x="50" y="335" font-size="33" fill="#173e35" font-weight="400" text-anchor="start">&lt;/title&gt;</text>
+<rect x="448" y="155" width="301" height="61" rx="9" fill="#e5ece3" stroke="#173e35" stroke-width="2"/>
+<text x="599" y="195" font-size="27" fill="#173e35" font-weight="700" text-anchor="middle">탭 제목의 자리</text>
+<path d="M399 266 C454 266 449 231 474 218" fill="none" stroke="#dfaa55" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 7"/>
+<text x="451" y="290" font-size="24" fill="#173e35" font-weight="400" text-anchor="start">지금은 편집 중</text>
+<text x="451" y="334" font-size="24" fill="#173e35" font-weight="400" text-anchor="start">저장·새로고침 전</text>
+<text x="451" y="378" font-size="24" fill="#173e35" font-weight="400" text-anchor="start">브라우저 변화 없음</text>
+</g></svg>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">WB15 · 오류 결과 관찰 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">오류 결과 관찰. 큰 글자와 여백 등 모양이 달라질 수 있습니다. 코드의 h1 열기·닫기 짝이 맞지 않습니다. 교육용 도해 · 실제 화면 아님. 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">WB15</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">오류 결과 관찰</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">큰 글자와 여백 등 모양이 달라질 수 있습니다. 코드의 h1 열기·닫기</text>
+<text x="32" y="490" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">짝이 맞지 않습니다.</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / WB15</text>
+<text x="50" y="149" font-size="28" fill="#173e35" font-weight="700" text-anchor="start">오류 코드를 저장하고 새로고침</text>
+<rect x="50" y="196" width="158" height="42" rx="21" fill="#dfaa55" stroke="none" stroke-width="2"/>
+<text x="129.0" y="225" font-size="26" fill="#173e35" font-weight="700" text-anchor="middle">&lt;h1&gt;</text>
+<rect x="261" y="196" width="158" height="42" rx="21" fill="#dfaa55" stroke="none" stroke-width="2"/>
+<text x="340.0" y="225" font-size="26" fill="#173e35" font-weight="700" text-anchor="middle">&lt;h1&gt;</text>
+<path d="M209 218 H257" fill="none" stroke="#9a4a2d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 6"/>
+<circle cx="449" cy="216" r="24" fill="#f6e5cb" stroke="none" stroke-width="2"/>
+<line x1="440.6" y1="207.6" x2="457.4" y2="224.4" stroke="#9a4a2d" stroke-width="4" stroke-linecap="round"/>
+<line x1="457.4" y1="207.6" x2="440.6" y2="224.4" stroke="#9a4a2d" stroke-width="4" stroke-linecap="round"/>
+<rect x="493" y="190" width="258" height="200" rx="12" fill="#fffdf8" stroke="#173e35" stroke-width="2"/>
+<text x="519" y="243" font-size="28" fill="#173e35" font-weight="400" text-anchor="start">브라우저는</text>
+<text x="519" y="286" font-size="24" fill="#173e35" font-weight="400" text-anchor="start">자동 보정할 수 있음</text>
+<line x1="522" y1="322" x2="708" y2="322" stroke="#51685e" stroke-width="5" stroke-linecap="round"/>
+<line x1="522" y1="353" x2="652.2" y2="353" stroke="#51685e" stroke-width="5" stroke-linecap="round"/>
+<text x="50" y="303" font-size="26" fill="#173e35" font-weight="400" text-anchor="start">모양이 달라질 수 있음</text>
+<text x="50" y="348" font-size="26" fill="#173e35" font-weight="400" text-anchor="start">오류창이 없어도</text>
+<text x="50" y="393" font-size="26" fill="#173e35" font-weight="400" text-anchor="start">태그의 짝은 따로 검사</text>
+</g></svg>

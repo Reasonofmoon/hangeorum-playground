@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">WB01 · 목표 읽기 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">목표 읽기. 탭 제목, 본문 제목, 소개 문단, 활동 두 개를 구별할 수 있습니다. 교육용 도해 · 실제 화면 아님. 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">WB01</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">목표 읽기</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">탭 제목, 본문 제목, 소개 문단, 활동 두 개를 구별할 수 있습니다.</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / WB01</text>
+<rect x="53" y="135" width="427" height="279" rx="14" fill="#fffdf8" stroke="#173e35" stroke-width="2"/>
+<rect x="68" y="149" width="397" height="39" rx="5" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<text x="82" y="176" font-size="23" fill="#173e35" font-weight="700" text-anchor="start">탭 제목</text>
+<text x="78" y="234" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">본문 제목</text>
+<circle cx="83" cy="311" r="4" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="98" y="319" font-size="23" fill="#173e35" font-weight="400" text-anchor="start">활동 1</text>
+<circle cx="83" cy="343" r="4" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="98" y="351" font-size="23" fill="#173e35" font-weight="400" text-anchor="start">활동 2</text>
+<line x1="480" y1="174" x2="533" y2="174" stroke="#dfaa55" stroke-width="3" stroke-linecap="round"/>
+<text x="553" y="184" font-size="29" fill="#173e35" font-weight="700" text-anchor="start">title</text>
+<line x1="480" y1="230" x2="533" y2="230" stroke="#dfaa55" stroke-width="3" stroke-linecap="round"/>
+<text x="553" y="240" font-size="29" fill="#173e35" font-weight="700" text-anchor="start">h1</text>
+<line x1="480" y1="277" x2="533" y2="277" stroke="#51685e" stroke-width="3" stroke-linecap="round"/>
+<text x="553" y="287" font-size="25" fill="#173e35" font-weight="400" text-anchor="start">소개 문단 p</text>
+<line x1="480" y1="347" x2="533" y2="347" stroke="#51685e" stroke-width="3" stroke-linecap="round"/>
+<text x="553" y="357" font-size="25" fill="#173e35" font-weight="400" text-anchor="start">활동 2개</text>
+</g></svg>

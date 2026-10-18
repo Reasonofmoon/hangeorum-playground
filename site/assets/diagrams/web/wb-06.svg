@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">WB06 · 전체 확장자 확인 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">전체 확장자 확인. 전체 이름은 index.html이며 .txt 또는 .rtf가 뒤에 붙지 않습니다. 교육용 도해 · 실제 화면 아님. 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">WB06</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">전체 확장자 확인</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">전체 이름은 index.html이며 .txt 또는 .rtf가 뒤에 붙지 않습니다.</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / WB06</text>
+<text x="54" y="153" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">전체 이름의 끝을 보기</text>
+<text x="54" y="235" font-size="45" fill="#173e35" font-weight="700" text-anchor="start">index.html</text>
+<rect x="327" y="187" width="162" height="66" rx="7" fill="#f6e5cb" stroke="none" stroke-width="2"/>
+<text x="408" y="234" font-size="45" fill="#9a4a2d" font-weight="400" text-anchor="middle">.txt</text>
+<circle cx="554" cy="218" r="27" fill="#f6e5cb" stroke="none" stroke-width="2"/>
+<line x1="544.55" y1="208.55" x2="563.45" y2="227.45" stroke="#9a4a2d" stroke-width="4" stroke-linecap="round"/>
+<line x1="563.45" y1="208.55" x2="544.55" y2="227.45" stroke="#9a4a2d" stroke-width="4" stroke-linecap="round"/>
+<line x1="224" y1="265" x2="224" y2="314" stroke="#dfaa55" stroke-width="5" stroke-linecap="round"/>
+<path d="M 218.0 302.5 L 224 314 L 230.0 302.5" fill="none" stroke="#dfaa55" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="54" y="370" font-size="45" fill="#173e35" font-weight="700" text-anchor="start">index.html</text>
+<circle cx="412" cy="354" r="27" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<path d="M 398.5 354 L 408.49 364.8 L 426.85 341.85" fill="none" stroke="#173e35" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="530" y="311" font-size="23" fill="#173e35" font-weight="400" text-anchor="start">.rtf라면</text>
+<text x="530" y="350" font-size="23" fill="#173e35" font-weight="400" text-anchor="start">이름 변경 대신</text>
+<text x="530" y="389" font-size="23" fill="#173e35" font-weight="400" text-anchor="start">일반 텍스트 저장</text>
+</g></svg>

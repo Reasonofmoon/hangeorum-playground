@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">COURSE · HTML 페이지 만들기 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">HTML 페이지 만들기 과정의 핵심 행동을 나타낸 교육용 도해 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">COURSE</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">HTML 페이지 만들기</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">18개 미션 · 원문의 조건을 읽고 직접 연습</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / COURSE</text>
+<text x="43" y="234" font-size="114" fill="#173e35" font-weight="700" text-anchor="start">&lt;</text>
+<text x="202" y="234" font-size="114" fill="#173e35" font-weight="700" text-anchor="start">/&gt;</text>
+<text x="58" y="311" font-size="31" fill="#173e35" font-weight="700" text-anchor="start">코드 작성</text>
+<path d="M325 204 C381 139 413 164 440 208" fill="none" stroke="#dfaa55" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="425" y1="190" x2="440" y2="208" stroke="#dfaa55" stroke-width="5" stroke-linecap="round"/>
+<path d="M 428.0 203.0 L 440 208 L 437.2 195.3" fill="none" stroke="#dfaa55" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="467" y="145" width="286" height="268" rx="14" fill="#fffdf8" stroke="#173e35" stroke-width="2"/>
+<rect x="482" y="159" width="256" height="39" rx="5" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<text x="496" y="186" font-size="23" fill="#173e35" font-weight="700" text-anchor="start">탭 제목</text>
+<text x="492" y="244" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">본문 제목</text>
+<circle cx="497" cy="321" r="4" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="512" y="329" font-size="23" fill="#173e35" font-weight="400" text-anchor="start">활동 1</text>
+<circle cx="497" cy="353" r="4" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="512" y="361" font-size="23" fill="#173e35" font-weight="400" text-anchor="start">활동 2</text>
+<text x="50" y="394" font-size="28" fill="#173e35" font-weight="400" text-anchor="start">편집 · 저장 · 미리보기 · 복구</text>
+</g></svg>

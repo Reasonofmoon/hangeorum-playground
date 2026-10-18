@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">FN10 · 복구 결과 확인하기 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">복구 결과 확인하기. 이름과 폴더가 둘 다 맞습니다. 교육용 도해 · 실제 화면 아님. 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">FN10</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">복구 결과 확인하기</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">이름과 폴더가 둘 다 맞습니다.</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / FN10</text>
+<text x="73" y="159" font-size="29" fill="#173e35" font-weight="700" text-anchor="start">복구 전</text>
+<text x="517" y="159" font-size="29" fill="#173e35" font-weight="700" text-anchor="start">복구 후</text>
+<circle cx="80" cy="227" r="22" fill="#f6e5cb" stroke="none" stroke-width="2"/>
+<line x1="72.3" y1="219.3" x2="87.7" y2="234.7" stroke="#9a4a2d" stroke-width="4" stroke-linecap="round"/>
+<line x1="87.7" y1="219.3" x2="72.3" y2="234.7" stroke="#9a4a2d" stroke-width="4" stroke-linecap="round"/>
+<text x="119" y="236" font-size="29" fill="#173e35" font-weight="400" text-anchor="start">v1</text>
+<line x1="336" y1="227" x2="465" y2="227" stroke="#173e35" stroke-width="4" stroke-linecap="round"/>
+<path d="M 453.5 233.0 L 465 227 L 453.5 221.0" fill="none" stroke="#173e35" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="705" cy="227" r="22" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<path d="M 694.0 227 L 702.14 235.8 L 717.1 217.1" fill="none" stroke="#173e35" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="507" y="236" font-size="29" fill="#173e35" font-weight="400" text-anchor="start">v01</text>
+<circle cx="80" cy="343" r="22" fill="#f6e5cb" stroke="none" stroke-width="2"/>
+<line x1="72.3" y1="335.3" x2="87.7" y2="350.7" stroke="#9a4a2d" stroke-width="4" stroke-linecap="round"/>
+<line x1="87.7" y1="335.3" x2="72.3" y2="350.7" stroke="#9a4a2d" stroke-width="4" stroke-linecap="round"/>
+<text x="119" y="352" font-size="29" fill="#173e35" font-weight="400" text-anchor="start">원고 / 검토</text>
+<line x1="336" y1="343" x2="465" y2="343" stroke="#173e35" stroke-width="4" stroke-linecap="round"/>
+<path d="M 453.5 349.0 L 465 343 L 453.5 337.0" fill="none" stroke="#173e35" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="705" cy="343" r="22" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<path d="M 694.0 343 L 702.14 351.8 L 717.1 333.1" fill="none" stroke="#173e35" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="507" y="352" font-size="29" fill="#173e35" font-weight="400" text-anchor="start">원고 / 초안</text>
+<path d="M476 188 H739 V394 H476" fill="none" stroke="#91a297" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g></svg>

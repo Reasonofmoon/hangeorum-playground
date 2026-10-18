@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">KP02 · 책 본문의 언어 확인하기 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">책 본문의 언어 확인하기. 날짜가 공식자료 확인 기록에 남습니다. 교육용 도해 · 실제 화면 아님. 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">KP02</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">책 본문의 언어 확인하기</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">날짜가 공식자료 확인 기록에 남습니다.</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / KP02</text>
+<path d="M62 144 H296 L320 168 V369 H62 Z" fill="#fffdf8" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M296 144 V168 H320" fill="none" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="90" y="191" font-size="29" fill="#173e35" font-weight="700" text-anchor="start">가상 책 본문</text>
+<text x="90" y="259" font-size="41" fill="#173e35" font-weight="700" text-anchor="start">English</text>
+<line x1="92" y1="306" x2="282" y2="306" stroke="#91a297" stroke-width="5" stroke-linecap="round"/>
+<line x1="92" y1="330" x2="225.0" y2="330" stroke="#91a297" stroke-width="5" stroke-linecap="round"/>
+<line x1="393" y1="139" x2="393" y2="404" stroke="#dfaa55" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 8"/>
+<text x="448" y="186" font-size="28" fill="#173e35" font-weight="400" text-anchor="start">교재 설명: 한국어</text>
+<text x="448" y="250" font-size="25" fill="#173e35" font-weight="400" text-anchor="start">서로 다른 언어 역할</text>
+<rect x="448" y="301" width="293" height="42" rx="21" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<text x="594.5" y="330" font-size="29" fill="#173e35" font-weight="700" text-anchor="middle">2026-10-15</text>
+<text x="450" y="394" font-size="27" fill="#173e35" font-weight="700" text-anchor="start">공식자료 확인일 기록</text>
+</g></svg>

@@ -1,0 +1,15 @@
+name: 매일 상태 점검
+
+# 매일 08:30 KST: 사이트와 공개 API가 살아 있는지, 비로그인 응답이 미리보기만 주는지 확인한다.
+on:
+  schedule: [{ cron: '30 23 * * *' }]
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: node tools/smoke-test.mjs

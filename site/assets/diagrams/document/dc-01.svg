@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">DC01 · 준비 폴더와 실행 환경 확인 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">준비 폴더와 실행 환경 확인. 저장 위치와 제품 종류가 기록됩니다. 교육용 도해 · 실제 화면 아님. 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">DC01</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">준비 폴더와 실행 환경 확인</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">저장 위치와 제품 종류가 기록됩니다.</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / DC01</text>
+<rect x="51" y="149" width="240" height="154" rx="8" fill="#e5ece3" stroke="#173e35" stroke-width="3"/>
+<line x1="136" y1="303" x2="136" y2="341" stroke="#173e35" stroke-width="5" stroke-linecap="round"/>
+<line x1="97" y1="343" x2="212" y2="343" stroke="#173e35" stroke-width="5" stroke-linecap="round"/>
+<text x="74" y="195" font-size="27" fill="#173e35" font-weight="400" text-anchor="start">제품 이름</text>
+<text x="74" y="238" font-size="27" fill="#173e35" font-weight="400" text-anchor="start">버전 · 운영체제</text>
+<rect x="75" y="370" width="216" height="42" rx="21" fill="#dfaa55" stroke="none" stroke-width="2"/>
+<text x="183.0" y="399" font-size="24" fill="#173e35" font-weight="700" text-anchor="middle">모르면 미확인</text>
+<text x="364" y="159" font-size="28" fill="#173e35" font-weight="700" text-anchor="start">저장할 연습 위치</text>
+<path d="M370 210 V195 Q370 190 377 190 H435.1 L450.6 210 H518 Q525 210 525 217 V270 Q525 277 518 277 H377 Q370 277 370 270 Z" fill="#e5ece3" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="447.5" y="250.03" font-size="28" fill="#173e35" font-weight="700" text-anchor="middle">문서</text>
+<path d="M399 291 V322 H448" fill="none" stroke="#173e35" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="467" y="330" font-size="28" fill="#173e35" font-weight="400" text-anchor="start">튜토리얼연습</text>
+<path d="M486 348 V382 H530" fill="none" stroke="#173e35" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="548" y="391" font-size="28" fill="#173e35" font-weight="400" text-anchor="start">문서편집</text>
+</g></svg>

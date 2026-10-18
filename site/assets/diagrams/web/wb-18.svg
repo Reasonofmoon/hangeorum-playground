@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">WB18 · 새 조건으로 독립 제작 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">새 조건으로 독립 제작의 새 조건과 빈 기록란. 독립 과제의 정답은 표시하지 않음. 교육용 도해 · 실제 화면 아님. 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다. 독립 과제 조건만 제시하며 정답과 완성 결과는 숨겼습니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">WB18</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">새 조건으로 독립 제작</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">새 조건을 읽고 직접 구성하세요. 정답은 도해에 표시하지 않습니다.</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / WB18</text>
+<rect x="48" y="132" width="340" height="42" rx="21" fill="#dfaa55" stroke="none" stroke-width="2"/>
+<text x="218.0" y="161" font-size="26" fill="#173e35" font-weight="700" text-anchor="middle">독서 모임 · 새 조건</text>
+<text x="50" y="213" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">파일: reading.html</text>
+<text x="50" y="260" font-size="26" fill="#173e35" font-weight="400" text-anchor="start">원래 index.html은 보존</text>
+<text x="50" y="327" font-size="26" fill="#173e35" font-weight="400" text-anchor="start">탭 제목 / 본문 제목 / 소개</text>
+<line x1="50" y1="365" x2="371" y2="365" stroke="#173e35" stroke-width="3" stroke-linecap="round" stroke-dasharray="8 8"/>
+<circle cx="473" cy="186" r="22" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<text x="473" y="195" font-size="27" fill="#173e35" font-weight="700" text-anchor="middle">1</text>
+<line x1="515" y1="190" x2="737" y2="190" stroke="#173e35" stroke-width="3" stroke-linecap="round" stroke-dasharray="8 8"/>
+<circle cx="473" cy="270" r="22" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<text x="473" y="279" font-size="27" fill="#173e35" font-weight="700" text-anchor="middle">2</text>
+<line x1="515" y1="274" x2="737" y2="274" stroke="#173e35" stroke-width="3" stroke-linecap="round" stroke-dasharray="8 8"/>
+<circle cx="473" cy="354" r="22" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<text x="473" y="363" font-size="27" fill="#173e35" font-weight="700" text-anchor="middle">3</text>
+<line x1="515" y1="358" x2="737" y2="358" stroke="#173e35" stroke-width="3" stroke-linecap="round" stroke-dasharray="8 8"/>
+<text x="463" y="410" font-size="27" fill="#173e35" font-weight="700" text-anchor="start">순서가 있는 세 항목</text>
+</g></svg>

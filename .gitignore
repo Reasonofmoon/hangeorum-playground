@@ -1,0 +1,7 @@
+node_modules/
+.clasprc.json
+*.bak
+_mirror/
+_gated/
+_build/
+.DS_Store

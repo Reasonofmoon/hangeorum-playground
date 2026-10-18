@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">FN07 · 두 오류가 있는 사본 열기 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">두 오류가 있는 사본 열기. 오류 2개: 버전 표기와 폴더가 잘못되었습니다. 교육용 도해 · 실제 화면 아님. 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">FN07</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">두 오류가 있는 사본 열기</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">오류 2개: 버전 표기와 폴더가 잘못되었습니다.</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / FN07</text>
+<rect x="57" y="130" width="180" height="42" rx="21" fill="#dfaa55" stroke="none" stroke-width="2"/>
+<text x="147.0" y="159" font-size="26" fill="#173e35" font-weight="700" text-anchor="middle">오류 사본</text>
+<path d="M73 199 H193 L217 223 V383 H73 Z" fill="#fffdf8" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M193 199 V223 H217" fill="none" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="145.0" y="303.88" font-size="28" fill="#173e35" font-weight="700" text-anchor="middle">.md</text>
+<line x1="245" y1="210" x2="735" y2="210" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="265" y="184" font-size="28" fill="#173e35" font-weight="700" text-anchor="start">이름과 위치는 따로 진단</text>
+<text x="274" y="258" font-size="36" fill="#173e35" font-weight="700" text-anchor="start">버전: v1</text>
+<circle cx="700" cy="247" r="23" fill="#f6e5cb" stroke="none" stroke-width="2"/>
+<line x1="691.95" y1="238.95" x2="708.05" y2="255.05" stroke="#9a4a2d" stroke-width="4" stroke-linecap="round"/>
+<line x1="708.05" y1="238.95" x2="691.95" y2="255.05" stroke="#9a4a2d" stroke-width="4" stroke-linecap="round"/>
+<text x="274" y="342" font-size="29" fill="#173e35" font-weight="400" text-anchor="start">폴더: 원고 / 검토</text>
+<circle cx="700" cy="331" r="23" fill="#f6e5cb" stroke="none" stroke-width="2"/>
+<line x1="691.95" y1="322.95" x2="708.05" y2="339.05" stroke="#9a4a2d" stroke-width="4" stroke-linecap="round"/>
+<line x1="708.05" y1="322.95" x2="691.95" y2="339.05" stroke="#9a4a2d" stroke-width="4" stroke-linecap="round"/>
+<rect x="534" y="368" width="185" height="42" rx="21" fill="#dfaa55" stroke="none" stroke-width="2"/>
+<text x="626.5" y="397" font-size="26" fill="#173e35" font-weight="700" text-anchor="middle">오류 2곳</text>
+</g></svg>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">FN06 · 이름과 위치 함께 확인하기 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">이름과 위치 함께 확인하기. 이름·경로·부모 폴더가 모두 맞습니다. 교육용 도해 · 실제 화면 아님. 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">FN06</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">이름과 위치 함께 확인하기</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">이름·경로·부모 폴더가 모두 맞습니다.</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / FN06</text>
+<path d="M54 160 H171 L195 184 V360 H54 Z" fill="#fffdf8" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M171 160 V184 H195" fill="none" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="124.5" y="274.0" font-size="28" fill="#173e35" font-weight="700" text-anchor="middle">.md</text>
+<line x1="207" y1="245" x2="268" y2="245" stroke="#173e35" stroke-width="3" stroke-linecap="round"/>
+<path d="M268 245 V167 H317 M268 245 V299 H317" fill="none" stroke="#173e35" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="331" y="135" width="115" height="42" rx="21" fill="#dfaa55" stroke="none" stroke-width="2"/>
+<text x="388.5" y="164" font-size="26" fill="#173e35" font-weight="700" text-anchor="middle">이름</text>
+<text x="331" y="209" font-size="23" fill="#173e35" font-weight="400" text-anchor="start">2026-10-14_여행기_v01.md</text>
+<circle cx="728" cy="188" r="18" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<path d="M 719.0 188 L 725.66 195.2 L 737.9 179.9" fill="none" stroke="#173e35" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="331" y="265" width="115" height="42" rx="21" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<text x="388.5" y="294" font-size="26" fill="#173e35" font-weight="700" text-anchor="middle">경로</text>
+<text x="331" y="339" font-size="30" fill="#173e35" font-weight="400" text-anchor="start">원고/초안</text>
+<circle cx="728" cy="320" r="18" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<path d="M 719.0 320 L 725.66 327.2 L 737.9 311.9" fill="none" stroke="#173e35" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="327" y="397" font-size="25" fill="#173e35" font-weight="700" text-anchor="start">부모 폴더까지 함께 확인</text>
+</g></svg>

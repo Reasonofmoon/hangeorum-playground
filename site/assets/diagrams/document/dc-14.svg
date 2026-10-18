@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">DC14 · 전체 PDF를 만들고 열기 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">전체 PDF를 만들고 열기. 전체 PDF가 열리고 첫 쪽부터 마지막 문장까지 보입니다. 교육용 도해 · 실제 화면 아님. 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">DC14</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">전체 PDF를 만들고 열기</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">전체 PDF가 열리고 첫 쪽부터 마지막 문장까지 보입니다.</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / DC14</text>
+<path d="M55 149 H233 L257 173 V340 H55 Z" fill="#fffdf8" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M233 149 V173 H257" fill="none" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="78" y="192" font-size="26" fill="#173e35" font-weight="700" text-anchor="start">첫 쪽</text>
+<line x1="78" y1="226" x2="223" y2="226" stroke="#91a297" stroke-width="5" stroke-linecap="round"/>
+<line x1="78" y1="250" x2="223" y2="250" stroke="#91a297" stroke-width="5" stroke-linecap="round"/>
+<line x1="78" y1="274" x2="179.5" y2="274" stroke="#91a297" stroke-width="5" stroke-linecap="round"/>
+<circle cx="224" cy="319" r="21" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<path d="M 213.5 319 L 221.27 327.4 L 235.55 309.55" fill="none" stroke="#173e35" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M300 149 H478 L502 173 V340 H300 Z" fill="#fffdf8" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M478 149 V173 H502" fill="none" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="323" y="192" font-size="26" fill="#173e35" font-weight="700" text-anchor="start">중간 쪽들</text>
+<line x1="323" y1="226" x2="468" y2="226" stroke="#91a297" stroke-width="5" stroke-linecap="round"/>
+<line x1="323" y1="250" x2="468" y2="250" stroke="#91a297" stroke-width="5" stroke-linecap="round"/>
+<line x1="323" y1="274" x2="424.5" y2="274" stroke="#91a297" stroke-width="5" stroke-linecap="round"/>
+<circle cx="469" cy="319" r="21" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<path d="M 458.5 319 L 466.27 327.4 L 480.55 309.55" fill="none" stroke="#173e35" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M545 149 H723 L747 173 V340 H545 Z" fill="#fffdf8" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M723 149 V173 H747" fill="none" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="568" y="192" font-size="26" fill="#173e35" font-weight="700" text-anchor="start">마지막 쪽</text>
+<line x1="568" y1="226" x2="713" y2="226" stroke="#91a297" stroke-width="5" stroke-linecap="round"/>
+<line x1="568" y1="250" x2="713" y2="250" stroke="#91a297" stroke-width="5" stroke-linecap="round"/>
+<line x1="568" y1="274" x2="669.5" y2="274" stroke="#91a297" stroke-width="5" stroke-linecap="round"/>
+<circle cx="714" cy="319" r="21" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<path d="M 703.5 319 L 711.27 327.4 L 725.55 309.55" fill="none" stroke="#173e35" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="50" y="380" font-size="29" fill="#173e35" font-weight="700" text-anchor="start">마지막 문장까지 빠짐없이 읽기</text>
+<text x="50" y="414" font-size="23" fill="#173e35" font-weight="400" text-anchor="start">“다른 사람의 의견을 허락 없이 공개하지 않습니다.”</text>
+</g></svg>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">DC08 · 굵게와 제목 스타일 차이 복구 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">굵게와 제목 스타일 차이 복구. 고의 오류 후 준비물이 다시 제목 2로 복구됩니다. 교육용 도해 · 실제 화면 아님. 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">DC08</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">굵게와 제목 스타일 차이 복구</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">고의 오류 후 준비물이 다시 제목 2로 복구됩니다.</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / DC08</text>
+<text x="61" y="145" font-size="27" fill="#173e35" font-weight="700" text-anchor="start">굵게만 적용</text>
+<text x="61" y="222" font-size="49" fill="#173e35" font-weight="900" text-anchor="start">준비물</text>
+<text x="61" y="277" font-size="27" fill="#173e35" font-weight="400" text-anchor="start">모양은 굵어짐</text>
+<text x="61" y="326" font-size="25" fill="#173e35" font-weight="400" text-anchor="start">제목 목록에는 없음</text>
+<circle cx="288" cy="365" r="25" fill="#f6e5cb" stroke="none" stroke-width="2"/>
+<line x1="279.25" y1="356.25" x2="296.75" y2="373.75" stroke="#9a4a2d" stroke-width="4" stroke-linecap="round"/>
+<line x1="296.75" y1="356.25" x2="279.25" y2="373.75" stroke="#9a4a2d" stroke-width="4" stroke-linecap="round"/>
+<line x1="337" y1="244" x2="441" y2="244" stroke="#dfaa55" stroke-width="5" stroke-linecap="round"/>
+<path d="M 429.5 250.0 L 441 244 L 429.5 238.0" fill="none" stroke="#dfaa55" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="483" y="145" font-size="28" fill="#173e35" font-weight="700" text-anchor="start">제목 2로 복구</text>
+<text x="482" y="218" font-size="29" fill="#173e35" font-weight="700" text-anchor="start">진행 안내</text>
+<path d="M504 242 V297 H552" fill="none" stroke="#173e35" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="563" y="271" width="165" height="42" rx="21" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<text x="645.5" y="300" font-size="26" fill="#173e35" font-weight="700" text-anchor="middle">준비물</text>
+<circle cx="689" cy="365" r="25" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<path d="M 676.5 365 L 685.75 375.0 L 702.75 353.75" fill="none" stroke="#173e35" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</g></svg>

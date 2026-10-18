@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">FN09 · 폴더 오류 고치기 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">폴더 오류 고치기. 원고/초안으로 복구됩니다. 교육용 도해 · 실제 화면 아님. 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">FN09</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">폴더 오류 고치기</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">원고/초안으로 복구됩니다.</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / FN09</text>
+<path d="M62 158 V143 Q62 138 69 138 H150.2 L171.2 158 H265 Q272 158 272 165 V236 Q272 243 265 243 H69 Q62 243 62 236 Z" fill="#e5ece3" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="167.0" y="210.45" font-size="28" fill="#173e35" font-weight="700" text-anchor="middle">원고</text>
+<path d="M166 256 V302 H244 M166 302 V382 H244" fill="none" stroke="#51685e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="265" y="279" width="138" height="42" rx="21" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<text x="334.0" y="308" font-size="26" fill="#173e35" font-weight="700" text-anchor="middle">검토</text>
+<circle cx="434" cy="299" r="18" fill="#f6e5cb" stroke="none" stroke-width="2"/>
+<line x1="427.7" y1="292.7" x2="440.3" y2="305.3" stroke="#9a4a2d" stroke-width="4" stroke-linecap="round"/>
+<line x1="440.3" y1="292.7" x2="427.7" y2="305.3" stroke="#9a4a2d" stroke-width="4" stroke-linecap="round"/>
+<rect x="265" y="361" width="138" height="42" rx="21" fill="#dfaa55" stroke="none" stroke-width="2"/>
+<text x="334.0" y="390" font-size="26" fill="#173e35" font-weight="700" text-anchor="middle">초안</text>
+<circle cx="434" cy="381" r="18" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<path d="M 425.0 381 L 431.66 388.2 L 443.9 372.9" fill="none" stroke="#173e35" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M589 145 H675 L699 169 V284 H589 Z" fill="#fffdf8" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M675 145 V169 H699" fill="none" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="644.0" y="224.23" font-size="28" fill="#173e35" font-weight="700" text-anchor="middle">.md</text>
+<path d="M644 298 V381 H480" fill="none" stroke="#173e35" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="532" y1="381" x2="482" y2="381" stroke="#173e35" stroke-width="4" stroke-linecap="round"/>
+<path d="M 493.5 375.0 L 482 381 L 493.5 387.0" fill="none" stroke="#173e35" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="515" y="326" font-size="25" fill="#173e35" font-weight="400" text-anchor="start">파일은 유지</text>
+<text x="515" y="358" font-size="25" fill="#173e35" font-weight="400" text-anchor="start">위치만 복구</text>
+</g></svg>

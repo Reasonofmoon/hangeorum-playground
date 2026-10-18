@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">DC02 · 연습 원고 넣기 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">연습 원고 넣기. 15개 비어 있지 않은 문단이 있습니다. 교육용 도해 · 실제 화면 아님. 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">DC02</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">연습 원고 넣기</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">15개 비어 있지 않은 문단이 있습니다.</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / DC02</text>
+<path d="M56 139 H266 L290 163 V402 H56 Z" fill="#fffdf8" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M266 139 V163 H290" fill="none" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="79" y="179" font-size="27" fill="#173e35" font-weight="700" text-anchor="start">연습원고.txt</text>
+<line x1="81" y1="213" x2="246" y2="213" stroke="#91a297" stroke-width="5" stroke-linecap="round"/>
+<line x1="81" y1="234" x2="246" y2="234" stroke="#91a297" stroke-width="5" stroke-linecap="round"/>
+<line x1="81" y1="255" x2="246" y2="255" stroke="#91a297" stroke-width="5" stroke-linecap="round"/>
+<line x1="81" y1="276" x2="246" y2="276" stroke="#91a297" stroke-width="5" stroke-linecap="round"/>
+<line x1="81" y1="297" x2="246" y2="297" stroke="#91a297" stroke-width="5" stroke-linecap="round"/>
+<line x1="81" y1="318" x2="246" y2="318" stroke="#91a297" stroke-width="5" stroke-linecap="round"/>
+<line x1="81" y1="339" x2="196.5" y2="339" stroke="#91a297" stroke-width="5" stroke-linecap="round"/>
+<line x1="309" y1="263" x2="424" y2="263" stroke="#173e35" stroke-width="4" stroke-linecap="round"/>
+<path d="M 412.5 269.0 L 424 263 L 412.5 257.0" fill="none" stroke="#173e35" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="334" y="235" font-size="22" fill="#173e35" font-weight="400" text-anchor="middle">붙여넣기</text>
+<path d="M448 139 H710 L734 163 V402 H448 Z" fill="#fffdf8" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M710 139 V163 H734" fill="none" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="469" y="180" font-size="32" fill="#173e35" font-weight="700" text-anchor="start">15개 문단</text>
+<line x1="473" y1="205.0" x2="700" y2="205.0" stroke="#dfaa55" stroke-width="5" stroke-linecap="round"/>
+<line x1="473" y1="216.6" x2="686" y2="216.6" stroke="#51685e" stroke-width="5" stroke-linecap="round"/>
+<line x1="473" y1="228.2" x2="672" y2="228.2" stroke="#dfaa55" stroke-width="5" stroke-linecap="round"/>
+<line x1="473" y1="239.8" x2="700" y2="239.8" stroke="#51685e" stroke-width="5" stroke-linecap="round"/>
+<line x1="473" y1="251.4" x2="686" y2="251.4" stroke="#51685e" stroke-width="5" stroke-linecap="round"/>
+<line x1="473" y1="263.0" x2="672" y2="263.0" stroke="#51685e" stroke-width="5" stroke-linecap="round"/>
+<line x1="473" y1="274.6" x2="700" y2="274.6" stroke="#51685e" stroke-width="5" stroke-linecap="round"/>
+<line x1="473" y1="286.2" x2="686" y2="286.2" stroke="#dfaa55" stroke-width="5" stroke-linecap="round"/>
+<line x1="473" y1="297.8" x2="672" y2="297.8" stroke="#51685e" stroke-width="5" stroke-linecap="round"/>
+<line x1="473" y1="309.4" x2="700" y2="309.4" stroke="#51685e" stroke-width="5" stroke-linecap="round"/>
+<line x1="473" y1="321.0" x2="686" y2="321.0" stroke="#51685e" stroke-width="5" stroke-linecap="round"/>
+<line x1="473" y1="332.6" x2="672" y2="332.6" stroke="#51685e" stroke-width="5" stroke-linecap="round"/>
+<line x1="473" y1="344.2" x2="700" y2="344.2" stroke="#dfaa55" stroke-width="5" stroke-linecap="round"/>
+<line x1="473" y1="355.79999999999995" x2="686" y2="355.79999999999995" stroke="#51685e" stroke-width="5" stroke-linecap="round"/>
+<line x1="473" y1="367.4" x2="672" y2="367.4" stroke="#51685e" stroke-width="5" stroke-linecap="round"/>
+</g></svg>

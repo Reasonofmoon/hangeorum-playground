@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko"><head>
+<meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' blob: https://accounts.google.com/gsi/client; style-src 'self' 'unsafe-inline' https://accounts.google.com/gsi/style; img-src 'self' data: blob: https://lh3.googleusercontent.com https://*.googleusercontent.com https://drive.google.com; connect-src https://script.google.com https://script.googleusercontent.com https://accounts.google.com/gsi/; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'self' https://accounts.google.com/gsi/ https://drive.google.com; worker-src 'none'"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI45 · 쉬운 언어 점검 로컬 실습</title>
+<style>
+:root{--bg:#fffaf3;--ink:#1f2433;--muted:#5c6375;--line:#ece4d8;--or:#ff8a3d;--ord:#e86a1c;--teal:#14a3a1;--tld:#0e7d7b;--red:#e8473f}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 "Pretendard","Malgun Gothic",sans-serif}
+header{background:linear-gradient(135deg,#fff1e2,#e7f7f5);border-bottom:1px solid var(--line);padding:12px 22px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+header h1{margin:0;font-size:20px}header small{color:var(--muted)}
+.wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;padding:14px 22px;max-width:1500px;margin:0 auto}
+@media (max-width:980px){.wrap{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 14px;box-shadow:0 6px 18px rgba(60,40,10,.06);margin-bottom:14px}
+.card h3{margin:0 0 8px;font-size:15.5px}
+textarea{width:100%;height:300px;font:14.5px/1.7 "Malgun Gothic",sans-serif;border:1px solid #e2d6c4;border-radius:12px;padding:10px;resize:vertical}
+button{font:inherit;font-size:14px;border:0;border-radius:10px;padding:7px 13px;cursor:pointer;background:var(--ink);color:#fff}
+button.ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}button.or{background:var(--or)}button.tl{background:var(--teal)}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px}
+label.f{font-size:13.5px;color:var(--muted);display:flex;gap:6px;align-items:center}
+input{font:inherit;font-size:14px;border:1px solid #e2d6c4;border-radius:8px;padding:4px 7px}
+.score{display:flex;gap:16px;align-items:center}
+.dial{width:96px;height:96px;border-radius:50%;display:grid;place-items:center;font-size:30px;font-weight:800;background:conic-gradient(var(--c) calc(var(--p)*1%),#f1ebe2 0)}
+.dial span{width:74px;height:74px;border-radius:50%;background:#fff;display:grid;place-items:center}
+.grade{font-size:20px;font-weight:800}.sub{color:var(--muted);font-size:13.5px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.chip{border-radius:999px;padding:2px 10px;font-size:13px;cursor:pointer;border:1px solid transparent}
+.chip.off{opacity:.45}
+.t-long{background:#ffe9e5;color:#b2362f}.t-multi{background:#fff1d6;color:#9a6200}.t-word{background:#ffe6d2;color:#a8460c}.t-passive{background:#ece6ff;color:#5b3fd1}.t-order{background:#dff1ff;color:#195b8f}.t-number{background:#dff5f2;color:#0e7d7b}
+#view{white-space:pre-wrap;font:14.5px/1.85 "Malgun Gothic",sans-serif;max-height:420px;overflow:auto}
+#view mark{border-radius:4px;padding:0 1px;cursor:pointer;color:inherit}
+#view mark.s-long,#view mark.s-multi{background:none;border-bottom:2px wavy currentColor}
+#view mark.s-long{color:#b2362f}#view mark.s-multi{color:#9a6200}
+#view mark.t-word,#view mark.t-passive,#view mark.t-order,#view mark.t-number{font-weight:700}
+#view mark.flash{outline:3px solid var(--or)}
+#list{max-height:330px;overflow:auto;margin:0;padding:0;list-style:none}
+#list li{border-bottom:1px solid #f3ece1;padding:6px 4px;font-size:14px;cursor:pointer}#list li:hover{background:#fffaf3}
+#list .tag{font-size:12px;border-radius:6px;padding:0 6px;margin-right:6px}
+#list .sg{display:block;color:var(--muted);font-size:13px}
+details summary{cursor:pointer;font-weight:700;font-size:14px}
+#dict{max-height:240px;overflow:auto;font-size:13px}#dict table{width:100%;border-collapse:collapse}#dict td{border-bottom:1px solid #f3ece1;padding:2px 6px}
+.note{font-size:12.5px;color:var(--muted);margin:6px 0 0}
+#aiOut{white-space:pre-wrap;background:#f7f4ee;border-radius:10px;padding:8px 10px;margin-top:8px;font-size:14px;display:none}
+#toast{position:fixed;right:20px;bottom:20px;background:var(--ink);color:#fff;border-radius:12px;padding:10px 16px;display:none;font-size:14px}
+.practice-note{max-width:1456px;margin:12px auto;padding:0 22px;font-size:14px}a{color:#125e7a}button:disabled{opacity:.5;cursor:not-allowed}.chip{font:inherit;color:inherit}textarea,input{max-width:100%}.card,.wrap>div{min-width:0;overflow-wrap:anywhere}@media(max-width:480px){.wrap{padding:10px;gap:8px}.practice-note{padding:0 12px}header{padding:12px}.row button{min-height:42px}.score{gap:8px}.dial{flex:none}.f{flex-wrap:wrap}}
+</style><meta name="gate-root" content="../../"><meta name="gate-scripts" content="core.js app.js"><link rel="stylesheet" href="../../assets/gate.css"><script src="../../assets/config.js"></script><script src="../../assets/gate.js"></script></head>
+<body>
+<header><h1>쉬운 언어 점검기</h1><small>안내문·공문을 붙여 넣으면 긴 문장, 어려운 말, 피동 표현, 결론 위치, 숫자·날짜 표기를 점검합니다. 이 브라우저 안에서만 동작합니다.</small></header>
+<p class="practice-note"><a href="../../index.html">한 걸음 서재</a> · AI45 로컬 실습 · 가상 공문만 사용하세요. 입력·기준·한 단계 되돌리기는 이 사이트의 브라우저 localStorage 중 v7 AI45 전용 키에 저장됩니다. 새로고침하면 입력만 복원되며 다시 점검해야 합니다. 실습 초기화는 이 실습의 입력·결과·되돌리기를 지우고 다른 실습과 v6 기록은 유지합니다. <strong>실제 AI 연결 없음</strong>.</p>
+<p class="practice-note" id="runnerStatus" role="status" aria-live="polite">예시를 불러오거나 글을 입력한 뒤 점검하세요.</p>
+<div class="wrap">
+  <div>
+    <div class="card"><h3>1. 글 붙여 넣기</h3>
+      <label for="src">연습할 안내문</label><textarea id="src" placeholder="점검할 글을 붙여 넣으세요."></textarea>
+      <div class="row"><button class="ghost" id="sampleBad">예시: 고치기 전 공문</button><button class="ghost" id="sampleGood">예시: 고친 뒤</button>
+        <label class="f">긴 문장 기준 <input type="number" id="limit" value="60" min="30" max="150" style="width:64px">자</label>
+        <button class="or" id="run">점검하기</button></div>
+      <p class="note">쉬운 말로 고친 뒤에도 날짜·접수 방법·조건·비용을 원문과 대조하세요. 이 점수는 사실 보존을 확인하지 않습니다.</p>
+      <div class="row"><button class="tl" id="fix">어려운 말 바꾸기</button><button class="ghost" id="copy">결과 복사</button><button class="ghost" id="undo" disabled>한 단계 되돌리기</button><button class="ghost" id="download">현재 글 TXT 저장</button><button class="ghost" id="reset">실습 초기화</button><span class="note" id="fixNote" role="status"></span></div>
+    </div>
+    <div class="card"><details id="dictBox"><summary>쉬운 말 사전 (<span id="dictN"></span>개)</summary>
+      <div class="row" style="margin:6px 0"><input aria-label="쉬운 말 사전 검색" id="dq" placeholder="찾기 (예: 금일)" style="flex:1"></div>
+      <div id="dict"></div><p class="note">"바꾸기 권장"만 자동으로 바꿉니다. 뒤에 "하다·되다"가 붙어 문법이 깨질 수 있는 곳은 건너뛰고 표시만 합니다.</p></details></div>
+    <div class="card"><details id="aiBox"><summary>로컬 모의 다시 쓰기</summary>
+      <p class="note">실제 AI에 연결하지 않습니다. 고치기 전 예시에는 미리 검수한 답안을 보여 주며, 다른 글에는 사전의 낱말 규칙만 적용합니다. 외부 주소 입력이나 전송 기능은 없습니다. 점수와 모의 결과는 사실 보존을 보장하지 않습니다.</p>
+      <button class="ghost" id="ai">로컬 모의 결과 보기</button><div id="aiOut" role="status" aria-live="polite"></div></details></div>
+  </div>
+  <div>
+    <div class="card"><h3>2. 점수</h3>
+      <div class="score"><div class="dial" id="dial" style="--p:0;--c:#14a3a1"><span id="num">-</span></div>
+        <div><div class="grade" id="grade">점검 전</div><div class="sub" id="stat"></div><div class="sub" id="concl"></div></div></div>
+      <div class="chips" id="chips"></div>
+    </div>
+    <div class="card"><h3>3. 표시한 글</h3><div id="view" class="sub">점검하기를 누르면 여기에 표시합니다.</div></div>
+    <div class="card"><h3>4. 고칠 곳 <span class="sub" id="cnt"></span></h3><ul id="list"></ul></div>
+  </div>
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
+
+
+<div id="hg-auth" class="hg-auth" aria-live="polite"></div><div class="hg-legal" role="contentinfo"><p>© 2026 한 걸음 서재. 모든 권리 보유. 글·이미지·실습 구성의 무단 복제와 재배포를 금지합니다. <a href="../../terms.html">이용 조건</a></p></div></body></html>

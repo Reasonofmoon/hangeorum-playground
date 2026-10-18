@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">DC17 · 새 조건을 혼자 적용하기 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">새 조건을 혼자 적용하기의 새 조건과 빈 기록란. 독립 과제의 정답은 표시하지 않음. 교육용 도해 · 실제 화면 아님. 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다. 독립 과제 조건만 제시하며 정답과 완성 결과는 숨겼습니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">DC17</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">새 조건을 혼자 적용하기</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">새 조건을 읽고 직접 구성하세요. 정답은 도해에 표시하지 않습니다.</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / DC17</text>
+<path d="M51 164 H165 L189 188 V356 H51 Z" fill="#fffdf8" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M165 164 V188 H189" fill="none" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="120.0" y="273.44" font-size="28" fill="#173e35" font-weight="700" text-anchor="middle">v01</text>
+<rect x="50" y="367" width="139" height="42" rx="21" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<text x="119.5" y="396" font-size="26" fill="#173e35" font-weight="700" text-anchor="middle">보존</text>
+<line x1="213" y1="258" x2="290" y2="258" stroke="#173e35" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 8"/>
+<path d="M 278.5 264.0 L 290 258 L 278.5 252.0" fill="none" stroke="#173e35" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M319 140 H695 L719 164 V414 H319 Z" fill="#fffdf8" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M695 140 V164 H719" fill="none" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="345" y="184" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">새 조건</text>
+<text x="345" y="228" font-size="27" fill="#173e35" font-weight="400" text-anchor="start">진행 안내 아래 새 구획</text>
+<text x="345" y="275" font-size="27" fill="#173e35" font-weight="400" text-anchor="start">제목 후보: 대화 약속</text>
+<line x1="344" y1="316" x2="686" y2="316" stroke="#173e35" stroke-width="3" stroke-linecap="round" stroke-dasharray="8 8"/>
+<text x="345" y="356" font-size="26" fill="#173e35" font-weight="400" text-anchor="start">설명 문단 · 새 버전 PDF</text>
+<text x="345" y="398" font-size="23" fill="#173e35" font-weight="400" text-anchor="start">스타일과 갱신 방법은 직접 선택</text>
+</g></svg>

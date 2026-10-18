@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="ko"><head><base target="_top"><meta charset="utf-8">
+<style>
+:root{--bg:#f7f6f2;--card:#fff;--ink:#22252b;--muted:#6b6f78;--line:#e3e1da;--accent:#3b4a6b;--ok:#1e7a4f;--warn:#a46a00;--err:#b3261e}
+*{box-sizing:border-box}body{margin:0;font:14px/1.55 system-ui,"Malgun Gothic",sans-serif;background:var(--bg);color:var(--ink)}
+header{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:12px 20px;background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+header h1{font-size:16px;margin:0}header .who{color:var(--muted);font-size:13px}header .links{margin-left:auto;display:flex;gap:10px;font-size:13px}
+a{color:var(--accent)}
+.role{padding:2px 10px;border-radius:999px;background:#eef1f7;color:var(--accent);font-size:12px;font-weight:600}
+nav.tabs{display:flex;gap:4px;padding:8px 20px;flex-wrap:wrap}
+nav.tabs button{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;cursor:pointer;font:inherit}
+nav.tabs button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+main{padding:8px 20px 60px}.panel{display:none}.panel.on{display:block}
+.grid{display:grid;grid-template-columns:320px 1fr;gap:16px}@media(max-width:900px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:12px}
+.list{max-height:calc(100vh - 220px);overflow:auto}
+.list .row{padding:8px 10px;border-radius:8px;cursor:pointer;border:1px solid transparent}
+.list .row:hover{background:#f2f1ec}.list .row.on{border-color:var(--accent);background:#eef1f7}
+.list .row small{display:block;color:var(--muted)}
+.state{font-size:11px;padding:1px 8px;border-radius:999px;border:1px solid var(--line);margin-right:4px}
+.state.게시{background:#e6f4ea;border-color:#b7dfc3}.state.검수중{background:#fff4e0;border-color:#f0d29a}.state.초안{background:#f1f1f1}.state.보관{color:#999}
+label{display:block;font-size:12px;color:var(--muted);margin:8px 0 2px}
+input,select,textarea{width:100%;font:inherit;padding:7px 9px;border:1px solid var(--line);border-radius:8px;background:#fff}
+textarea{min-height:60px;resize:vertical}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:0 12px}
+button.btn{font:inherit;padding:7px 14px;border-radius:8px;border:1px solid var(--line);background:#fff;cursor:pointer}
+button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}button.danger{color:var(--err)}
+button:disabled{opacity:.5;cursor:not-allowed}
+.bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0}
+.step{border:1px solid var(--line);border-radius:10px;padding:12px;margin:10px 0;background:#fcfcfa}
+.step.drag{outline:2px dashed var(--accent)}
+.step h4{margin:0 0 4px;font-size:14px;display:flex;gap:8px;align-items:center}
+.step h4 .sp{flex:1}
+.drop{border:1px dashed #b9b6ab;border-radius:8px;padding:10px;text-align:center;color:var(--muted);margin-top:8px;cursor:pointer}
+.drop.over{background:#eef1f7;border-color:var(--accent)}
+.media{display:flex;gap:10px;align-items:flex-start;margin-top:8px}.media img{max-width:180px;max-height:120px;border-radius:6px;border:1px solid var(--line)}
+.issues li.error{color:var(--err)}.issues li.warn{color:var(--warn)}
+.toast{position:fixed;right:16px;bottom:16px;background:#22252b;color:#fff;padding:10px 14px;border-radius:10px;max-width:420px;z-index:20;display:none;white-space:pre-wrap}
+table{border-collapse:collapse;width:100%;font-size:13px}td,th{border-bottom:1px solid var(--line);padding:6px;text-align:left;vertical-align:top}
+.mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.mgrid img{width:100%;height:120px;object-fit:cover;border-radius:6px;background:#eee}
+.muted{color:var(--muted);font-size:13px}.qr img{width:180px;height:180px}
+.preview{border-left:3px solid var(--accent);padding-left:12px}
+dialog{border:1px solid var(--line);border-radius:12px;max-width:560px;width:92%}
+</style></head>
+<body>
+<header><h1>한 걸음 서재 관리자</h1><span class="role" id="role">확인 중</span><span class="who" id="who"></span>
+<span class="links"><a id="lnk-site" target="_blank">사이트</a><a id="lnk-sheet" target="_blank">원본 시트</a><a id="lnk-drive" target="_blank">Drive 폴더·권한</a></span></header>
+<nav class="tabs" id="tabs"></nav>
+<main>
+<section class="panel" data-tab="튜토리얼">
+ <div class="grid">
+  <div class="card"><div class="bar"><input id="q" placeholder="제목·코드 검색"></div>
+   <div class="bar"><select id="f-state"><option value="">모든 상태</option></select><select id="f-cat"><option value="">모든 분류</option></select></div>
+   <div class="bar"><button class="btn" id="new-t">+ 새 튜토리얼</button><span class="muted" id="t-count"></span></div>
+   <div class="list" id="t-list"></div></div>
+  <div id="editor"><div class="card muted">왼쪽에서 튜토리얼을 고르거나 새로 만드세요.</div></div>
+ </div>
+</section>
+<section class="panel" data-tab="미디어"><div class="card"><p class="muted">업로드한 이미지·GIF입니다. 게시할 때 쓰인 파일만 공개 폴더로 옮겨집니다. 대체 텍스트와 출처를 꼭 채워 주세요.</p><div class="mgrid" id="m-grid"></div></div></section>
+<section class="panel" data-tab="공유">
+ <div class="card"><label>튜토리얼</label><select id="s-tut"></select>
+  <div class="bar"><button class="btn primary" id="s-make">링크 만들기</button><button class="btn" id="s-copy" disabled>복사</button></div>
+  <input id="s-url" readonly placeholder="링크가 여기에 나옵니다"><div class="qr" id="s-qr"></div></div>
+ <div class="card"><h3>메일로 보내기</h3><p class="muted">내 Gmail에서 숨은참조(BCC)로 보냅니다. 한 번에 50명까지.</p>
+  <label>받는 사람(쉼표·줄바꿈 구분)</label><textarea id="m-to"></textarea><label>제목</label><input id="m-sub" value="[한 걸음 서재] 이번 주 실습 안내"><label>메시지</label><textarea id="m-msg">아래 링크를 열고 Google 계정으로 로그인한 뒤 따라 해 보세요.</textarea>
+  <div class="bar"><button class="btn primary" id="m-send">보내기</button></div></div>
+ <div class="card"><h3>Classroom에 올리기</h3><div class="bar"><button class="btn" id="c-load">내 수업 불러오기</button><select id="c-course"></select></div>
+  <label>게시물 제목</label><input id="c-title"><label>설명</label><textarea id="c-text">로그인한 뒤 순서대로 따라 해 보세요.</textarea>
+  <div class="bar"><button class="btn primary" id="c-post">수업 자료로 올리기</button></div></div>
+</section>
+<section class="panel" data-tab="학습자">
+ <div class="card"><h3>학습자 명단</h3><p class="muted">여기에 있는 Google 계정만 사이트 전체 내용을 볼 수 있습니다. 추가·삭제는 운영자만 할 수 있습니다.</p>
+  <label>이메일 추가(쉼표·줄바꿈)</label><textarea id="l-add"></textarea><div class="cols"><div><label>그룹</label><input id="l-group" placeholder="예: 10월반"></div><div><label>만료일(선택)</label><input id="l-exp" type="date"></div></div>
+  <div class="bar"><button class="btn primary" id="l-save">추가</button><select id="l-course"></select><button class="btn" id="l-sync">Classroom 명단 가져오기</button></div>
+  <table id="l-table"></table></div>
+</section>
+<section class="panel" data-tab="게시">
+ <div class="card"><h3>게시 전 검사</h3><div class="bar"><button class="btn" id="v-run">검사하기</button><span id="v-sum" class="muted"></span></div><ul class="issues" id="v-list"></ul>
+  <label>게시 메모</label><input id="p-note" placeholder="무엇을 바꿨는지 한 줄"><div class="bar"><button class="btn primary" id="p-go">게시하기 (운영자)</button><span class="muted">상태가 "게시"인 튜토리얼만 사이트에 나갑니다. 반영까지 최대 1분.</span></div></div>
+ <div class="card"><h3>버전</h3><table id="ver-table"></table></div>
+</section>
+<section class="panel" data-tab="기록"><div class="card"><div class="bar"><button class="btn" id="a-load">최근 조회 기록</button><span class="muted">자세한 분석은 Data Studio 대시보드와 Colab 노트북을 쓰세요.</span></div><table id="a-table"></table></div></section>
+<section class="panel" data-tab="설정">
+ <div class="card"><h3>AI 도우미 (Google AI Studio)</h3><p class="muted">aistudio.google.com에서 만든 Gemini API 키를 넣습니다. 키는 이 웹앱의 Script Properties에만 저장되고 화면에 다시 보이지 않습니다.</p>
+  <label>Gemini API 키</label><input id="g-key" type="password" autocomplete="off"><label>모델</label><input id="g-model">
+  <div class="bar"><button class="btn primary" id="g-save">저장</button><span id="g-state" class="muted"></span></div></div>
+ <div class="card"><h3>게시 규칙</h3><label><input type="checkbox" id="r-block" style="width:auto"> 권리 검토가 끝나지 않은 자료(blockers)는 게시 막기</label><p class="muted">켜면 보충 자료 중 권리 확인이 남은 항목은 사이트에서 빠집니다.</p></div>
+ <div class="card"><h3>권한 안내</h3><ul class="muted"><li>운영자: 40_게시본 폴더 편집자(또는 소유자)</li><li>편집자: 원본 시트 편집자 + 00·20·30 폴더 편집자</li><li>검수자: 원본 시트 댓글 작성자 또는 뷰어</li><li>권한 변경은 Drive 공유 화면에서 합니다.</li></ul></div>
+</section>
+</main>
+<dialog id="dlg"><form method="dialog" id="dlg-form"></form></dialog>
+<div class="toast" id="toast"></div>
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+<script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const el=(t,a={},...c)=>{const n=document.createElement(t);for(const k in a){if(k==='on')for(const e in a.on)n.addEventListener(e,a.on[e]);else if(k in n&&k!=='list')n[k]=a[k];else n.setAttribute(k,a[k]);}n.append(...c.flat().filter(x=>x!=null));return n;};
+const run=(fn,...args)=>new Promise((res,rej)=>google.script.run.withSuccessHandler(res).withFailureHandler(e=>rej(e))[fn](...args));
+const toast=(m,ms=3500)=>{const t=$('#toast');t.textContent=m;t.style.display='block';clearTimeout(t._t);t._t=setTimeout(()=>t.style.display='none',ms);};
+const busy=async(btn,fn)=>{const o=btn.textContent;btn.disabled=true;btn.textContent='처리 중…';try{return await fn();}catch(e){toast('오류: '+(e.message||e),7000);}finally{btn.disabled=false;btn.textContent=o;}};
+const RN={operator:'운영자',editor:'편집자',reviewer:'검수자',none:'권한 없음'};
+let B={},T=[],cur=null,dirty=false;
+const can=r=>({none:0,reviewer:1,editor:2,operator:3})[B.role]>=({reviewer:1,editor:2,operator:3})[r];
+
+// 이미지 워터마크(브라우저에서 처리). GIF는 움직임을 지키려고 그대로 올린다.
+function fileToB64(file){return new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(String(r.result).split(',')[1]);r.onerror=rej;r.readAsDataURL(file);});}
+async function watermarked(file){
+  if(!/^image\/(png|jpeg|webp)$/.test(file.type))return {data:await fileToB64(file),mime:file.type,name:file.name,url:URL.createObjectURL(file)};
+  const img=await new Promise((res,rej)=>{const i=new Image();i.onload=()=>res(i);i.onerror=rej;i.src=URL.createObjectURL(file);});
+  const c=document.createElement('canvas');c.width=img.naturalWidth;c.height=img.naturalHeight;const g=c.getContext('2d');g.drawImage(img,0,0);
+  const s=Math.max(12,Math.round(Math.min(c.width,c.height)*0.035));g.font=`bold ${s}px "Malgun Gothic",sans-serif`;const txt='© 한 걸음 서재 · 무단 복제 금지';const w=g.measureText(txt).width;
+  g.fillStyle='rgba(0,0,0,.35)';g.fillRect(c.width-w-s*1.6,c.height-s*2.4,w+s*1.2,s*1.8);g.fillStyle='rgba(255,255,255,.85)';g.fillText(txt,c.width-w-s,c.height-s*1.05);
+  const mime=file.type==='image/png'?'image/png':'image/jpeg';const url=c.toDataURL(mime,0.9);
+  return {data:url.split(',')[1],mime,name:file.name.replace(/\.\w+$/,mime==='image/png'?'.png':'.jpg'),url};
+}
+function ask(title,fields){return new Promise(res=>{const f=$('#dlg-form');f.replaceChildren(el('h3',{},title));const ins={};
+  for(const [k,lab,val,type] of fields){f.append(el('label',{},lab));ins[k]=type==='textarea'?el('textarea',{value:val||''}):el('input',{value:val||'',type:type||'text'});f.append(ins[k]);}
+  const ok=el('button',{className:'btn primary',value:'ok'},'확인'),no=el('button',{className:'btn',value:'cancel'},'취소');f.append(el('div',{className:'bar'},ok,no));
+  $('#dlg').onclose=()=>res($('#dlg').returnValue==='ok'?Object.fromEntries(Object.entries(ins).map(([k,v])=>[k,v.value])):null);$('#dlg').showModal();});}
+
+async function boot(){
+  B=await run('getBootstrap');
+  $('#role').textContent=RN[B.role];$('#who').textContent=B.email||'(이메일 확인 불가)';
+  $('#lnk-site').href=B.siteUrl;$('#lnk-sheet').href=B.sheetUrl;$('#lnk-drive').href=B.folderUrl;
+  if(B.role==='none'){document.querySelector('main').innerHTML='<div class="card">이 계정에는 원본 시트 권한이 없습니다. 운영자에게 Drive 공유를 요청하세요.</div>';return;}
+  const tabs=['튜토리얼','미디어','공유','학습자','게시','기록','설정'].filter(t=>t!=='학습자'||can('editor')).filter(t=>t!=='기록'||can('editor'));
+  for(const t of tabs)$('#tabs').append(el('button',{on:{click:()=>show(t)}},t));
+  for(const s of B.states)$('#f-state').append(el('option',{value:s},s));
+  for(const c of B.categories)$('#f-cat').append(el('option',{value:c},c));
+  show('튜토리얼');await loadList();
+  $('#g-model').value=B.geminiModel;$('#g-state').textContent=B.hasGeminiKey?'키 저장됨':'키 없음';
+}
+function show(t){$$('#tabs button').forEach(b=>b.classList.toggle('on',b.textContent===t));$$('.panel').forEach(p=>p.classList.toggle('on',p.dataset.tab===t));
+  if(t==='미디어')loadMedia();if(t==='학습자')loadLearners();if(t==='게시')loadVersions();if(t==='공유')fillShare();if(t==='설정')run('getSettings').then(s=>{$('#r-block').checked=String(s.block_unreviewed_rights).toUpperCase()==='TRUE';});}
+async function loadList(){T=await run('listTutorials');renderList();}
+function renderList(){
+  const q=$('#q').value.trim().toLowerCase(),st=$('#f-state').value,ct=$('#f-cat').value;
+  const rows=T.filter(t=>(!st||t.state===st)&&(!ct||t.category===ct)&&(!q||(t.title+' '+t.code+' '+t.id).toLowerCase().includes(q)));
+  $('#t-count').textContent=rows.length+'개';
+  $('#t-list').replaceChildren(...rows.slice(0,400).map(t=>el('div',{className:'row'+(cur&&cur.tutorial.id===t.id?' on':''),on:{click:()=>openT(t.id)}},el('span',{className:'state '+t.state},t.state),t.title,el('small',{},`${t.code} · ${t.category} · ${t.steps}단계${t.conditional?' · 조건부':''}`))));
+}
+['#q','#f-state','#f-cat'].forEach(s=>$(s).addEventListener('input',renderList));
+$('#new-t').onclick=async()=>{if(!can('editor'))return toast('편집자 권한이 필요합니다.');
+  const v=await ask('새 튜토리얼',[['id','ID (예: google-workspace/gw-08)','google-workspace/gw-'],['code','코드 (예: GW08)','GW'],['title','제목',''],['category','분류',B.categories[B.categories.length-1]]]);
+  if(!v)return;cur={tutorial:{id:v.id,code:v.code,title:v.title,category:v.category,publish_state:'초안',mode:'guide',difficulty:'미지정',difficultyBasis:'새로 만든 실습. 난이도 등급 미지정.',timeBasis:'단일 행동 수 × 2분의 편집 추정. 실측 아님.',sourceKind:'workspace-track',status:'NEW',sourceStatus:'draft',conditional:false,simulation:false},steps:[{}],media:{},isNew:true};renderEditor();};
+async function openT(id){if(dirty&&!confirm('저장하지 않은 변경이 있습니다. 버릴까요?'))return;$('#editor').innerHTML='<div class="card muted">불러오는 중…</div>';cur=await run('getTutorial',id);cur.originalId=id;dirty=false;renderList();renderEditor();}
+
+function field(obj,k,lab,type,opts){const ro=!can('editor');let n;
+  if(type==='select'){n=el('select',{disabled:ro});for(const o of opts)n.append(el('option',{value:o,selected:String(obj[k])===o},o));}
+  else if(type==='textarea')n=el('textarea',{value:obj[k]??'',readOnly:ro});else n=el('input',{value:obj[k]??'',readOnly:ro});
+  n.addEventListener('input',()=>{obj[k]=n.value;dirty=true;});return el('div',{},el('label',{},lab),n);}
+function renderEditor(){
+  const t=cur.tutorial,E=$('#editor');E.replaceChildren();
+  const head=el('div',{className:'card'},el('div',{className:'bar'},el('strong',{},t.title||'(제목 없음)'),el('span',{className:'state '+t.publish_state},t.publish_state)),
+    el('div',{className:'cols'},field(t,'id','ID'),field(t,'code','코드'),field(t,'publish_state','상태','select',can('operator')?B.states:B.states.filter(s=>s!=='게시'||t.publish_state==='게시')),field(t,'category','분류'),field(t,'mode','방식','select',['guide','practice']),field(t,'difficulty','난이도','select',['미지정','중급','심화'])),
+    field(t,'title','제목'),field(t,'description','한 줄 설명','textarea'),el('div',{className:'cols'},field(t,'tags','태그(쉼표)'),field(t,'minutes','예상 시간(분, 비우면 단계×2)')),field(t,'scopeNote','범위 안내(무엇을 하고 하지 않는지)','textarea'));
+  // 참고 자료
+  const res=JSON.parse(t.resources_json||'[]');const rl=el('div');
+  const drawRes=()=>{rl.replaceChildren(...res.map((r,i)=>el('div',{className:'bar'},el('a',{href:r.url,target:'_blank'},r.title||r.url),can('editor')?el('button',{className:'btn danger',on:{click:()=>{res.splice(i,1);t.resources_json=JSON.stringify(res);dirty=true;drawRes();}}},'삭제'):null)));};drawRes();
+  const resBar=can('editor')?el('div',{className:'bar'},el('button',{className:'btn',on:{click:async()=>{const v=await ask('링크 추가',[['title','이름',''],['url','https:// 주소','https://']]);if(v&&/^https:\/\//.test(v.url)){res.push(v);t.resources_json=JSON.stringify(res);dirty=true;drawRes();}}}},'+ 링크'),
+    el('button',{className:'btn',on:{click:()=>pickFile('*/*',async f=>{const aud=confirm('누구나 받을 수 있게 공개할까요?\n확인 = 공개 / 취소 = 학습자용 폴더(비공개)')?'공개':'학습자용';toast('자료 올리는 중…');const r=await run('uploadResource',{name:f.name,mime:f.type||'application/octet-stream',data:await fileToB64(f),audience:aud});res.push({title:r.title,url:r.url});t.resources_json=JSON.stringify(res);dirty=true;drawRes();toast('자료를 올렸습니다 ('+aud+')');})}},'+ 파일 올리기')):null;
+  head.append(el('label',{},'참고 자료'),rl,resBar);
+  E.append(head);
+  // 단계
+  const sc=el('div',{className:'card'},el('div',{className:'bar'},el('strong',{},'단계 '+cur.steps.length+'개'),can('editor')?el('button',{className:'btn',on:{click:()=>{cur.steps.push({});dirty=true;renderEditor();}}},'+ 단계'):null,can('editor')?el('button',{className:'btn',on:{click:aiDraft}},'AI 단계 초안'):null,el('button',{className:'btn',on:{click:()=>togglePreview()}},'미리보기')));
+  cur.steps.forEach((s,i)=>sc.append(stepCard(s,i)));E.append(sc);
+  E.append(el('div',{className:'card',id:'pv',hidden:true}));
+  const foot=el('div',{className:'card bar'});
+  if(can('editor')){foot.append(el('button',{className:'btn primary',on:{click:e=>save(e.target)}},'저장'));
+    if(t.publish_state==='초안')foot.append(el('button',{className:'btn',on:{click:e=>{t.publish_state='검수중';save(e.target);}}},'검수 요청'));
+    foot.append(el('button',{className:'btn',on:{click:async()=>{const v=await ask('복제',[['id','새 ID',t.id+'-copy']]);if(v){await run('duplicateTutorial',t.id,v.id);toast('복제했습니다');loadList();}}}},'복제'));}
+  else foot.append(el('span',{className:'muted'},'검수자는 읽기만 할 수 있습니다. 의견은 원본 시트의 해당 행에 댓글로 남겨 주세요.'));
+  foot.append(el('button',{className:'btn',on:{click:()=>{show('공유');$('#s-tut').value=t.id;}}},'링크 보내기'));
+  E.append(foot);
+}
+function stepCard(s,i){
+  const ro=!can('editor');const box=el('div',{className:'step',draggable:!ro});
+  box.addEventListener('dragstart',e=>{e.dataTransfer.setData('text/step',String(i));});
+  box.addEventListener('dragover',e=>{if(e.dataTransfer.types.includes('text/step')){e.preventDefault();box.classList.add('drag');}});
+  box.addEventListener('dragleave',()=>box.classList.remove('drag'));
+  box.addEventListener('drop',e=>{const from=e.dataTransfer.getData('text/step');if(from==='')return;e.preventDefault();const [m]=cur.steps.splice(Number(from),1);cur.steps.splice(i,0,m);dirty=true;renderEditor();});
+  const mv=(d)=>{const j=i+d;if(j<0||j>=cur.steps.length)return;[cur.steps[i],cur.steps[j]]=[cur.steps[j],cur.steps[i]];dirty=true;renderEditor();};
+  box.append(el('h4',{},(cur.tutorial.code||'')+'.'+(i+1),el('span',{className:'sp'}),ro?null:el('button',{className:'btn',on:{click:()=>mv(-1)}},'↑'),ro?null:el('button',{className:'btn',on:{click:()=>mv(1)}},'↓'),ro?null:el('button',{className:'btn danger',on:{click:()=>{if(confirm('이 단계를 지울까요?')){cur.steps.splice(i,1);dirty=true;renderEditor();}}}},'삭제')));
+  box.append(field(s,'instruction','할 일 (행동 하나)','textarea'),el('div',{className:'cols'},field(s,'expected','성공하면 보이는 것','textarea'),field(s,'recovery','다를 때 할 일','textarea')),el('div',{className:'cols'},field(s,'sourceType','종류','select',['read','action','input','click']),field(s,'kind','확인 방식','select',['manual','practice','automatic'])));
+  const mbox=el('div',{className:'media'});const m=s.media_id&&cur.media[s.media_id];
+  if(m)mbox.append(m.thumb||m._local?el('img',{src:m._local||m.thumb,alt:m.alt}):el('span',{className:'muted'},'('+m.type+')'),el('div',{},el('div',{},el('strong',{},m.media_id)),el('div',{className:'muted'},'대체 텍스트: '+m.alt),ro?null:el('button',{className:'btn',on:{click:()=>{s.media_id='';dirty=true;renderEditor();}}},'빼기')));
+  box.append(mbox);
+  if(!ro){const drop=el('div',{className:'drop'},'이미지·GIF를 여기에 끌어다 놓거나 눌러서 고르기 (PNG·JPG는 워터마크 자동, '+B.maxUploadMb+'MB 이하)');
+    const handle=async f=>{if(!f)return;if(f.size>B.maxUploadMb*1048576)return toast(B.maxUploadMb+'MB를 넘습니다. GIF는 짧게 자르거나 영상으로 올려 주세요.');
+      const w=await watermarked(f);let alt='';
+      if(B.hasGeminiKey&&/^image\/(png|jpeg|webp)$/.test(w.mime)){toast('AI가 대체 텍스트를 제안하는 중…');try{alt=await run('aiAltText',{mime:w.mime,data:w.data});}catch(e){}}
+      const v=await ask('이미지 정보',[['alt','대체 텍스트 (필수)',alt],['caption','설명 문구',''],['source','출처','직접 제작'],['rights','권리 상태','직접 제작 · 사용 가능']]);if(!v||!v.alt)return toast('대체 텍스트가 있어야 올릴 수 있습니다.');
+      toast('올리는 중…',10000);const r=await run('uploadMedia',{...w,...v,tutorialId:cur.tutorial.id});r._local=w.url;cur.media[r.media_id]=r;s.media_id=r.media_id;dirty=true;renderEditor();toast('올렸습니다. 저장을 눌러야 단계에 연결됩니다.');};
+    drop.onclick=()=>pickFile('image/*,video/mp4',handle);
+    drop.addEventListener('dragover',e=>{if(e.dataTransfer.types.includes('Files')){e.preventDefault();drop.classList.add('over');}});drop.addEventListener('dragleave',()=>drop.classList.remove('over'));
+    drop.addEventListener('drop',e=>{if(!e.dataTransfer.files.length)return;e.preventDefault();e.stopPropagation();drop.classList.remove('over');handle(e.dataTransfer.files[0]);});
+    box.append(drop);}
+  return box;
+}
+function pickFile(accept,cb){const i=el('input',{type:'file',accept});i.onchange=()=>cb(i.files[0]);i.click();}
+function togglePreview(){const pv=$('#pv');pv.hidden=!pv.hidden;if(pv.hidden)return;const t=cur.tutorial;
+  pv.replaceChildren(el('h3',{},'학습자 화면 미리보기'),el('p',{className:'muted'},t.category+' · '+(t.minutes||cur.steps.length*2)+'분 · '+cur.steps.length+'단계'),el('h2',{},t.title),el('p',{},t.description||''),
+    ...cur.steps.map((s,i)=>{const m=s.media_id&&cur.media[s.media_id];return el('div',{className:'preview step'},el('strong',{},'단계 '+(i+1)),el('p',{},s.instruction||''),m&&(m._local||m.thumb)?el('img',{src:m._local||m.thumb,alt:m.alt,style:'max-width:100%'}):null,s.expected?el('p',{className:'muted'},'확인: '+s.expected):null,s.recovery?el('p',{className:'muted'},'다르면: '+s.recovery):null);}));}
+async function aiDraft(){if(!B.hasGeminiKey)return toast('설정 탭에 AI Studio 키를 먼저 넣어 주세요.');
+  const v=await ask('AI 단계 초안 (사람 검수 필수)',[['tool','사용 도구',cur.tutorial.category],['goal','이 튜토리얼의 목표',cur.tutorial.description||''],['count','단계 수','6','number']]);if(!v)return;
+  toast('Gemini가 초안을 쓰는 중…',15000);try{const steps=await run('aiDraftSteps',{title:cur.tutorial.title,...v});cur.steps=cur.steps.filter(s=>s.instruction).concat(steps);dirty=true;renderEditor();toast(steps.length+'개 단계를 추가했습니다. 화면 이름이 맞는지 꼭 확인하세요.');}catch(e){toast('오류: '+e.message,7000);}}
+async function save(btn){await busy(btn,async()=>{const r=await run('saveTutorial',{tutorial:cur.tutorial,steps:cur.steps,originalId:cur.originalId});dirty=false;cur.originalId=r.id;toast('저장했습니다 ('+r.updated_at+')');await loadList();renderEditor();});}
+
+// 미디어
+async function loadMedia(){$('#m-grid').innerHTML='<p class="muted">불러오는 중…</p>';const ms=await run('listMedia');
+  $('#m-grid').replaceChildren(...(ms.length?ms:[]).map(m=>{const alt=el('input',{value:m.alt,readOnly:!can('editor')});const rights=el('input',{value:m.rights,readOnly:!can('editor')});
+    const disp=el('select',{disabled:!can('editor')},...['image','drive-preview'].map(o=>el('option',{value:o,selected:m.display===o},o==='image'?'이미지로 표시':'Drive 미리보기(영상·큰 GIF)')));
+    return el('div',{className:'card'},m.thumb?el('img',{src:m.thumb,alt:m.alt}):el('div',{className:'muted'},m.type),el('div',{className:'muted'},m.media_id+(m.public_url?' · 공개됨':' · 초안')),el('label',{},'대체 텍스트'),alt,el('label',{},'권리'),rights,el('label',{},'표시 방식'),disp,
+      can('editor')?el('button',{className:'btn',on:{click:e=>busy(e.target,async()=>{await run('updateMedia',m.media_id,{alt:alt.value,rights:rights.value,display:disp.value});toast('저장했습니다');})}},'저장'):null);}));
+  if(!ms.length)$('#m-grid').innerHTML='<p class="muted">아직 올린 미디어가 없습니다. 튜토리얼 단계에서 이미지를 끌어다 놓으세요.</p>';}
+
+// 공유
+function fillShare(){const s=$('#s-tut');if(s.options.length)return;for(const t of T)s.append(el('option',{value:t.id},`[${t.state}] ${t.code} ${t.title}`));if(cur)s.value=cur.tutorial.id;}
+$('#s-make').onclick=e=>busy(e.target,async()=>{const r=await run('makeLink',{id:$('#s-tut').value,channel:'copy'});$('#s-url').value=r.url;$('#s-copy').disabled=false;
+  const qr=qrcode(0,'M');qr.addData(r.url);qr.make();$('#s-qr').innerHTML=qr.createImgTag(5,8);toast('링크를 만들었습니다. 로그인한 학습자만 전체 내용을 봅니다.');});
+$('#s-copy').onclick=()=>{$('#s-url').select();navigator.clipboard?.writeText($('#s-url').value).then(()=>toast('복사했습니다'),()=>{document.execCommand('copy');toast('복사했습니다');});};
+$('#m-send').onclick=e=>busy(e.target,async()=>{const t=T.find(x=>x.id===$('#s-tut').value);if(!t)return toast('위에서 튜토리얼을 고르세요.');const r=await run('sendLinkMail',{id:t.id,title:t.title,to:$('#m-to').value,subject:$('#m-sub').value,message:$('#m-msg').value});toast(r.sent+'명에게 보냈습니다. 오늘 남은 발송 수: '+r.remaining);});
+async function loadCourses(sel){const cs=await run('listCourses');sel.replaceChildren(...cs.map(c=>el('option',{value:c.id},c.name+(c.section?' · '+c.section:''))));if(!cs.length)toast('활성 수업이 없습니다. classroom.google.com에서 수업을 먼저 만드세요.');}
+$('#c-load').onclick=e=>busy(e.target,()=>loadCourses($('#c-course')));
+$('#c-post').onclick=e=>busy(e.target,async()=>{const t=T.find(x=>x.id===$('#s-tut').value);if(!$('#c-course').value)return toast('수업을 고르세요.');const r=await run('postToClassroom',{id:t.id,courseId:$('#c-course').value,title:$('#c-title').value||t.title,text:$('#c-text').value});toast('Classroom에 '+r.kind+'로 올렸습니다.');});
+
+// 학습자
+async function loadLearners(){const ls=await run('listLearners');$('#l-table').replaceChildren(el('tr',{},...['이메일','그룹','출처','만료','추가일',''].map(h=>el('th',{},h))),...ls.map(l=>el('tr',{},el('td',{},l.email),el('td',{},l.group),el('td',{},l.source),el('td',{},l.expires),el('td',{},l.added_at),el('td',{},can('operator')?el('button',{className:'btn danger',on:{click:e=>busy(e.target,async()=>{if(confirm(l.email+' 을(를) 명단에서 뺄까요?')){await run('removeLearner',l.email);loadLearners();}})}},'빼기'):''))));
+  if(can('operator')&&!$('#l-course').options.length)loadCourses($('#l-course')).catch(()=>{});}
+$('#l-save').onclick=e=>busy(e.target,async()=>{const r=await run('addLearners',{emails:$('#l-add').value,group:$('#l-group').value,expires:$('#l-exp').value});toast(r.added+'명을 추가했습니다. 5분 안에 반영됩니다.');$('#l-add').value='';loadLearners();});
+$('#l-sync').onclick=e=>busy(e.target,async()=>{if(!$('#l-course').value)return toast('수업을 고르세요.');const r=await run('syncRoster',$('#l-course').value);toast(`학생 ${r.found}명 확인, ${r.added}명 추가`+(r.missingEmail?`\n이메일이 안 보이는 학생 ${r.missingEmail}명은 직접 추가해 주세요(개인 계정 수업 제한).`:''),9000);loadLearners();});
+
+// 게시
+$('#v-run').onclick=e=>busy(e.target,async()=>{const r=await run('validate');$('#v-sum').textContent=`게시 대상 ${r.items}개 · 오류 ${r.errors.length} · 주의 ${r.warnings.length}`;
+  $('#v-list').replaceChildren(...r.errors.concat(r.warnings.slice(0,60)).map(i=>el('li',{className:i.level},`[${i.level==='error'?'오류':'주의'}] ${i.id}: ${i.msg}`)));});
+$('#p-go').onclick=e=>busy(e.target,async()=>{if(!can('operator'))return toast('운영자만 게시할 수 있습니다. 40_게시본 폴더 편집 권한이 필요합니다.');if(!confirm('지금 사이트에 게시할까요?'))return;
+  const r=await run('publish',$('#p-note').value);if(!r.ok){$('#v-list').replaceChildren(...r.errors.map(i=>el('li',{className:'error'},`[오류] ${i.id}: ${i.msg}`)));return toast('오류가 있어 게시하지 않았습니다.');}
+  toast(`v${r.version} 게시 완료 · ${r.items}개 (주의 ${r.warnings})`);loadVersions();});
+async function loadVersions(){const vs=await run('listVersions');$('#ver-table').replaceChildren(el('tr',{},...['버전','게시한 사람','시각','항목','메모',''].map(h=>el('th',{},h))),...vs.map(v=>el('tr',{},el('td',{},'v'+v.version),el('td',{},v.published_by),el('td',{},v.published_at),el('td',{},v.items),el('td',{},v.note),el('td',{},can('operator')&&v.file_id?el('button',{className:'btn',on:{click:e=>busy(e.target,async()=>{if(confirm('v'+v.version+'(으)로 되돌릴까요?')){await run('rollback',v.version);toast('되돌렸습니다. 1분 안에 반영됩니다.');}})}},'되돌리기'):''))));}
+
+// 기록·설정
+$('#a-load').onclick=e=>busy(e.target,async()=>{const r=await run('recentAccess',40);$('#a-table').replaceChildren(el('tr',{},...['시각','계정','추적','요청','튜토리얼','결과','ms'].map(h=>el('th',{},h))),...r.map(a=>el('tr',{},...[a.ts,a.email||'(비로그인)',a.trace,a.action,a.tutorial,a.result,a.ms].map(x=>el('td',{},String(x))))));});
+$('#g-save').onclick=e=>busy(e.target,async()=>{if(!can('operator'))return toast('운영자만 바꿀 수 있습니다.');if($('#g-key').value)await run('setGeminiKey',$('#g-key').value);if($('#g-model').value)await run('setSetting','gemini_model',$('#g-model').value);$('#g-key').value='';B.hasGeminiKey=B.hasGeminiKey||true;$('#g-state').textContent='저장됨';toast('저장했습니다');});
+$('#r-block').onchange=e=>run('setSetting','block_unreviewed_rights',e.target.checked?'TRUE':'FALSE').then(()=>toast('게시 규칙을 바꿨습니다')).catch(err=>{toast('오류: '+err.message);e.target.checked=!e.target.checked;});
+window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue='';}});
+boot().catch(e=>{document.querySelector('main').innerHTML='<div class="card">불러오지 못했습니다: '+(e.message||e)+'</div>';});
+</script>
+</body></html>

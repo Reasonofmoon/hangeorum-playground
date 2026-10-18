@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">WB03 · 일반 텍스트 문서 열기 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">일반 텍스트 문서 열기. 글자 크기 꾸미기 없이 코드를 입력할 빈 문서가 열립니다. 교육용 도해 · 실제 화면 아님. 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">WB03</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">일반 텍스트 문서 열기</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">글자 크기 꾸미기 없이 코드를 입력할 빈 문서가 열립니다.</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / WB03</text>
+<path d="M142 128 H447 L471 152 V418 H142 Z" fill="#fffdf8" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M447 128 V152 H471" fill="none" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="176" y1="173" x2="176" y2="222" stroke="#173e35" stroke-width="4" stroke-linecap="round"/>
+<text x="176" y="272" font-size="32" fill="#173e35" font-weight="700" text-anchor="start">빈 일반 텍스트</text>
+<text x="526" y="200" font-size="58" fill="#dfaa55" font-weight="700" text-anchor="start">&lt; &gt;</text>
+<text x="522" y="273" font-size="28" fill="#173e35" font-weight="400" text-anchor="start">코드를 입력</text>
+<text x="522" y="321" font-size="28" fill="#173e35" font-weight="400" text-anchor="start">꾸밈은 제외</text>
+<text x="174" y="374" font-size="25" fill="#51685e" font-weight="400" text-anchor="start">.docx · .rtf와 구분</text>
+</g></svg>

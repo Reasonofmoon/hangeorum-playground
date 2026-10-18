@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">KP13 · 목차의 이동 대상을 확인하기 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">목차의 이동 대상을 확인하기. 재현 가능한 오류 한 건이 남습니다. 교육용 도해 · 실제 화면 아님. 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">KP13</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">목차의 이동 대상을 확인하기</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">재현 가능한 오류 한 건이 남습니다.</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / KP13</text>
+<rect x="49" y="130" width="318" height="42" rx="21" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<text x="208.0" y="159" font-size="26" fill="#173e35" font-weight="700" text-anchor="middle">balcony_v01.epub</text>
+<text x="54" y="219" font-size="30" fill="#173e35" font-weight="400" text-anchor="start">Choosing</text>
+<text x="54" y="258" font-size="30" fill="#173e35" font-weight="400" text-anchor="start">Pots</text>
+<line x1="254" y1="229" x2="443" y2="229" stroke="#173e35" stroke-width="4" stroke-linecap="round"/>
+<path d="M 431.5 235.0 L 443 229 L 431.5 223.0" fill="none" stroke="#173e35" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="480" y="219" font-size="30" fill="#173e35" font-weight="400" text-anchor="start">Choosing</text>
+<text x="480" y="258" font-size="30" fill="#173e35" font-weight="400" text-anchor="start">Pots</text>
+<circle cx="728" cy="227" r="22" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<path d="M 717.0 227 L 725.14 235.8 L 740.1 217.1" fill="none" stroke="#173e35" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="54" y="345" font-size="30" fill="#173e35" font-weight="400" text-anchor="start">Watering</text>
+<text x="54" y="384" font-size="30" fill="#173e35" font-weight="400" text-anchor="start">Record</text>
+<path d="M255 354 L313 328 L370 380 L441 354" fill="none" stroke="#9a4a2d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="421" y1="361" x2="444" y2="354" stroke="#9a4a2d" stroke-width="4" stroke-linecap="round"/>
+<path d="M 434.7 363.1 L 444 354 L 431.2 351.6" fill="none" stroke="#9a4a2d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="480" y="345" font-size="30" fill="#173e35" font-weight="400" text-anchor="start">Observing</text>
+<text x="480" y="384" font-size="30" fill="#173e35" font-weight="400" text-anchor="start">Light</text>
+<circle cx="728" cy="355" r="22" fill="#f6e5cb" stroke="none" stroke-width="2"/>
+<line x1="720.3" y1="347.3" x2="735.7" y2="362.7" stroke="#9a4a2d" stroke-width="4" stroke-linecap="round"/>
+<line x1="735.7" y1="347.3" x2="720.3" y2="362.7" stroke="#9a4a2d" stroke-width="4" stroke-linecap="round"/>
+</g></svg>

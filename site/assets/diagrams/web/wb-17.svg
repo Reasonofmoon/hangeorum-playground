@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">WB17 · 복구 확인 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">복구 확인. 제목·문단·목록이 안내 과제의 정상 결과와 맞습니다. 교육용 도해 · 실제 화면 아님. 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">WB17</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">복구 확인</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">제목·문단·목록이 안내 과제의 정상 결과와 맞습니다.</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / WB17</text>
+<rect x="46" y="136" width="343" height="280" rx="14" fill="#fffdf8" stroke="#173e35" stroke-width="2"/>
+<rect x="61" y="150" width="313" height="39" rx="5" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<text x="75" y="177" font-size="23" fill="#173e35" font-weight="700" text-anchor="start">작은 정원 소개</text>
+<text x="71" y="235" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">작은 정원</text>
+<line x1="71" y1="266" x2="362" y2="266" stroke="#7e9588" stroke-width="4" stroke-linecap="round"/>
+<line x1="71" y1="282" x2="274.7" y2="282" stroke="#7e9588" stroke-width="4" stroke-linecap="round"/>
+<circle cx="76" cy="312" r="4" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="91" y="320" font-size="23" fill="#173e35" font-weight="400" text-anchor="start">잎 관찰하기</text>
+<circle cx="76" cy="344" r="4" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="91" y="352" font-size="23" fill="#173e35" font-weight="400" text-anchor="start">물 주기</text>
+<line x1="411" y1="269" x2="477" y2="269" stroke="#dfaa55" stroke-width="5" stroke-linecap="round"/>
+<path d="M 465.5 275.0 L 477 269 L 465.5 263.0" fill="none" stroke="#dfaa55" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="526" cy="182" r="23" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<path d="M 514.5 182 L 523.01 191.2 L 538.65 171.65" fill="none" stroke="#173e35" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="566" y="190" font-size="29" fill="#173e35" font-weight="700" text-anchor="start">제목</text>
+<circle cx="526" cy="267" r="23" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<path d="M 514.5 267 L 523.01 276.2 L 538.65 256.65" fill="none" stroke="#173e35" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="566" y="275" font-size="29" fill="#173e35" font-weight="700" text-anchor="start">소개 문단</text>
+<circle cx="526" cy="352" r="23" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<path d="M 514.5 352 L 523.01 361.2 L 538.65 341.65" fill="none" stroke="#173e35" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="566" y="360" font-size="29" fill="#173e35" font-weight="700" text-anchor="start">목록 두 항목</text>
+<text x="456" y="408" font-size="24" fill="#173e35" font-weight="400" text-anchor="start">저장·새로고침 후 비교</text>
+</g></svg>

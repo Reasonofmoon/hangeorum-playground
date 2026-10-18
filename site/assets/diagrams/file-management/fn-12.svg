@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">FN12 · 완료와 숙련 구별하기 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">완료와 숙련 구별하기. 완료는 이 가상 시나리오의 판정입니다. 실제 파일 관리 숙련은 확인하지 않았습니다. 교육용 도해 · 실제 화면 아님. 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">FN12</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">완료와 숙련 구별하기</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">완료는 이 가상 시나리오의 판정입니다. 실제 파일 관리 숙련은 확인하지</text>
+<text x="32" y="490" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">않았습니다.</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / FN12</text>
+<circle cx="204" cy="252" r="109" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<circle cx="204" cy="204" r="27" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<path d="M 190.5 204 L 200.49 214.8 L 218.85 191.85" fill="none" stroke="#173e35" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="115" y="259" font-size="31" fill="#173e35" font-weight="700" text-anchor="start">가상 과제</text>
+<text x="115" y="302" font-size="31" fill="#173e35" font-weight="700" text-anchor="start">완료 기록</text>
+<line x1="400" y1="132" x2="400" y2="398" stroke="#dfaa55" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 8"/>
+<path d="M518 155 H645 L669 179 V321 H518 Z" fill="#fffdf8" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M645 155 V179 H669" fill="none" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="593.5" y="249.62" font-size="28" fill="#173e35" font-weight="700" text-anchor="middle">새 조건</text>
+<text x="593" y="371" font-size="28" fill="#173e35" font-weight="700" text-anchor="middle">실제 환경 재현</text>
+<text x="593" y="408" font-size="25" fill="#173e35" font-weight="400" text-anchor="middle">별도로 확인</text>
+</g></svg>

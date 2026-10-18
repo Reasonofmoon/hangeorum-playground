@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">KP08 · 사용 자료 목록 만들기 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">사용 자료 목록 만들기. 표지 이외의 시각 자료도 목록에 들어갑니다. 교육용 도해 · 실제 화면 아님. 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">KP08</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">사용 자료 목록 만들기</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">표지 이외의 시각 자료도 목록에 들어갑니다.</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / KP08</text>
+<text x="49" y="145" font-size="29" fill="#173e35" font-weight="700" text-anchor="start">자료마다 경위를 따로 기록</text>
+<path d="M53 173 H87 L111 197 V228 H53 Z" fill="#fffdf8" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M87 173 V197 H111" fill="none" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="64" y1="194" x2="95" y2="194" stroke="#91a297" stroke-width="3" stroke-linecap="round"/>
+<line x1="64" y1="206" x2="85.7" y2="206" stroke="#91a297" stroke-width="3" stroke-linecap="round"/>
+<text x="139" y="209" font-size="29" fill="#173e35" font-weight="700" text-anchor="start">본문</text>
+<line x1="322" y1="198" x2="369" y2="198" stroke="#51685e" stroke-width="3" stroke-linecap="round"/>
+<text x="396" y="209" font-size="27" fill="#173e35" font-weight="400" text-anchor="start">가상 저자 직접 작성</text>
+<line x1="49" y1="244" x2="750" y2="244" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<rect x="53" y="251" width="58" height="55" rx="4" fill="#e5ece3" stroke="#173e35" stroke-width="2"/>
+<path d="M59 296 L75 271 L88 287 L105 264" fill="none" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="139" y="287" font-size="29" fill="#173e35" font-weight="700" text-anchor="start">표지 사진</text>
+<line x1="322" y1="276" x2="369" y2="276" stroke="#51685e" stroke-width="3" stroke-linecap="round"/>
+<text x="396" y="287" font-size="27" fill="#173e35" font-weight="400" text-anchor="start">출처 미확인</text>
+<line x1="49" y1="322" x2="750" y2="322" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<circle cx="81" cy="356" r="25" fill="#dfaa55" stroke="none" stroke-width="2"/>
+<text x="81" y="364" font-size="23" fill="#173e35" font-weight="700" text-anchor="middle">AI</text>
+<text x="139" y="365" font-size="29" fill="#173e35" font-weight="700" text-anchor="start">내부 그림</text>
+<line x1="322" y1="354" x2="369" y2="354" stroke="#51685e" stroke-width="3" stroke-linecap="round"/>
+<text x="396" y="365" font-size="27" fill="#173e35" font-weight="400" text-anchor="start">AI 생성</text>
+<line x1="49" y1="400" x2="750" y2="400" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+</g></svg>

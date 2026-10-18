@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">COURSE · 파일 이름과 폴더 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">파일 이름과 폴더 과정의 핵심 행동을 나타낸 교육용 도해 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">COURSE</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">파일 이름과 폴더</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">12개 미션 · 원문의 조건을 읽고 직접 연습</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / COURSE</text>
+<path d="M56 183 V168 Q56 163 63 163 H164.36 L190.16 183 H307 Q314 183 314 190 V362 Q314 369 307 369 H63 Q56 369 56 362 Z" fill="#e5ece3" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="185.0" y="305.14" font-size="28" fill="#173e35" font-weight="700" text-anchor="middle">원고</text>
+<path d="M90 266 V251 Q90 246 97 246 H169.8 L188.8 266 H273 Q280 266 280 273 V337 Q280 344 273 344 H97 Q90 344 90 337 Z" fill="#dfaa55" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="185.0" y="313.62" font-size="28" fill="#173e35" font-weight="700" text-anchor="middle">초안</text>
+<path d="M550 151 H678 L702 175 V354 H550 Z" fill="#fffdf8" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M678 151 V175 H702" fill="none" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="626.0" y="266.71" font-size="28" fill="#173e35" font-weight="700" text-anchor="middle">.md</text>
+<line x1="350" y1="270" x2="510" y2="270" stroke="#dfaa55" stroke-width="6" stroke-linecap="round"/>
+<path d="M 498.5 276.0 L 510 270 L 498.5 264.0" fill="none" stroke="#dfaa55" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="475" y="367" width="264" height="42" rx="21" fill="#dfaa55" stroke="none" stroke-width="2"/>
+<text x="607.0" y="396" font-size="31" fill="#173e35" font-weight="700" text-anchor="middle">이름 + 위치</text>
+</g></svg>

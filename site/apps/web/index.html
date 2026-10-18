@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' blob: https://accounts.google.com/gsi/client; style-src 'self' 'unsafe-inline' https://accounts.google.com/gsi/style; img-src 'self' data: blob: https://lh3.googleusercontent.com https://*.googleusercontent.com https://drive.google.com; connect-src https://script.google.com https://script.googleusercontent.com https://accounts.google.com/gsi/; frame-src 'self' about: https://accounts.google.com/gsi/ https://drive.google.com; object-src 'none'; base-uri 'none'; form-action 'none'; font-src 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>웹 제작 · 한 걸음 실습실</title>
+  <link rel="stylesheet" href="style.css">
+  
+  
+  
+<meta name="gate-root" content="../../"><meta name="gate-data" content="apps/web/lesson.js"><meta name="gate-scripts" content="engine.js app.js"><link rel="stylesheet" href="../../assets/gate.css"><script src="../../assets/config.js"></script><script src="../../assets/gate.js"></script></head>
+<body>
+  <a class="skip" href="#code-editor">코드 편집으로 건너뛰기</a>
+  <header class="page-header">
+    <div><a class="back" href="../../index.html" target="_top">← 실습 선택</a><p class="eyebrow">한 걸음 실습실 / 웹 제작</p><h1 id="lesson-title">웹 제작 실습</h1><p class="muted" id="lesson-meta"></p></div>
+    <p class="boundary">코드를 바꾸고 결과를 확인해요<small>앱 안 저장은 실제 파일 저장과 별개입니다.</small></p>
+  </header>
+  <main>
+    <noscript><p class="notice">이 실습에는 JavaScript가 필요합니다. 제공된 원고와 HTML 파일로 직접 실습할 수 있습니다.</p></noscript>
+    <p id="reentry-notice" class="notice" role="status" hidden></p>
+    <p id="storage-notice" class="notice" role="status" hidden></p>
+    <nav class="routebar" aria-label="미션 이동">
+      <label for="step-select">미션</label><select id="step-select"></select>
+      <form id="route-form"><label for="route-input">책의 코드</label><input id="route-input" placeholder="WB11.2" maxlength="60" autocomplete="off"><button type="submit">이동</button></form>
+      <span id="step-count"></span>
+    </nav>
+    <p id="route-error" class="notice error" role="alert" hidden></p>
+    <div class="mobile-tabs" role="group" aria-label="화면 보기"><button id="show-guide" aria-pressed="false">안내</button><button id="show-work" aria-pressed="false">작업</button><button id="show-both" aria-pressed="true">함께</button></div>
+    <div class="layout" id="layout" data-mobile="both">
+      <aside id="guide" class="panel" aria-labelledby="step-title">
+        <div class="step-top"><span id="step-code" class="eyebrow"></span><span id="step-phase" class="badge"></span></div>
+        <h2 id="step-title"></h2><p id="step-instruction" class="instruction"></p>
+        <p class="location"><strong>책에서 하는 위치</strong><br><span id="step-location"></span></p>
+        <div class="expected"><h3>예상 결과</h3><p id="step-expected"></p></div>
+        <section aria-labelledby="micro-heading"><h3 id="micro-heading">한 번에 한 행동</h3><button id="show-micro-help" hidden>한 동작 도움 열기 · 힌트로 기록</button><ol id="micro-list"></ol></section>
+        <div class="hint-actions"><button id="hint-button">힌트 보기</button><span id="help-level" class="muted"></span></div>
+        <div id="hint-panel" class="hints" hidden></div>
+        <div id="self-panel" class="self-panel" hidden><h3>실제 기기에서 직접 확인</h3><p>앱은 기기의 폴더·파일·열린 프로그램을 확인하지 않습니다. 책의 행동을 실제로 마쳤을 때만 표시하세요.</p><label><input id="self-confirm" type="checkbox"> <span id="self-label">직접 확인했습니다.</span></label></div>
+        <div id="read-panel" hidden><label><input id="read-confirm" type="checkbox"> 조건 카드를 읽었습니다.</label></div>
+        <button id="check-step" class="primary full">이 행동 확인</button>
+        <p id="step-status" class="status" role="status">현재 행동을 수행하고 확인하세요.</p>
+        <div class="step-nav"><button id="previous-step">← 이전 미션</button><button id="next-step">다음 미션 →</button></div>
+      </aside>
+      <section id="workspace" class="panel" aria-labelledby="workspace-heading">
+        <div class="work-heading"><h2 id="workspace-heading">직접 만드는 작업 공간</h2><span id="mode-label" class="badge"></span></div>
+        <section class="goal" aria-labelledby="goal-heading"><p class="eyebrow">조건 카드</p><h3 id="goal-heading"></h3><dl id="goal-list"></dl><p id="goal-change" hidden></p></section>
+        <div class="scenario-actions"><button id="guided-mode">안내 과제</button><button id="transfer-mode">독립 과제 시작</button><button id="reset-attempt">현재 과제 다시 시작</button></div>
+        <p class="small muted" id="attempt-note">제공된 가상 내용으로 연습하세요. 입력과 실습 상태는 이 브라우저의 v7 저장소에 남아 같은 환경에서 이어할 수 있습니다.</p>
+        <div class="editor-heading"><label for="code-editor"><strong>1. 코드 편집</strong> <span id="working-file"></span></label><span id="edit-state" class="badge"></span></div>
+        <textarea id="code-editor" maxlength="65536" spellcheck="false" autocapitalize="off" autocomplete="off" aria-describedby="editor-note"></textarea>
+        <p id="editor-note" class="small muted">제공된 HTML 요소만 미리볼 수 있습니다. CSS·JavaScript·외부 URL 실행은 지원하지 않습니다. 코드 편집 → 앱 안 저장 → 미리보기 새로고침 순서로 진행합니다.</p>
+        <div class="toolbar"><button id="save-code" class="primary">2. 앱 안 저장</button><button id="refresh-preview">3. 미리보기 새로고침</button><button id="undo">되돌리기</button><button id="load-starter">시작 코드 다시 넣기</button></div>
+        <p id="buffer-status" class="small" role="status"></p>
+        <div id="recovery-panel" class="recovery-panel"><h3>오류 실험 · WB14–WB17</h3><p>안내 조건을 완성한 뒤 제목의 닫는 태그 한 곳을 바꿉니다.</p><div class="toolbar"><button id="inject-error">닫는 h1 태그 오류 만들기</button><button id="observe-error">저장·새로고침한 오류 관찰 확인</button></div><p id="recovery-status" class="small"></p></div>
+        <section aria-labelledby="preview-heading"><div class="preview-heading"><h3 id="preview-heading">저장한 내용의 미리보기</h3><span id="preview-state" class="small"></span></div><div class="preview-shell"><div class="preview-tab"><span>문서 제목</span><strong id="preview-title">아직 새로고침하지 않았습니다</strong></div><iframe id="preview-frame" title="학습자가 편집한 HTML 미리보기" sandbox="" referrerpolicy="no-referrer"></iframe></div><p class="small muted">위 제목 표시는 미리보기 문서의 title입니다. 실습실 자체의 브라우저 탭 제목은 바뀌지 않습니다.</p></section>
+        <section id="transfer-reason-panel" class="self-panel" hidden><label for="transfer-reason"><strong>새 조건에서 바꾼 구조와 이유</strong></label><textarea id="transfer-reason" rows="2" maxlength="700" placeholder="순서 없는 두 항목을 순서 있는 세 항목으로 바꾼 이유를 설명하세요."></textarea><label><input id="reason-confirm" type="checkbox"> 위 설명을 조건 카드와 대조했습니다. (자가확인)</label><p class="small muted">설명의 의미는 자동 채점하지 않습니다. 입력은 이 브라우저의 v7 실습 저장소에 보관합니다.</p></section>
+        <div class="checkbar"><button id="check-result" class="primary">현재 결과 조건 확인</button><span id="result-level"></span></div><div id="result-status" class="status" role="status">저장과 새로고침 후 결과를 확인하세요.</div><ul id="condition-checks" class="condition-checks"></ul>
+        <section class="answer-section"><h3>정답과 비교</h3><p class="small">열면 해당 과제의 ‘정답 참조 수행’으로 기록합니다. 정답은 편집칸에 자동으로 들어가지 않습니다.</p><button id="show-answer">현재 과제 정답 보기 · 참조로 기록</button><button id="hide-answer" hidden>정답 닫기</button><pre id="answer-code" tabindex="0" hidden></pre></section>
+      </section>
+    </div>
+    <section id="concept-section" class="panel concept" aria-labelledby="concept-heading"><h2 id="concept-heading">개념 확인</h2><p>문항에 답한 뒤 설명과 비교하세요.</p><form id="concept-form"><div id="concept-questions"></div><button class="primary" type="submit" id="check-concepts">응답과 설명 확인</button></form><p id="concept-status" class="status" role="status"></p></section>
+    <section class="evidence" aria-labelledby="record-heading"><p class="eyebrow">결과와 도움을 함께 기록</p><h2 id="record-heading">수행 기록</h2><p id="current-record"></p><div id="progress-list"></div><p id="record-boundary">기록의 ‘이전 통과’는 과거 확인 이력입니다. 현재 코드의 완료 상태나 실제 기기 작업을 보증하지 않습니다.</p></section>
+    <footer><p id="offline-task"></p><p>이 앱은 로그인·결제·출판 제출·공개 배포를 수행하지 않습니다. 코드·설명·앱 안 저장본·미리보기·미션·확인 이력을 이 브라우저의 localStorage(v7 웹 실습)에 저장합니다. 같은 브라우저에서 이어할 수 있습니다. 플레이그라운드 초기화는 이 실습 저장만 지우며 다른 실습이나 v6 기록은 지우지 않습니다.</p><p id="version-note"></p></footer>
+  </main>
+<div id="hg-auth" class="hg-auth" aria-live="polite"></div><div class="hg-legal" role="contentinfo"><p>© 2026 한 걸음 서재. 모든 권리 보유. 글·이미지·실습 구성의 무단 복제와 재배포를 금지합니다. <a href="../../terms.html">이용 조건</a></p></div></body>
+</html>

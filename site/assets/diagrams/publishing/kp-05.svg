@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">KP05 · 가상 저자명 옮기기 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">가상 저자명 옮기기. 이름 순서까지 일치합니다. 교육용 도해 · 실제 화면 아님. 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">KP05</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">가상 저자명 옮기기</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">이름 순서까지 일치합니다.</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / KP05</text>
+<circle cx="142" cy="191" r="38" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<path d="M77 299 C78 220 206 220 207 299" fill="#e5ece3" stroke="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="48" y="359" font-size="28" fill="#173e35" font-weight="700" text-anchor="start">가상 저자</text>
+<text x="49" y="401" font-size="32" fill="#173e35" font-weight="400" text-anchor="start">Hana Kim</text>
+<line x1="246" y1="261" x2="368" y2="261" stroke="#dfaa55" stroke-width="5" stroke-linecap="round"/>
+<path d="M 356.5 267.0 L 368 261 L 356.5 255.0" fill="none" stroke="#dfaa55" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="407" y="197" font-size="29" fill="#173e35" font-weight="700" text-anchor="start">책에 표시할 이름</text>
+<rect x="409" y="233" width="333" height="80" rx="9" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<text x="438" y="284" font-size="38" fill="#173e35" font-weight="700" text-anchor="start">Hana Kim</text>
+<text x="410" y="378" font-size="28" fill="#173e35" font-weight="400" text-anchor="start">이름 순서까지 대조</text>
+<text x="410" y="411" font-size="23" fill="#173e35" font-weight="400" text-anchor="start">실제 계정 정보와 구분</text>
+</g></svg>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">FN11 · 새 조건으로 혼자 정리하기 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">새 조건으로 혼자 정리하기의 새 조건과 빈 기록란. 독립 과제의 정답은 표시하지 않음. 교육용 도해 · 실제 화면 아님. 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다. 독립 과제 조건만 제시하며 정답과 완성 결과는 숨겼습니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">FN11</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">새 조건으로 혼자 정리하기</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">새 조건을 읽고 직접 구성하세요. 정답은 도해에 표시하지 않습니다.</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / FN11</text>
+<path d="M57 144 H175 L199 168 V321 H57 Z" fill="#fffdf8" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M175 144 V168 H199" fill="none" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="128.0" y="244.89" font-size="28" fill="#173e35" font-weight="700" text-anchor="middle">메모.md</text>
+<text x="242" y="160" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">새 과제의 조건</text>
+<text x="242" y="208" font-size="28" fill="#173e35" font-weight="400" text-anchor="start">2026-11-02 · 요리책</text>
+<text x="242" y="251" font-size="27" fill="#173e35" font-weight="400" text-anchor="start">두 번째 검토본 · Markdown</text>
+<path d="M243 284 H743" fill="none" stroke="#dfaa55" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="243" y="327" font-size="25" fill="#173e35" font-weight="400" text-anchor="start">파일 이름</text>
+<line x1="385" y1="333" x2="740" y2="333" stroke="#173e35" stroke-width="3" stroke-linecap="round" stroke-dasharray="8 7"/>
+<text x="243" y="386" font-size="25" fill="#173e35" font-weight="400" text-anchor="start">폴더 위치</text>
+<line x1="385" y1="391" x2="740" y2="391" stroke="#173e35" stroke-width="3" stroke-linecap="round" stroke-dasharray="8 7"/>
+</g></svg>

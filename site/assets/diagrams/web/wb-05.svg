@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">WB05 · HTML 파일 저장 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">HTML 파일 저장. 웹연습 폴더에 HTML 코드가 든 index.html이 생깁니다. 교육용 도해 · 실제 화면 아님. 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">WB05</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">HTML 파일 저장</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">웹연습 폴더에 HTML 코드가 든 index.html이 생깁니다.</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / WB05</text>
+<text x="55" y="154" font-size="28" fill="#173e35" font-weight="700" text-anchor="start">일반 텍스트 코드</text>
+<path d="M56 181 H201 L225 205 V368 H56 Z" fill="#fffdf8" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M201 181 V205 H225" fill="none" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="140.5" y="287.59" font-size="28" fill="#173e35" font-weight="700" text-anchor="middle">&lt;html&gt;</text>
+<line x1="252" y1="273" x2="355" y2="273" stroke="#173e35" stroke-width="4" stroke-linecap="round"/>
+<path d="M 343.5 279.0 L 355 273 L 343.5 267.0" fill="none" stroke="#173e35" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M385 196 V181 Q385 176 392 176 H531.16 L565.96 196 H726 Q733 196 733 203 V368 Q733 375 726 375 H392 Q385 375 385 368 Z" fill="#dfaa55" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="559.0" y="313.31" font-size="28" fill="#173e35" font-weight="700" text-anchor="middle">웹연습</text>
+<rect x="423" y="247" width="270" height="77" rx="7" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<text x="558" y="295" font-size="32" fill="#173e35" font-weight="700" text-anchor="middle">index.html</text>
+<rect x="65" y="383" width="161" height="42" rx="21" fill="#dfaa55" stroke="none" stroke-width="2"/>
+<text x="145.5" y="412" font-size="26" fill="#173e35" font-weight="700" text-anchor="middle">UTF-8</text>
+<text x="391" y="411" font-size="24" fill="#173e35" font-weight="400" text-anchor="start">위치 · 이름 · 형식 · 인코딩</text>
+</g></svg>

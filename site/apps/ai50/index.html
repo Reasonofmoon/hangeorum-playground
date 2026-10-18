@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' blob: https://accounts.google.com/gsi/client; style-src 'self' 'unsafe-inline' https://accounts.google.com/gsi/style; img-src 'self' data: blob: https://lh3.googleusercontent.com https://*.googleusercontent.com https://drive.google.com; connect-src https://script.google.com https://script.googleusercontent.com https://accounts.google.com/gsi/; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'self' https://accounts.google.com/gsi/ https://drive.google.com; worker-src 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI50 · 예시 사용량·비용 로컬 실습</title>
+<style>
+:root{--bg:#f6f3ee;--card:#fff;--line:#e4ddd2;--ink:#22324a;--muted:#6b7686;--teal:#14a098;--teal-d:#0d7d77;--orange:#f08a3c;--red:#d9534f;--green:#2e9e5b;--yellow:#c98a00}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 "Malgun Gothic","Apple SD Gothic Neo",sans-serif}
+header{background:#22324a;color:#fff;padding:14px 22px;display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
+header h1{margin:0;font-size:20px}header small{color:#c9d3e0}
+main{max-width:1240px;margin:0 auto;padding:16px 22px 40px}
+section.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:0 0 16px}
+h2{font-size:17px;margin:0 0 10px}h2 .n{display:inline-block;background:var(--orange);color:#fff;border-radius:50%;width:24px;height:24px;text-align:center;line-height:24px;font-size:13px;margin-right:6px}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:8px 0}
+button{font:inherit;border:none;border-radius:8px;padding:7px 13px;background:var(--teal);color:#fff;cursor:pointer;font-weight:700}
+button.o{background:var(--orange)}button.g{background:#8a94a6}button.l{background:#faf7f2;color:var(--ink);border:1px solid var(--line);font-weight:400}
+input,select{font:inherit;border:1px solid var(--line);border-radius:8px;padding:5px 8px;background:#fff;color:var(--ink)}
+input[type=number]{width:110px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left}
+th{background:#faf7f2}td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.map{border:2px dashed #f3c99f;border-radius:12px;padding:12px;margin:10px 0;background:#fffaf4}
+.map .grid{display:grid;grid-template-columns:repeat(3,minmax(200px,1fr));gap:8px 14px}
+.map label{display:flex;flex-direction:column;font-size:13px;color:var(--muted)}
+.muted{color:var(--muted);font-size:13px}
+.note{background:#fff8ee;border:1px solid #f3d9bd;border-radius:10px;padding:8px 12px;font-size:14px;margin:8px 0}
+.alert{border-radius:12px;padding:12px 14px;font-weight:700;margin:6px 0 12px}
+.alert.over{background:#fde8e7;color:var(--red);border:1px solid #f4b6b3}.alert.warn{background:#fff1e3;color:#b85c00;border:1px solid #f6c891}
+.alert.near{background:#fff8d9;color:var(--yellow);border:1px solid #f0de9a}.alert.ok{background:#e3f5ea;color:var(--green);border:1px solid #b8e2c8}.alert.none{background:#eef1f5;color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:8px 0}
+.cards div{background:#faf7f2;border-radius:12px;padding:10px 12px}.cards b{display:block;font-size:22px}.cards small{color:var(--muted)}
+.charts{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:980px){.charts,.cards{grid-template-columns:1fr 1fr}.map .grid{grid-template-columns:1fr}}
+svg{width:100%;height:auto;background:#fff;border:1px solid var(--line);border-radius:12px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;margin-top:6px}.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.src{display:inline-flex;gap:6px;align-items:center;background:#eef7f6;border-radius:999px;padding:3px 6px 3px 12px;font-size:13.5px;margin:3px}
+.src button{padding:1px 8px;font-size:12px;background:#8a94a6}
+.miss td{background:#fff3f2}
+.err{color:var(--red)}
+.table-scroll{max-width:100%;overflow:auto}.table-scroll table{min-width:670px}.map{min-width:0;overflow:auto}.map .grid{min-width:0}.map select,.map input{min-width:0;max-width:100%}.src{flex-wrap:wrap;max-width:100%;overflow-wrap:anywhere}.card,.charts>div{min-width:0}input[type=file]{width:100%;max-width:100%}a{color:#145d76}button:disabled{opacity:.5;cursor:not-allowed}.note,.muted{overflow-wrap:anywhere}@media(max-width:480px){main{padding:12px 10px}.card{padding:12px!important}header{padding:12px}.charts{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.cards b{font-size:18px}.row button{min-height:42px}}
+</style>
+<meta name="gate-root" content="../../"><meta name="gate-data" content="apps/ai50/samples.js"><meta name="gate-scripts" content="core.js app.js"><link rel="stylesheet" href="../../assets/gate.css"><script src="../../assets/config.js"></script><script src="../../assets/gate.js"></script></head>
+<body>
+<header><h1>AI 사용량·비용 보기</h1><small>사용량 CSV를 불러와 가격표로 비용을 계산합니다. 인터넷으로 아무것도 보내지 않습니다.</small></header>
+<main>
+  <p class="note"><a href="../../index.html">한 걸음 서재</a> · AI50 로컬 실습. <strong>모든 예시 가격은 가상 값이며 표시 금액은 실제 청구액이 아닙니다.</strong> 이 사이트의 브라우저 localStorage 중 v7 AI50 전용 키에 CSV 내용·열 맞춤·가격·기간을 보관합니다. 새로고침하면 입력을 복원하며 검사는 다시 해야 합니다. 전체 초기화는 이 실습의 입력·예제·검사 결과만 지웁니다. 다른 실습과 v6 기록은 유지됩니다. 실제 AI·결제 서비스와 연결하지 않습니다.</p>
+  <div class="row"><button class="l" id="readyExample">빠른 예제 불러오기</button><button class="o" id="checkResult">현재 계산 검사</button></div>
+  <p class="muted">빠른 예제 불러오기는 이 실습의 현재 입력을 묶음에 포함된 예제 A와 가상 가격으로 바꿉니다. 아래 예시 A·B 버튼은 열 맞추기부터 연습할 때 사용하세요.</p>
+  <p id="runnerStatus" class="note" role="status" aria-live="polite">예제나 CSV를 불러온 뒤 현재 계산 검사를 누르세요.</p>
+  <p id="persistenceStatus" class="muted" role="status"></p>
+  <section class="card" id="secLoad">
+    <h2><span class="n">1</span>사용량 CSV 불러오기</h2>
+    <div class="row">
+      <input aria-label="연습 사용량 CSV 선택" type="file" id="files" accept=".csv,text/csv,.txt" multiple>
+      <button class="l" id="sampleA">예시 A: 예시클라우드 (가짜)</button>
+      <button class="l" id="sampleB">예시 B: 가나다AI (가짜)</button>
+      <button class="g" id="resetAll">전체 초기화</button>
+    </div>
+    <p class="muted">날짜·입력 토큰·출력 토큰 열은 필수입니다. 토큰은 0 이상 안전한 정수여야 합니다. 빈칸·음수·소수·문자는 제외하며, 사용량이 없으면 0을 직접 입력하세요. 같은 이름의 파일을 다시 적용하면 기존 파일을 교체합니다. 같은 머리글의 열 맞춤은 기억합니다.</p>
+    <div id="loadStatus" role="status" aria-live="polite"></div>
+    <div id="mapping"></div>
+    <div id="sources"></div>
+  </section>
+
+  <section class="card" id="secPrice">
+    <h2><span class="n">2</span>가격표 (100만 토큰당)</h2>
+    <div class="note">가격은 비워서 시작합니다. <b>이 실습은 가상 가격으로 계산하며 실제 청구액을 표시하지 않습니다.</b> "예시 가격"은 이 화면의 가짜 모델(ex-chat, gana) 전용 연습 값입니다.</div>
+    <div class="row">
+      <label>통화 표시 <input type="text" id="cur" value="USD" style="width:80px"></label>
+      <button class="l" id="fillExample">예시 가격 채우기 (가짜 모델 전용)</button>
+      <button class="l" id="addPrice">행 추가</button>
+      <button class="l" id="expSettings">설정 내보내기 (JSON)</button>
+      <label class="l" style="cursor:pointer;border:1px solid var(--line);border-radius:8px;padding:6px 12px;background:#faf7f2">설정 가져오기<input type="file" id="impSettings" accept=".json" style="display:none"></label>
+    </div>
+    <div class="table-scroll" role="region" aria-label="가격표 가로 스크롤" tabindex="0"><table id="priceTable"></table></div>
+    <div id="settingsStatus" role="status" aria-live="polite"></div>
+  </section>
+
+  <section class="card" id="secDash">
+    <h2><span class="n">3</span>예산, 예측, 차트</h2>
+    <div class="row">
+      <label>달 <select id="month"></select></label>
+      <label>월 예산 <input type="number" id="budget" min="0" step="1" placeholder="예: 60"></label>
+      <label>기준일 <input type="date" id="asOf"></label>
+      <span class="muted">예측 = 기준일까지 쓴 돈 / 지난 날 수 x 그 달 날 수 (직선)</span>
+    </div>
+    <div id="alert" class="alert none">데이터를 불러오면 계산합니다.</div>
+    <div class="cards" id="cards"></div>
+    <div class="charts">
+      <div><b>달별 관측 비용 (제공자 / 모델)</b><div id="chartMonthly"></div><div id="monthlyCoverage" class="note"></div><div class="legend" id="legend"></div></div>
+      <div><b>이번 달 누적과 월말 예측</b><div id="chartDaily"></div></div>
+    </div>
+    <p id="periodStatus" class="note" role="status"></p>
+    <h3 id="modelHeading" style="font-size:15px;margin:16px 0 6px">모델별 (선택한 달, 기준일까지)</h3>
+    <div class="table-scroll" role="region" aria-label="모델별 결과 가로 스크롤" tabindex="0"><table id="modelTable"></table></div>
+    <div class="row" style="margin-top:12px">
+      <button class="o" id="expSummary">월별 요약 CSV</button>
+      <button class="l" id="expRows">정리된 사용량 CSV</button>
+      <button class="l" id="expSvg">차트 SVG 저장</button>
+    </div>
+    <p class="muted">두 CSV는 불러온 전체 기간을 내보냅니다. 월별 요약에는 관측 시작일·종료일·기록일 수를 포함합니다. 기준일은 카드·모델 표·일별 차트에 적용됩니다.</p>
+  </section>
+</main>
+
+
+
+<div id="hg-auth" class="hg-auth" aria-live="polite"></div><div class="hg-legal" role="contentinfo"><p>© 2026 한 걸음 서재. 모든 권리 보유. 글·이미지·실습 구성의 무단 복제와 재배포를 금지합니다. <a href="../../terms.html">이용 조건</a></p></div></body>
+</html>

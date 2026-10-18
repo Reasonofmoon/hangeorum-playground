@@ -1,0 +1,46 @@
+name: Apps Script 배포 (clasp)
+
+# gas/ 폴더가 바뀌면 clasp로 코드를 올리고, 같은 배포 ID를 새 버전으로 갱신한다.
+# 배포 ID가 그대로라서 /exec 주소는 바뀌지 않는다.
+on:
+  push:
+    branches: [main]
+    paths: ['gas/**', '.github/workflows/gas-deploy.yml']
+  workflow_dispatch:
+
+concurrency: { group: gas-deploy, cancel-in-progress: false }
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [api, admin]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: clasp 설치
+        run: npm install -g @google/clasp@3.3.0
+      - name: 인증 파일 쓰기
+        env: { CLASPRC_JSON: '${{ secrets.CLASPRC_JSON }}' }
+        run: |
+          if [ -z "$CLASPRC_JSON" ]; then echo "CLASPRC_JSON 시크릿이 없습니다"; exit 1; fi
+          printf '%s' "$CLASPRC_JSON" > ~/.clasprc.json
+      - name: 코드 올리기
+        working-directory: gas/${{ matrix.project }}
+        run: clasp push --force
+      - name: 배포 갱신 (같은 /exec 주소 유지)
+        working-directory: gas/${{ matrix.project }}
+        run: |
+          DEPLOYMENT_ID=$(cat .deployment-id)
+          clasp update-deployment "$DEPLOYMENT_ID" --description "gh ${GITHUB_SHA::7} ${{ github.event.head_commit.message && 'push' || 'manual' }}"
+          clasp list-deployments | head -n 5
+      - name: 상태 확인 (api만)
+        if: matrix.project == 'api'
+        run: curl -sL "$(cat gas/api/.exec-url)?action=health" | tee /dev/stderr | grep -q '"ok":true'
+        working-directory: .
+      - name: 인증 파일 지우기
+        if: always()
+        run: rm -f ~/.clasprc.json

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">DC12 · 목차 전체 업데이트 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">목차 전체 업데이트. 새 제목과 현재 쪽 번호가 모두 반영됩니다. 교육용 도해 · 실제 화면 아님. 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">DC12</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">목차 전체 업데이트</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">새 제목과 현재 쪽 번호가 모두 반영됩니다.</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / DC12</text>
+<path d="M56 145 H279 L303 169 V387 H56 Z" fill="#fffdf8" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M279 145 V169 H303" fill="none" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="81" y="188" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">본문</text>
+<text x="81" y="244" font-size="27" fill="#173e35" font-weight="400" text-anchor="start">함께 읽는</text>
+<text x="81" y="287" font-size="27" fill="#173e35" font-weight="400" text-anchor="start">순서</text>
+<text x="81" y="330" font-size="27" fill="#173e35" font-weight="400" text-anchor="start">현재 쪽 P</text>
+<path d="M492 145 H720 L744 169 V387 H492 Z" fill="#fffdf8" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M720 145 V169 H744" fill="none" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="518" y="188" font-size="27" fill="#173e35" font-weight="700" text-anchor="start">목차 전체 갱신</text>
+<text x="518" y="244" font-size="27" fill="#173e35" font-weight="400" text-anchor="start">함께 읽는</text>
+<text x="518" y="287" font-size="27" fill="#173e35" font-weight="400" text-anchor="start">순서</text>
+<text x="518" y="330" font-size="27" fill="#173e35" font-weight="400" text-anchor="start">같은 쪽 P</text>
+<path d="M329 208 C377 143 431 156 466 210" fill="none" stroke="#dfaa55" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="454" y1="192" x2="467" y2="211" stroke="#dfaa55" stroke-width="5" stroke-linecap="round"/>
+<path d="M 455.5 204.9 L 467 211 L 465.4 198.1" fill="none" stroke="#dfaa55" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="400" y="278" font-size="23" fill="#173e35" font-weight="700" text-anchor="middle">본문 → 목차</text>
+<path d="M329 335 H466" fill="none" stroke="#51685e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 5"/>
+<text x="400" y="371" font-size="22" fill="#173e35" font-weight="400" text-anchor="middle">쪽 번호 대조</text>
+</g></svg>

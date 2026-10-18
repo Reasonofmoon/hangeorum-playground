@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' blob: https://accounts.google.com/gsi/client; style-src 'self' 'unsafe-inline' https://accounts.google.com/gsi/style; img-src 'self' data: blob: https://lh3.googleusercontent.com https://*.googleusercontent.com https://drive.google.com; connect-src https://script.google.com https://script.googleusercontent.com https://accounts.google.com/gsi/; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'self' https://accounts.google.com/gsi/ https://drive.google.com; font-src 'self'">
+  <title>출판 준비 기록 · 한 걸음 실습실</title>
+  <link rel="stylesheet" href="styles.css">
+  
+  
+  
+<meta name="gate-root" content="../../"><meta name="gate-data" content="apps/publishing/lesson.js"><meta name="gate-scripts" content="engine.js app.js"><link rel="stylesheet" href="../../assets/gate.css"><script src="../../assets/config.js"></script><script src="../../assets/gate.js"></script></head>
+<body>
+  <a class="skip" href="#workspace-title">실습 작업 공간으로 건너뛰기</a>
+  <header class="topbar">
+    <a href="../../index.html" target="_top" class="brand">한 걸음 실습실 <span>03 / 출판 준비</span></a>
+    <span class="simulation" id="simulation-label">독립 교육용 모형 · KDP 실제 화면 아님</span>
+  </header>
+  <div class="notice" id="dataset-notice"></div>
+  <div class="layout">
+    <aside class="sidebar" aria-label="미션 탐색">
+      <p class="eyebrow">준비 기록 만들기</p>
+      <h1 id="lesson-title">출판 전 준비</h1>
+      <p class="small">가상 도서의 정보를 쓰고, 확인한 것과 남은 일을 구분합니다.</p>
+      <label class="mobile-label" for="mission-select">미션 이동</label>
+      <select id="mission-select" aria-label="미션 이동"></select>
+      <nav id="mission-nav" aria-label="18개 미션"></nav>
+      <p id="progress" class="progress"></p>
+      <button id="show-record" class="secondary" type="button">준비 기록 모아 보기</button>
+    </aside>
+    <main id="main-content">
+      <div class="lesson-head"><p id="phase" class="eyebrow"></p><h2 id="mission-title"></h2><p id="mission-why"></p></div>
+      <div class="work-grid">
+        <section class="guide panel" aria-labelledby="guide-title">
+          <div class="panel-title"><span class="number">1</span><h3 id="guide-title">한 행동씩 따라가기</h3></div>
+          <div id="guide-content"></div>
+          <div class="help-row"><button type="button" id="hint-button" class="secondary">힌트 보기</button><span id="hint-state" class="small"></span></div>
+          <div id="hint-content"></div>
+        </section>
+        <section class="workspace panel" aria-labelledby="workspace-title">
+          <div class="panel-title"><span class="number">2</span><h3 id="workspace-title" tabindex="-1">직접 준비 기록 쓰기</h3></div>
+          <p id="workspace-location" class="small"></p>
+          <div id="scenario"></div>
+          <div id="workspace-fields"></div>
+          <div id="verification-controls"></div>
+          <div id="feedback" class="feedback" role="status" aria-live="polite" tabindex="-1"></div>
+          <div class="tools"><button id="undo-button" type="button" class="secondary">한 번 되돌리기</button><button id="reset-button" type="button" class="text-button">이 미션 입력 초기화</button></div>
+        </section>
+      </div>
+      <section class="transfer panel" id="transfer-panel" aria-labelledby="transfer-title"><h3 id="transfer-title">새 조건에 적용하기</h3><div id="transfer-content"></div></section>
+      <section class="panel" id="concept-panel" hidden><h3>개념 다시 확인하기</h3><div id="concept-content"></div></section>
+      <div class="page-controls"><button id="previous-button" type="button" class="secondary">← 이전 행동</button><span id="current-route" class="small"></span><button id="next-button" type="button">다음 행동 →</button></div>
+      <footer><p id="storage-notice">입력·확인·힌트·위치를 이 브라우저의 localStorage(v7 출판 준비)에 저장합니다. 같은 브라우저에서 이어하며 초기화는 이 실습의 기록만 지웁니다.</p><p>실제 계정·업로드·제출·결제 기능이 없습니다. 실명·연락처·로그인 정보를 입력하지 마세요.</p><p id="version-label"></p></footer>
+    </main>
+  </div>
+  <dialog id="record-dialog" aria-labelledby="record-title"><h2 id="record-title">v7 출판 준비 기록</h2><p>학습 기록입니다. 실제 출판 상태는 미실행입니다. 필요하면 아래 텍스트를 직접 복사해 보관하세요.</p><textarea id="record-text" readonly aria-label="준비 기록 텍스트"></textarea><button id="close-record" type="button">닫기</button></dialog>
+  <noscript><p>이 실습은 로컬 JavaScript가 필요합니다. 원고의 종이 답안 과제로 같은 판단과 기록을 연습할 수 있습니다.</p></noscript>
+<div id="hg-auth" class="hg-auth" aria-live="polite"></div><div class="hg-legal" role="contentinfo"><p>© 2026 한 걸음 서재. 모든 권리 보유. 글·이미지·실습 구성의 무단 복제와 재배포를 금지합니다. <a href="../../terms.html">이용 조건</a></p></div></body>
+</html>

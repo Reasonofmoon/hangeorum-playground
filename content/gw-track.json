@@ -1,0 +1,1014 @@
+[
+  {
+    "id": "google-workspace/gw-01",
+    "title": "clasp로 Apps Script 프로젝트를 내 컴퓨터와 GitHub에서 관리하기",
+    "description": "clasp를 설치하고 로그인한 뒤 Apps Script 코드를 내 컴퓨터로 가져오고 다시 올립니다.",
+    "category": "구글 워크스페이스",
+    "tags": [
+      "구글 워크스페이스",
+      "clasp",
+      "Apps Script",
+      "GitHub",
+      "명령줄",
+      "GW01"
+    ],
+    "difficulty": "미지정",
+    "difficultyBasis": "새로 만든 실습. 난이도 등급 미지정.",
+    "minutes": 16,
+    "timeBasis": "단일 행동 8개 × 2분의 편집 추정. 실측 아님.",
+    "mode": "guide",
+    "engine": null,
+    "practiceUrl": null,
+    "sourceUrl": null,
+    "code": "GW01",
+    "steps": [
+      {
+        "title": "GW01.1",
+        "instruction": "터미널을 열고 `node -v`를 입력합니다.",
+        "expected": "`v22` 이상의 버전 번호가 보입니다.",
+        "recovery": "명령을 찾을 수 없거나 22보다 낮으면 Node.js를 22 이상으로 설치한 뒤 터미널을 새로 엽니다. clasp는 Node.js 22.0.0 이상이 필요합니다.",
+        "kind": "manual",
+        "sourceType": "input",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW01.1",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW01.2",
+        "instruction": "`npm install -g @google/clasp`를 입력해 clasp를 설치합니다.",
+        "expected": "설치가 오류 없이 끝나고 `clasp help`를 입력하면 `clone-script`, `push` 같은 명령 목록이 보입니다.",
+        "recovery": "권한 오류가 나면 관리자 권한 터미널에서 다시 실행합니다. `clasp`를 찾지 못하면 터미널을 닫았다가 다시 엽니다.",
+        "kind": "manual",
+        "sourceType": "input",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW01.2",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW01.3",
+        "instruction": "브라우저에서 https://script.google.com/home/usersettings 를 열고 Google Apps Script API를 사용으로 바꿉니다.",
+        "expected": "설정 화면에서 Google Apps Script API가 켜진 상태로 보입니다.",
+        "recovery": "다른 계정으로 열렸다면 오른쪽 위 계정을 콘텐츠 시트 소유 계정으로 바꾼 뒤 다시 엽니다. 학교·회사 계정은 관리자가 막았을 수 있습니다.",
+        "kind": "manual",
+        "sourceType": "click",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW01.3",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW01.4",
+        "instruction": "터미널에서 `clasp login`을 입력하고, 열린 브라우저 창에서 계정을 고른 뒤 허용합니다.",
+        "expected": "터미널에 로그인 완료 메시지가 보이고, 홈 폴더에 `.clasprc.json` 파일이 생깁니다.",
+        "recovery": "브라우저가 열리지 않으면 `clasp login --no-localhost`로 다시 실행하고 안내에 따라 코드를 붙여 넣습니다.",
+        "kind": "manual",
+        "sourceType": "action",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW01.4",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW01.5",
+        "instruction": "`clasp show-authorized-user`를 입력해 로그인한 계정을 확인합니다.",
+        "expected": "콘텐츠 시트를 관리하는 계정 정보가 보입니다.",
+        "recovery": "다른 계정이면 `clasp logout` 후 `clasp login`을 다시 합니다.",
+        "kind": "manual",
+        "sourceType": "input",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW01.5",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW01.6",
+        "instruction": "Apps Script 편집기의 프로젝트 설정에서 스크립트 ID를 복사하고, 저장소 폴더에서 `clasp clone-script <스크립트ID> --rootDir gas/api`를 입력합니다.",
+        "expected": "`gas/api` 폴더에 `appsscript.json`과 코드 파일이 생기고, 현재 폴더에 `.clasp.json`이 생깁니다.",
+        "recovery": "\"API가 꺼져 있다\"는 오류가 나면 3단계를 다시 확인합니다. 이미 `.clasp.json`이 있는 저장소라면 이 단계는 건너뛰고 `clasp pull`로 최신 코드를 받습니다.",
+        "kind": "manual",
+        "sourceType": "input",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW01.6",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW01.7",
+        "instruction": "코드 파일 하나에 주석 한 줄을 추가하고 `clasp show-file-status`를 입력합니다.",
+        "expected": "올라갈 파일 목록에 방금 고친 파일이 보입니다.",
+        "recovery": "목록에 없으면 파일이 `rootDir` 밖에 있거나 `.claspignore`에 걸린 것입니다. 파일 위치를 확인합니다.",
+        "kind": "manual",
+        "sourceType": "input",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW01.7",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW01.8",
+        "instruction": "`clasp push`를 입력해 코드를 Apps Script로 올립니다.",
+        "expected": "Apps Script 편집기를 새로고침하면 방금 넣은 주석이 보입니다.",
+        "recovery": "`push`는 온라인 프로젝트 전체를 내 컴퓨터 파일로 덮어씁니다. 편집기에서 직접 고친 내용이 있다면 먼저 `clasp pull`로 받아 둡니다. manifest 충돌 안내가 나오면 내용을 확인한 뒤에만 `clasp push --force`를 씁니다.",
+        "kind": "manual",
+        "sourceType": "input",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW01.8",
+        "sourceUrl": null,
+        "practiceUrl": null
+      }
+    ],
+    "conditional": false,
+    "status": "NEW",
+    "sourceKind": "workspace-track",
+    "sourceStatus": "draft",
+    "volumeIds": [],
+    "simulation": false,
+    "scopeNote": "clasp 3.x 기준 명령으로 설치, 로그인, 가져오기, 올리기까지 다룹니다. TypeScript 변환, 배포(deployment), `clasp run-function`은 다루지 않습니다. 배포는 GW02에서 다룹니다.",
+    "hints": [
+      "clasp 3.x에서는 `clone`이 `clone-script`, `open`이 `open-script`로 이름이 바뀌었습니다. 옛 이름도 일부 별칭으로 남아 있습니다.",
+      "`.clasprc.json`은 Google 로그인 정보입니다. 저장소에 올리지 마세요."
+    ],
+    "expected": "로컬 폴더와 Apps Script 편집기의 코드가 같아지고, `clasp push`로 바꾼 내용이 편집기에 보입니다.",
+    "recovery": "명령이 실패하면 `clasp show-authorized-user`로 계정을 먼저 확인하고, Apps Script API 사용 설정을 다시 봅니다. 자세한 로그가 필요하면 `DEBUG=clasp:*`를 켜고 다시 실행합니다.",
+    "resources": [
+      {
+        "title": "공식 문서 clasp (GitHub README)",
+        "url": "https://github.com/google/clasp"
+      },
+      {
+        "title": "공식 설정 Apps Script API 사용 설정",
+        "url": "https://script.google.com/home/usersettings"
+      }
+    ]
+  },
+  {
+    "id": "google-workspace/gw-02",
+    "title": "GitHub Actions로 Apps Script 자동 배포하기",
+    "description": "GitHub에 코드를 올리면 GitHub Actions가 clasp로 Apps Script를 같은 웹 앱 주소에 다시 배포하게 합니다.",
+    "category": "구글 워크스페이스",
+    "tags": [
+      "구글 워크스페이스",
+      "GitHub Actions",
+      "clasp",
+      "Apps Script",
+      "배포",
+      "보안",
+      "GW02"
+    ],
+    "difficulty": "미지정",
+    "difficultyBasis": "새로 만든 실습. 난이도 등급 미지정.",
+    "minutes": 16,
+    "timeBasis": "단일 행동 8개 × 2분의 편집 추정. 실측 아님.",
+    "mode": "guide",
+    "engine": null,
+    "practiceUrl": null,
+    "sourceUrl": null,
+    "code": "GW02",
+    "steps": [
+      {
+        "title": "GW02.1",
+        "instruction": "내 컴퓨터에서 `clasp login`을 마친 뒤 홈 폴더의 `.clasprc.json` 파일을 메모장으로 엽니다.",
+        "expected": "JSON 형식의 로그인 정보가 보입니다.",
+        "recovery": "파일이 없으면 GW01의 `clasp login` 단계를 먼저 합니다. 이 파일은 Google 계정 로그인 토큰입니다. 화면 공유나 채팅에 붙여 넣지 마세요.",
+        "kind": "manual",
+        "sourceType": "action",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW02.1",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW02.2",
+        "instruction": "GitHub 저장소 `Reasonofmoon/hangeorum-playground`에서 **Settings** > **Secrets and variables** > **Actions**를 엽니다.",
+        "expected": "**Secrets** 탭과 **New repository secret** 버튼이 보입니다.",
+        "recovery": "**Settings** 탭이 안 보이면 저장소 권한이 부족한 것입니다. 저장소 소유자에게 요청합니다.",
+        "kind": "manual",
+        "sourceType": "click",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW02.2",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW02.3",
+        "instruction": "**New repository secret**을 누르고 **Name**에 `CLASPRC_JSON`, **Secret**에 `.clasprc.json` 내용 전체를 붙여 넣은 뒤 **Add secret**을 누릅니다.",
+        "expected": "시크릿 목록에 `CLASPRC_JSON`이 보입니다. 값은 다시 볼 수 없습니다.",
+        "recovery": "붙여 넣은 내용이 잘렸다면 같은 이름으로 **Update**해서 다시 넣습니다. 복사한 메모장 창은 저장하지 말고 닫습니다.",
+        "kind": "manual",
+        "sourceType": "input",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW02.3",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW02.4",
+        "instruction": "Apps Script 편집기에서 **Deploy** > **Manage deployments**를 열고 웹 앱 배포의 배포 ID를 확인합니다.",
+        "expected": "`AKfy...`로 시작하는 배포 ID와 `/exec`로 끝나는 웹 앱 URL이 보입니다.",
+        "recovery": "배포가 없으면 **Deploy** > **New deployment**로 웹 앱 배포를 먼저 만듭니다. 터미널에서는 `clasp list-deployments`로도 볼 수 있습니다.",
+        "kind": "manual",
+        "sourceType": "read",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW02.4",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW02.5",
+        "instruction": "`.github/workflows/gas-deploy.yml`이 쓰는 배포 ID가 4단계의 ID와 같은지 확인합니다.",
+        "expected": "워크플로가 새 배포를 만들지 않고 같은 배포 ID를 갱신하도록 되어 있습니다(예: `clasp update-deployment <배포ID>`).",
+        "recovery": "ID가 다르면 워크플로 설정을 고칩니다. 배포 ID를 워크플로 파일에 두는지 시크릿에 두는지는 저장소 구성을 따릅니다(확인 필요).",
+        "kind": "manual",
+        "sourceType": "read",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW02.5",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW02.6",
+        "instruction": "`gas/api` 안의 파일을 조금 고쳐 커밋하고 `main` 브랜치에 push합니다.",
+        "expected": "GitHub 저장소의 **Actions** 탭에 새 워크플로 실행이 나타납니다.",
+        "recovery": "실행이 안 보이면 워크플로의 `on:` 조건(브랜치, 경로)이 이번 변경과 맞는지 확인합니다.",
+        "kind": "manual",
+        "sourceType": "action",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW02.6",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW02.7",
+        "instruction": "**Actions** 탭에서 방금 실행을 열어 결과를 확인합니다.",
+        "expected": "모든 단계가 초록색 체크로 끝납니다.",
+        "recovery": "인증 오류가 나면 `CLASPRC_JSON`이 만료되었거나 잘못 붙여 넣어진 것입니다. 로컬에서 `clasp login`을 다시 하고 시크릿을 갱신합니다.",
+        "kind": "manual",
+        "sourceType": "read",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW02.7",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW02.8",
+        "instruction": "예전에 쓰던 `/exec` 웹 앱 URL을 그대로 열어 변경 내용이 반영됐는지 봅니다.",
+        "expected": "URL은 그대로이고 내용만 새 버전으로 바뀌었습니다.",
+        "recovery": "URL이 바뀌었다면 새 배포가 만들어진 것입니다. 사이트 설정의 API 주소를 바꾸지 말고 워크플로가 기존 배포 ID를 갱신하도록 고칩니다.",
+        "kind": "manual",
+        "sourceType": "read",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW02.8",
+        "sourceUrl": null,
+        "practiceUrl": null
+      }
+    ],
+    "conditional": false,
+    "status": "NEW",
+    "sourceKind": "workspace-track",
+    "sourceStatus": "draft",
+    "volumeIds": [],
+    "simulation": false,
+    "scopeNote": "GitHub Actions 시크릿 등록과 같은 웹 앱 URL을 유지하는 재배포를 다룹니다. 워크플로 YAML을 처음부터 작성하는 방법과 서비스 계정 인증은 다루지 않습니다. clasp README는 서비스 계정 방식(`--adc`)을 실험 단계라고 안내합니다.",
+    "hints": [
+      "웹 앱 URL은 최신 코드가 아니라 배포(deployment)에 묶여 있습니다. 같은 배포 ID에 새 버전을 올려야 URL이 유지됩니다.",
+      "`CLASPRC_JSON`은 Google 계정 로그인 토큰입니다. 유출되면 그 계정의 Apps Script를 남이 고칠 수 있습니다. 의심되면 Google 계정에서 clasp 접근 권한을 해제하고 다시 로그인합니다(해제 메뉴 위치 확인 필요)."
+    ],
+    "expected": "`main`에 push하면 GitHub Actions가 성공하고, 기존 `/exec` URL에서 새 코드가 동작합니다.",
+    "recovery": "Actions 로그에서 실패한 단계를 먼저 봅니다. 인증 문제면 시크릿 갱신, 배포 문제면 배포 ID 확인 순서로 고칩니다.",
+    "resources": [
+      {
+        "title": "공식 문서 GitHub Actions에서 시크릿 사용하기",
+        "url": "https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets"
+      },
+      {
+        "title": "공식 문서 Apps Script 배포 만들기와 관리",
+        "url": "https://developers.google.com/apps-script/concepts/deployments"
+      },
+      {
+        "title": "공식 문서 clasp (create-deployment / update-deployment)",
+        "url": "https://github.com/google/clasp"
+      }
+    ]
+  },
+  {
+    "id": "google-workspace/gw-03",
+    "title": "구글 시트를 콘텐츠 관리 도구로 쓰기",
+    "description": "관리자 웹 앱에서 튜토리얼과 단계를 고치고, 이미지에 대체 텍스트를 달아 올린 뒤 게시를 요청합니다.",
+    "category": "구글 워크스페이스",
+    "tags": [
+      "구글 워크스페이스",
+      "구글 시트",
+      "Apps Script",
+      "웹 앱",
+      "대체 텍스트",
+      "Google Drive",
+      "GW03"
+    ],
+    "difficulty": "미지정",
+    "difficultyBasis": "새로 만든 실습. 난이도 등급 미지정.",
+    "minutes": 14,
+    "timeBasis": "단일 행동 7개 × 2분의 편집 추정. 실측 아님.",
+    "mode": "guide",
+    "engine": null,
+    "practiceUrl": null,
+    "sourceUrl": null,
+    "code": "GW03",
+    "steps": [
+      {
+        "title": "GW03.1",
+        "instruction": "관리자 웹 앱 주소(`/exec`)를 콘텐츠 관리 권한이 있는 계정으로 엽니다.",
+        "expected": "튜토리얼 목록 화면이 보입니다.",
+        "recovery": "\"권한 없음\" 화면이 나오면 로그인한 계정을 확인합니다. 관리자에게 Drive 콘텐츠 폴더 공유를 요청합니다.",
+        "kind": "manual",
+        "sourceType": "action",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW03.1",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW03.2",
+        "instruction": "목록에서 고칠 튜토리얼 한 줄을 고르고 제목이나 설명을 고친 뒤 저장합니다(버튼 이름 확인 필요).",
+        "expected": "저장 완료 안내가 보이고, `한걸음서재_원본` 시트의 `tutorials` 탭에서 같은 줄이 바뀌어 있습니다.",
+        "recovery": "저장이 안 되면 필수 칸이 비어 있는지 봅니다. 시트를 직접 고치는 대신 관리자 웹 앱에서 다시 저장합니다.",
+        "kind": "manual",
+        "sourceType": "input",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW03.2",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW03.3",
+        "instruction": "같은 튜토리얼의 단계 편집 화면에서 단계 하나의 지시문, 기대 결과, 복구 방법을 고치고 저장합니다.",
+        "expected": "`steps` 탭에서 그 단계 줄의 내용이 바뀌어 있습니다.",
+        "recovery": "순서가 꼬였다면 `order` 값을 확인합니다. 한 단계에는 행동 하나만 적습니다.",
+        "kind": "manual",
+        "sourceType": "input",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW03.3",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW03.4",
+        "instruction": "이미지나 GIF 파일 하나를 올리고, 대체 텍스트 칸에 그림이 보여 주는 내용을 한 문장으로 적습니다.",
+        "expected": "`media` 탭에 새 줄이 생기고 `alt` 칸이 채워져 있습니다.",
+        "recovery": "대체 텍스트를 \"이미지\", \"스크린샷\"처럼 쓰지 않습니다. 화면을 못 보는 학습자가 무엇을 알아야 하는지 적습니다. 파일 크기 제한에 걸리면 GIF를 짧게 줄입니다(제한 값 확인 필요).",
+        "kind": "manual",
+        "sourceType": "input",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW03.4",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW03.5",
+        "instruction": "게시 요청 버튼을 눌러 검토를 요청합니다(버튼 이름 확인 필요).",
+        "expected": "튜토리얼 상태가 검토 대기 상태로 바뀝니다.",
+        "recovery": "상태가 그대로면 화면을 새로고침한 뒤 `log` 탭에 요청 기록이 남았는지 봅니다.",
+        "kind": "manual",
+        "sourceType": "click",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW03.5",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW03.6",
+        "instruction": "Google Drive에서 콘텐츠 폴더의 공유 설정을 열어 사람별 권한을 확인합니다.",
+        "expected": "편집자는 콘텐츠를 고칠 수 있고, 뷰어는 읽기만 할 수 있습니다. 이 권한이 관리자 웹 앱의 역할과 같습니다.",
+        "recovery": "권한을 바꿀 때는 꼭 필요한 사람에게만 편집 권한을 줍니다. 퇴사·종료한 사람은 바로 공유에서 뺍니다.",
+        "kind": "manual",
+        "sourceType": "read",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW03.6",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW03.7",
+        "instruction": "`versions` 탭을 열어 방금 고친 내용의 버전 기록이 남았는지 봅니다.",
+        "expected": "수정 시각과 수정한 사람이 적힌 줄이 보입니다.",
+        "recovery": "기록이 없으면 관리자 웹 앱이 버전 기록을 언제 남기는지 확인합니다(게시 시점에만 남을 수 있음, 확인 필요).",
+        "kind": "manual",
+        "sourceType": "read",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW03.7",
+        "sourceUrl": null,
+        "practiceUrl": null
+      }
+    ],
+    "conditional": false,
+    "status": "NEW",
+    "sourceKind": "workspace-track",
+    "sourceStatus": "draft",
+    "volumeIds": [],
+    "simulation": false,
+    "scopeNote": "관리자 웹 앱으로 내용을 고치는 흐름과 Drive 권한이 역할이 되는 구조를 다룹니다. 관리자 웹 앱의 버튼 이름은 앱 구현에 따라 다르므로 실제 화면과 대조해야 합니다(확인 필요). 시트를 직접 고치는 방법과 공개 API 캐시 갱신은 다루지 않습니다.",
+    "hints": [
+      "시트는 원본 데이터, 관리자 웹 앱은 안전한 편집 창구라고 생각하세요.",
+      "대체 텍스트는 그림을 못 보는 사람에게 그림 대신 읽어 주는 문장입니다."
+    ],
+    "expected": "고친 튜토리얼과 단계, 대체 텍스트가 달린 미디어가 시트에 저장되고 게시 요청 상태가 됩니다.",
+    "recovery": "저장이 안 되면 계정 권한(Drive 공유)부터 확인하고, 그다음 필수 칸을 확인합니다.",
+    "resources": [
+      {
+        "title": "공식 문서 Apps Script 웹 앱",
+        "url": "https://developers.google.com/apps-script/guides/web"
+      },
+      {
+        "title": "공식 문서 Apps Script 배포 관리",
+        "url": "https://developers.google.com/apps-script/concepts/deployments"
+      }
+    ]
+  },
+  {
+    "id": "google-workspace/gw-04",
+    "title": "Looker Studio로 학습 기록 대시보드 만들기",
+    "description": "`access_log` 시트를 데이터 소스로 연결해 점수표, 시계열, 표가 있는 대시보드를 만들고 보기 권한으로 공유합니다.",
+    "category": "구글 워크스페이스",
+    "tags": [
+      "구글 워크스페이스",
+      "Looker Studio",
+      "Data Studio",
+      "구글 시트",
+      "대시보드",
+      "access_log",
+      "GW04"
+    ],
+    "difficulty": "미지정",
+    "difficultyBasis": "새로 만든 실습. 난이도 등급 미지정.",
+    "minutes": 16,
+    "timeBasis": "단일 행동 8개 × 2분의 편집 추정. 실측 아님.",
+    "mode": "guide",
+    "engine": null,
+    "practiceUrl": null,
+    "sourceUrl": null,
+    "code": "GW04",
+    "steps": [
+      {
+        "title": "GW04.1",
+        "instruction": "https://datastudio.google.com 을 엽니다.",
+        "expected": "Data Studio 홈 화면이 보입니다. 2026년 4월부터 Looker Studio 이름이 Data Studio로 바뀌었고, 옛 주소 lookerstudio.google.com은 새 주소로 넘어갑니다.",
+        "recovery": "회사 네트워크에서 열리지 않으면 관리자에게 새 도메인 허용을 요청합니다.",
+        "kind": "manual",
+        "sourceType": "action",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW04.1",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW04.2",
+        "instruction": "왼쪽 위 **Create**를 누르고 **Data Source**를 고른 뒤 **Google Sheets** 커넥터를 고릅니다.",
+        "expected": "스프레드시트 목록이 보입니다.",
+        "recovery": "목록에 시트가 없으면 시트 URL을 직접 붙여 넣습니다. 그래도 없으면 시트 공유 권한을 확인합니다.",
+        "kind": "manual",
+        "sourceType": "click",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW04.2",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW04.3",
+        "instruction": "**Spreadsheet**에서 `한걸음서재_원본`, **Worksheet**에서 `access_log`를 고르고 오른쪽 위 **CONNECT**를 누릅니다.",
+        "expected": "필드 목록에 `ts`, `email`, `trace`, `action`, `paths`, `tutorial_id`, `result`, `ms`가 보입니다.",
+        "recovery": "필드가 이상하면 첫 줄이 한 줄짜리 머리글인지, 한 열에 같은 형식의 값만 있는지 확인합니다.",
+        "kind": "manual",
+        "sourceType": "click",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW04.3",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW04.4",
+        "instruction": "`ts` 필드 유형이 날짜·시간인지 확인하고, 오른쪽 위 **CREATE REPORT**와 **ADD TO REPORT**를 차례로 누릅니다.",
+        "expected": "빈 보고서 편집 화면이 열립니다.",
+        "recovery": "`ts`가 텍스트로 잡히면 필드 유형을 날짜·시간으로 바꿉니다. 시트 날짜 형식에 따라 변환이 필요할 수 있습니다(확인 필요).",
+        "kind": "manual",
+        "sourceType": "click",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW04.4",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW04.5",
+        "instruction": "툴바에서 **Add a chart** > **Scorecard**를 고르고 캔버스에 놓은 뒤 측정값을 전체 기록 수로 둡니다.",
+        "expected": "총 조회 수 숫자 하나가 보입니다.",
+        "recovery": "숫자가 이상하면 오른쪽 **Properties** 패널의 **Setup** 탭에서 측정값을 다시 고릅니다. 기본 개수 필드 이름은 화면을 보고 고릅니다(확인 필요).",
+        "kind": "manual",
+        "sourceType": "click",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW04.5",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW04.6",
+        "instruction": "**Add a chart** > **Time series**를 놓고 측정기준을 `ts`(날짜)로 둡니다.",
+        "expected": "날짜별 조회 수 선 그래프가 보입니다.",
+        "recovery": "선이 평평하면 날짜 단위가 초 단위로 잡힌 것입니다. 날짜 단위를 일(day)로 바꿉니다.",
+        "kind": "manual",
+        "sourceType": "click",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW04.6",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW04.7",
+        "instruction": "**Add a chart** > **Table**을 놓고 측정기준을 `tutorial_id`, 측정값을 기록 수로 둡니다.",
+        "expected": "튜토리얼별 조회 수 표가 보입니다.",
+        "recovery": "표에 `email` 열을 넣지 마세요. 공유 보고서에 개인정보가 드러납니다.",
+        "kind": "manual",
+        "sourceType": "click",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW04.7",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW04.8",
+        "instruction": "오른쪽 위 **Share**를 누르고 받을 사람의 이메일을 넣은 뒤 권한을 **Can view**로 고릅니다.",
+        "expected": "받는 사람이 보고서를 볼 수 있지만 고칠 수는 없습니다.",
+        "recovery": "데이터 소스가 **OWNER'S CREDENTIALS**이면 보는 사람이 시트 권한 없이도 데이터를 봅니다. 공유 전에 개인정보 열이 보이지 않는지 다시 확인합니다.",
+        "kind": "manual",
+        "sourceType": "input",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW04.8",
+        "sourceUrl": null,
+        "practiceUrl": null
+      }
+    ],
+    "conditional": false,
+    "status": "NEW",
+    "sourceKind": "workspace-track",
+    "sourceStatus": "draft",
+    "volumeIds": [],
+    "simulation": false,
+    "scopeNote": "`access_log` 한 탭으로 기본 대시보드를 만드는 법을 다룹니다. `tutorials` 탭과 합치는 데이터 혼합(blend), 계산된 필드, 예약 이메일은 다루지 않습니다.",
+    "hints": [
+      "Looker Studio는 2026년 4월에 Data Studio로 이름이 바뀌었습니다. 기존 보고서는 그대로 옮겨집니다.",
+      "점수표는 숫자 하나, 시계열은 날짜에 따른 변화, 표는 항목별 비교에 씁니다."
+    ],
+    "expected": "총 조회 수, 날짜별 추이, 튜토리얼별 조회 수가 보이는 보고서를 보기 권한으로 공유합니다.",
+    "recovery": "시트 열을 바꾼 뒤 필드가 안 맞으면 데이터 소스 필드를 새로고침합니다.",
+    "resources": [
+      {
+        "title": "공식 문서 Data Studio에서 Google Sheets 연결",
+        "url": "https://docs.cloud.google.com/data-studio/connect-to-google-sheets"
+      },
+      {
+        "title": "공식 문서 보고서에 차트 추가",
+        "url": "https://docs.cloud.google.com/data-studio/add-charts-and-controls-to-your-report"
+      },
+      {
+        "title": "공식 문서 Looker Studio에서 Data Studio로 이름 변경",
+        "url": "https://docs.cloud.google.com/data-studio/welcome"
+      },
+      {
+        "title": "공식 문서 Scorecard 참조",
+        "url": "https://docs.cloud.google.com/data-studio/scorecard-reference"
+      }
+    ]
+  },
+  {
+    "id": "google-workspace/gw-05",
+    "title": "Colab에서 학습 기록 분석하기",
+    "description": "GitHub에 있는 노트북을 Colab에서 열고, 내 Google 계정으로 시트의 `access_log`를 읽어 그래프로 봅니다.",
+    "category": "구글 워크스페이스",
+    "tags": [
+      "구글 워크스페이스",
+      "Colab",
+      "gspread",
+      "pandas",
+      "access_log",
+      "데이터 분석",
+      "GW05"
+    ],
+    "difficulty": "미지정",
+    "difficultyBasis": "새로 만든 실습. 난이도 등급 미지정.",
+    "minutes": 14,
+    "timeBasis": "단일 행동 7개 × 2분의 편집 추정. 실측 아님.",
+    "mode": "guide",
+    "engine": null,
+    "practiceUrl": null,
+    "sourceUrl": null,
+    "code": "GW05",
+    "steps": [
+      {
+        "title": "GW05.1",
+        "instruction": "`docs/practice/README.md`의 **Open in Colab** 배지를 눌러 `01_access_log_analysis.ipynb`를 엽니다.",
+        "expected": "Colab에서 노트북이 열립니다. 주소가 `colab.research.google.com/github/...` 형식입니다.",
+        "recovery": "열리지 않으면 아래 주소를 직접 엽니다: https://colab.research.google.com/github/Reasonofmoon/hangeorum-playground/blob/main/notebooks/01_access_log_analysis.ipynb",
+        "kind": "manual",
+        "sourceType": "click",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW05.1",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW05.2",
+        "instruction": "**File** 메뉴에서 Drive에 사본을 저장합니다(메뉴 이름 확인 필요).",
+        "expected": "내 Drive에 사본이 생기고, 고친 내용이 저장됩니다.",
+        "recovery": "사본 없이 실행해도 분석은 되지만, 닫으면 고친 내용이 사라집니다.",
+        "kind": "manual",
+        "sourceType": "click",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW05.2",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW05.3",
+        "instruction": "첫 번째 코드 셀을 실행하고, 뜨는 창에서 시트를 볼 수 있는 계정을 고른 뒤 허용합니다.",
+        "expected": "\"인증 완료\" 문구가 출력됩니다.",
+        "recovery": "창이 안 뜨면 브라우저 팝업 차단을 풉니다. 다른 계정을 골랐다면 **Runtime**을 다시 시작하고 셀을 다시 실행합니다(메뉴 이름 확인 필요).",
+        "kind": "manual",
+        "sourceType": "action",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW05.3",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW05.4",
+        "instruction": "`SHEET_ID` 입력 칸에 시트 주소의 `/d/`와 `/edit` 사이 문자열을 붙여 넣습니다.",
+        "expected": "입력 칸에 ID가 들어갑니다.",
+        "recovery": "주소 전체를 넣으면 실패합니다. ID 부분만 넣습니다.",
+        "kind": "manual",
+        "sourceType": "input",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW05.4",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW05.5",
+        "instruction": "`access_log`를 읽는 셀을 실행합니다.",
+        "expected": "행 개수와 처음 5줄 표가 보입니다.",
+        "recovery": "`SpreadsheetNotFound`가 나오면 ID와 계정 권한을, `WorksheetNotFound`가 나오면 탭 이름을 확인합니다.",
+        "kind": "manual",
+        "sourceType": "action",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW05.5",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW05.6",
+        "instruction": "날짜별 조회 수와 튜토리얼 순위 셀을 실행합니다.",
+        "expected": "막대·선 그래프와 상위 튜토리얼 표가 보입니다.",
+        "recovery": "그래프 글자가 네모로 깨지면 축 이름이 영어인지 확인합니다. 노트북은 글자 깨짐을 피하려고 영어 축 이름을 씁니다.",
+        "kind": "manual",
+        "sourceType": "action",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW05.6",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW05.7",
+        "instruction": "할당량 초과(`result`가 `429`) 개수를 세는 셀을 실행합니다.",
+        "expected": "429 개수와 날짜별 분포가 출력됩니다.",
+        "recovery": "429가 많으면 공개 API의 호출 한도나 캐시 설정을 점검하라는 신호입니다.",
+        "kind": "manual",
+        "sourceType": "read",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW05.7",
+        "sourceUrl": null,
+        "practiceUrl": null
+      }
+    ],
+    "conditional": false,
+    "status": "NEW",
+    "sourceKind": "workspace-track",
+    "sourceStatus": "draft",
+    "volumeIds": [],
+    "simulation": false,
+    "scopeNote": "읽기 전용 분석입니다. 시트에 값을 쓰지 않습니다. 개인정보(이메일)는 개수 세기에만 쓰고 화면에 목록으로 출력하지 않습니다.",
+    "hints": [
+      "Colab 인증은 `google.colab.auth.authenticate_user()` 한 줄이면 됩니다. gspread 공식 문서도 같은 방법을 안내합니다."
+    ],
+    "expected": "날짜별 조회 수, 튜토리얼 순위, 사용자 수, 429 개수를 그래프와 표로 확인합니다.",
+    "recovery": "오류가 나면 위에서부터 셀을 다시 실행합니다. 인증 셀을 건너뛰면 시트를 읽지 못합니다.",
+    "resources": [
+      {
+        "title": "공식 노트북 Colab에서 GitHub 노트북 열기",
+        "url": "https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb"
+      },
+      {
+        "title": "공식 문서 gspread Colab 인증",
+        "url": "https://docs.gspread.org/en/latest/advanced.html"
+      },
+      {
+        "title": "실습 노트북 01_access_log_analysis.ipynb",
+        "url": "https://colab.research.google.com/github/Reasonofmoon/hangeorum-playground/blob/main/notebooks/01_access_log_analysis.ipynb"
+      }
+    ]
+  },
+  {
+    "id": "google-workspace/gw-06",
+    "title": "AI Studio에서 Gemini API 키 만들고 단계 초안 받기",
+    "description": "Google AI Studio에서 API 키를 만들어 안전한 곳에 보관하고, Colab 노트북으로 튜토리얼 단계 초안을 JSON으로 받습니다.",
+    "category": "구글 워크스페이스",
+    "tags": [
+      "구글 워크스페이스",
+      "AI Studio",
+      "Gemini API",
+      "Colab",
+      "Apps Script",
+      "보안",
+      "GW06"
+    ],
+    "difficulty": "미지정",
+    "difficultyBasis": "새로 만든 실습. 난이도 등급 미지정.",
+    "minutes": 16,
+    "timeBasis": "단일 행동 8개 × 2분의 편집 추정. 실측 아님.",
+    "mode": "guide",
+    "engine": null,
+    "practiceUrl": null,
+    "sourceUrl": null,
+    "code": "GW06",
+    "steps": [
+      {
+        "title": "GW06.1",
+        "instruction": "https://aistudio.google.com/api-keys 를 열고 **Create API key**를 누릅니다.",
+        "expected": "새 API 키가 목록에 생깁니다.",
+        "recovery": "키를 만들 수 없다는 안내가 나오면 조직 정책 때문일 수 있습니다. 조직과 연결되지 않은 개인 Google Cloud 프로젝트로 다시 시도합니다.",
+        "kind": "manual",
+        "sourceType": "click",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW06.1",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW06.2",
+        "instruction": "키를 복사합니다. 채팅, 문서, 코드 파일에는 붙여 넣지 않습니다.",
+        "expected": "클립보드에 키가 있습니다.",
+        "recovery": "키를 실수로 공개했다면 AI Studio에서 그 키를 지우고 새로 만듭니다.",
+        "kind": "manual",
+        "sourceType": "action",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW06.2",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW06.3",
+        "instruction": "Colab 노트북 왼쪽 패널의 **Secrets**(열쇠 아이콘)를 열고 이름 `GOOGLE_API_KEY`로 새 시크릿을 만들어 키를 붙여 넣습니다.",
+        "expected": "시크릿 목록에 `GOOGLE_API_KEY`가 보이고, 노트북 접근이 켜져 있습니다(스위치 이름 확인 필요).",
+        "recovery": "노트북에서 키를 못 읽으면 그 시크릿의 노트북 접근 스위치를 켭니다.",
+        "kind": "manual",
+        "sourceType": "input",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW06.3",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW06.4",
+        "instruction": "Apps Script에서도 쓰려면 편집기 왼쪽 **Project Settings** > **Script Properties** > **Add script property**에 `GEMINI_API_KEY`를 넣고 **Save script properties**를 누릅니다.",
+        "expected": "스크립트 속성 목록에 키 이름이 보입니다. 코드에는 `PropertiesService.getScriptProperties()`로 읽습니다.",
+        "recovery": "이미 속성이 있으면 **Edit script properties**를 눌러 추가합니다. 키를 `.gs` 파일에 직접 적으면 `clasp push`와 GitHub에 그대로 올라갑니다.",
+        "kind": "manual",
+        "sourceType": "input",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW06.4",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW06.5",
+        "instruction": "`02_gemini_step_drafts.ipynb`를 Colab에서 열고 설치·클라이언트 셀을 실행합니다.",
+        "expected": "\"클라이언트 준비 완료\"와 모델 이름이 출력됩니다.",
+        "recovery": "`SecretNotFoundError`가 나면 3단계 시크릿 이름이 정확히 `GOOGLE_API_KEY`인지 확인합니다.",
+        "kind": "manual",
+        "sourceType": "action",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW06.5",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW06.6",
+        "instruction": "`TOPIC`과 `TUTORIAL_ID` 칸을 채우고 초안 생성 셀을 실행합니다.",
+        "expected": "단계 목록이 JSON으로 출력됩니다.",
+        "recovery": "JSON 파싱 오류가 나면 셀을 한 번 더 실행합니다. 계속 실패하면 주제를 더 짧고 구체적으로 적습니다.",
+        "kind": "manual",
+        "sourceType": "input",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW06.6",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW06.7",
+        "instruction": "검증 셀을 실행해 빠진 칸과 잘못된 값을 확인합니다.",
+        "expected": "\"문제 없음\" 또는 고칠 항목 목록이 보입니다.",
+        "recovery": "문제가 있는 단계는 사람이 직접 고칩니다. 다시 생성해도 같은 문제가 날 수 있습니다.",
+        "kind": "manual",
+        "sourceType": "read",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW06.7",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW06.8",
+        "instruction": "CSV를 내려받아 사람이 한 줄씩 읽고 고친 뒤에만 `steps` 탭에 붙여 넣습니다.",
+        "expected": "사람이 검토한 단계만 시트에 들어갑니다.",
+        "recovery": "AI 초안은 틀린 메뉴 이름이나 없는 명령을 만들 수 있습니다. 공식 문서와 대조하지 않은 단계는 게시하지 않습니다.",
+        "kind": "manual",
+        "sourceType": "action",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW06.8",
+        "sourceUrl": null,
+        "practiceUrl": null
+      }
+    ],
+    "conditional": false,
+    "status": "NEW",
+    "sourceKind": "workspace-track",
+    "sourceStatus": "draft",
+    "volumeIds": [],
+    "simulation": false,
+    "scopeNote": "API 키 발급, 안전한 보관, 단계 초안 생성까지 다룹니다. 생성 결과를 자동으로 게시하지 않습니다. 결제 설정과 사용량 한도는 다루지 않습니다.",
+    "hints": [
+      "API 키는 비밀번호처럼 다룹니다. 저장소에는 절대 커밋하지 않습니다.",
+      "노트북은 `gemini-3.8-flash` 모델을 기본값으로 씁니다. 모델 이름은 ai.google.dev 모델 목록에서 바뀌었는지 확인하세요."
+    ],
+    "expected": "키가 Colab Secrets와(필요하면) Script Properties에만 있고, 검토용 단계 초안 CSV가 생깁니다.",
+    "recovery": "키 관련 오류는 시크릿 이름과 키 유효성을, 생성 오류는 모델 이름과 주제 문장을 먼저 확인합니다.",
+    "resources": [
+      {
+        "title": "공식 문서 Gemini API 키 사용",
+        "url": "https://ai.google.dev/gemini-api/docs/api-key"
+      },
+      {
+        "title": "공식 문서 Gemini 모델 목록",
+        "url": "https://ai.google.dev/gemini-api/docs/models"
+      },
+      {
+        "title": "공식 SDK google-genai (Python)",
+        "url": "https://github.com/googleapis/python-genai"
+      },
+      {
+        "title": "공식 문서 Apps Script Properties Service",
+        "url": "https://developers.google.com/apps-script/guides/properties"
+      },
+      {
+        "title": "실습 노트북 02_gemini_step_drafts.ipynb",
+        "url": "https://colab.research.google.com/github/Reasonofmoon/hangeorum-playground/blob/main/notebooks/02_gemini_step_drafts.ipynb"
+      }
+    ]
+  },
+  {
+    "id": "google-workspace/gw-07",
+    "title": "Classroom 수업에 튜토리얼 링크 나눠 주기",
+    "description": "Google Classroom 수업을 만들고 튜토리얼 링크를 자료로 올린 뒤, 수강생 명단을 학습자 목록과 맞춥니다.",
+    "category": "구글 워크스페이스",
+    "tags": [
+      "구글 워크스페이스",
+      "Google Classroom",
+      "학습자 관리",
+      "learners",
+      "자료 공유",
+      "GW07"
+    ],
+    "difficulty": "미지정",
+    "difficultyBasis": "새로 만든 실습. 난이도 등급 미지정.",
+    "minutes": 14,
+    "timeBasis": "단일 행동 7개 × 2분의 편집 추정. 실측 아님.",
+    "mode": "guide",
+    "engine": null,
+    "practiceUrl": null,
+    "sourceUrl": null,
+    "code": "GW07",
+    "steps": [
+      {
+        "title": "GW07.1",
+        "instruction": "https://classroom.google.com 에서 **Classes** 페이지 위쪽 추가(+) > **Create class**를 누르고 수업 이름을 넣은 뒤 **Create**를 누릅니다.",
+        "expected": "새 수업이 열리고 수업 코드가 보입니다.",
+        "recovery": "**Create class**가 없으면 그 계정은 수업 참여만 가능한 계정입니다. 다른 계정으로 바꿉니다. 수업 이름에는 URL을 넣을 수 없습니다.",
+        "kind": "manual",
+        "sourceType": "click",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW07.1",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW07.2",
+        "instruction": "수업의 **Classwork** 페이지에서 **Create** > **Material**을 고릅니다.",
+        "expected": "자료 작성 화면이 열립니다.",
+        "recovery": "메뉴가 안 보이면 교사로 들어왔는지 확인합니다.",
+        "kind": "manual",
+        "sourceType": "click",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW07.2",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW07.3",
+        "instruction": "제목을 적고 링크 첨부를 골라 튜토리얼 주소(예: https://reasonofmoon.github.io/hangeorum-playground/)를 붙여 넣은 뒤 게시합니다(첨부 버튼 이름 확인 필요).",
+        "expected": "**Classwork**에 링크가 달린 자료가 보입니다.",
+        "recovery": "링크가 열리지 않으면 주소 끝까지 복사됐는지 확인합니다.",
+        "kind": "manual",
+        "sourceType": "input",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW07.3",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW07.4",
+        "instruction": "**People** > **Invite students**로 학생을 초대하거나 수업 코드·초대 링크를 나눠 줍니다.",
+        "expected": "학생 목록에 초대한 학생이 보입니다.",
+        "recovery": "학교 계정은 다른 도메인에 이메일 초대가 막힐 수 있습니다. 그럴 때는 수업 코드나 초대 링크를 씁니다.",
+        "kind": "manual",
+        "sourceType": "input",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW07.4",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW07.5",
+        "instruction": "관리자 웹 앱에서 Classroom 명단 동기화 기능을 열고 방금 만든 수업을 고릅니다(버튼 이름 확인 필요).",
+        "expected": "동기화할 학생 수가 보입니다.",
+        "recovery": "수업이 목록에 없으면 같은 Google 계정으로 로그인했는지 확인합니다.",
+        "kind": "manual",
+        "sourceType": "click",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW07.5",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW07.6",
+        "instruction": "동기화를 실행한 뒤 `learners` 탭을 엽니다.",
+        "expected": "학생마다 `email`, `name`, `group`, `source`, `expires`, `note`, `added_at`이 채워진 줄이 생깁니다.",
+        "recovery": "`email`이 비어 있으면 아래 개인 계정 제한을 확인합니다. 빈 줄은 지우고 이메일을 직접 받아 넣습니다.",
+        "kind": "manual",
+        "sourceType": "read",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW07.6",
+        "sourceUrl": null,
+        "practiceUrl": null
+      },
+      {
+        "title": "GW07.7",
+        "instruction": "개인 Google 계정으로 수업을 운영한다면 제한을 확인합니다.",
+        "expected": "개인 계정은 수업당 구성원 250명, 하루 수업 생성 30개, 교사당 하루 초대 100건 제한이 있고, 이메일 주소 표시 기능이 없습니다.",
+        "recovery": "이메일 표시 기능이 없으면 명단 동기화로 이메일을 못 받을 수 있습니다(확인 필요). 이 경우 학습자에게 이메일을 따로 받거나 Google Workspace for Education 계정을 씁니다.",
+        "kind": "manual",
+        "sourceType": "read",
+        "assessmentBasis": "외부 도구에서 수행하고 직접 확인. 브라우저 자동 검사 없음.",
+        "code": "GW07.7",
+        "sourceUrl": null,
+        "practiceUrl": null
+      }
+    ],
+    "conditional": false,
+    "status": "NEW",
+    "sourceKind": "workspace-track",
+    "sourceStatus": "draft",
+    "volumeIds": [],
+    "simulation": false,
+    "scopeNote": "수업 만들기, 링크 자료 올리기, 학생 초대, 명단을 학습자 목록과 맞추는 흐름을 다룹니다. 과제 채점, 보호자 메일, Classroom API 설정 방법은 다루지 않습니다. 관리자 웹 앱의 동기화 버튼 이름과 개인 계정에서 Classroom API로 이메일을 받을 수 있는지는 확인 필요입니다.",
+    "hints": [
+      "개인 Google 계정도 13세 이상이면 수업을 만들 수 있지만, 학교 계정보다 제한이 많습니다.",
+      "`learners` 탭의 `expires`로 접근 기간을 관리합니다."
+    ],
+    "expected": "학생이 Classroom에서 튜토리얼 링크를 열 수 있고, `learners` 탭에 명단이 들어갑니다.",
+    "recovery": "동기화가 실패하면 수업 계정과 관리자 웹 앱 계정이 같은지 먼저 확인하고, 그다음 개인 계정 제한을 확인합니다.",
+    "resources": [
+      {
+        "title": "공식 도움말 수업 만들기",
+        "url": "https://support.google.com/edu/classroom/answer/6020273"
+      },
+      {
+        "title": "공식 도움말 수업 페이지에 자료 추가",
+        "url": "https://support.google.com/edu/classroom/answer/9123621"
+      },
+      {
+        "title": "공식 도움말 학생 초대",
+        "url": "https://support.google.com/edu/classroom/answer/6020282"
+      },
+      {
+        "title": "공식 도움말 Classroom 사용 한도",
+        "url": "https://support.google.com/edu/classroom/answer/7300976"
+      }
+    ]
+  }
+]

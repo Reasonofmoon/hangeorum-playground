@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">DC07 · 탐색창으로 구조 확인하기 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">탐색창으로 구조 확인하기. 최상위 3개와 그 아래 5개 제목이 계층을 이룹니다. 교육용 도해 · 실제 화면 아님. 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">DC07</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">탐색창으로 구조 확인하기</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">최상위 3개와 그 아래 5개 제목이 계층을 이룹니다.</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / DC07</text>
+<text x="44" y="140" font-size="28" fill="#173e35" font-weight="700" text-anchor="start">제목 구조</text>
+<text x="49" y="180" font-size="25" fill="#173e35" font-weight="700" text-anchor="start">모임 소개</text>
+<text x="84" y="211" font-size="23" fill="#173e35" font-weight="400" text-anchor="start">모임의 목적</text>
+<text x="84" y="242" font-size="23" fill="#173e35" font-weight="400" text-anchor="start">참여 대상</text>
+<text x="49" y="273" font-size="25" fill="#173e35" font-weight="700" text-anchor="start">진행 안내</text>
+<rect x="74" y="277" width="235" height="37" rx="6" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<text x="84" y="304" font-size="23" fill="#173e35" font-weight="400" text-anchor="start">준비물</text>
+<text x="84" y="335" font-size="23" fill="#173e35" font-weight="400" text-anchor="start">진행 순서</text>
+<text x="49" y="366" font-size="25" fill="#173e35" font-weight="700" text-anchor="start">마무리</text>
+<text x="84" y="397" font-size="23" fill="#173e35" font-weight="400" text-anchor="start">돌아보기</text>
+<line x1="339" y1="300" x2="453" y2="300" stroke="#dfaa55" stroke-width="5" stroke-linecap="round"/>
+<path d="M 441.5 306.0 L 453 300 L 441.5 294.0" fill="none" stroke="#dfaa55" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M475 141 H721 L745 165 V410 H475 Z" fill="#fffdf8" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M721 141 V165 H745" fill="none" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="501" y="184" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">진행 안내</text>
+<rect x="499" y="226" width="215" height="42" rx="21" fill="#dfaa55" stroke="none" stroke-width="2"/>
+<text x="606.5" y="255" font-size="26" fill="#173e35" font-weight="700" text-anchor="middle">준비물</text>
+<line x1="501" y1="298" x2="708" y2="298" stroke="#91a297" stroke-width="5" stroke-linecap="round"/>
+<line x1="501" y1="324" x2="708" y2="324" stroke="#91a297" stroke-width="5" stroke-linecap="round"/>
+<line x1="501" y1="350" x2="708" y2="350" stroke="#91a297" stroke-width="5" stroke-linecap="round"/>
+<line x1="501" y1="376" x2="645.9" y2="376" stroke="#91a297" stroke-width="5" stroke-linecap="round"/>
+</g></svg>

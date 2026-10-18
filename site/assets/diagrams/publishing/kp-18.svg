@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">KP18 · 다음 검토자가 읽을 기록 남기기 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">다음 검토자가 읽을 기록 남기기. 학습 완료와 실제 출판 준비 상태가 분리됩니다. 교육용 도해 · 실제 화면 아님. 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">KP18</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">다음 검토자가 읽을 기록 남기기</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">학습 완료와 실제 출판 준비 상태가 분리됩니다.</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / KP18</text>
+<circle cx="193" cy="232" r="84" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<circle cx="193" cy="206" r="26" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<path d="M 180.0 206 L 189.62 216.4 L 207.3 194.3" fill="none" stroke="#173e35" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="193" y="267" font-size="30" fill="#173e35" font-weight="700" text-anchor="middle">학습 기록</text>
+<text x="75" y="363" font-size="25" fill="#173e35" font-weight="400" text-anchor="start">초안 · 자료 · AI 경위</text>
+<text x="75" y="405" font-size="25" fill="#173e35" font-weight="400" text-anchor="start">모형 검토 결과</text>
+<line x1="396" y1="139" x2="396" y2="407" stroke="#dfaa55" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 8"/>
+<path d="M455 141 H726 L750 165 V414 H455 Z" fill="#fffdf8" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M726 141 V165 H750" fill="none" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="481" y="184" font-size="28" fill="#173e35" font-weight="700" text-anchor="start">남아 있는 검토</text>
+<text x="482" y="239" font-size="25" fill="#173e35" font-weight="400" text-anchor="start">표지 권리</text>
+<text x="482" y="289" font-size="25" fill="#173e35" font-weight="400" text-anchor="start">실제 EPUB 미리보기</text>
+<text x="482" y="339" font-size="25" fill="#173e35" font-weight="400" text-anchor="start">최신 정책 재확인</text>
+<text x="479" y="403" font-size="25" fill="#173e35" font-weight="700" text-anchor="start">출판 전 검토 대기</text>
+</g></svg>

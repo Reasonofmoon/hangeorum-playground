@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">KP03 · 제목을 하나의 칸에 담기 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">제목을 하나의 칸에 담기. 철자와 단어 순서가 같습니다. 교육용 도해 · 실제 화면 아님. 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">KP03</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">제목을 하나의 칸에 담기</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">철자와 단어 순서가 같습니다.</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / KP03</text>
+<path d="M51 142 H323 L347 166 V401 H51 Z" fill="#fffdf8" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M323 142 V166 H347" fill="none" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="78" y="205" font-size="37" fill="#173e35" font-weight="700" text-anchor="start">Small</text>
+<text x="78" y="260" font-size="37" fill="#173e35" font-weight="700" text-anchor="start">Balcony</text>
+<text x="78" y="315" font-size="37" fill="#173e35" font-weight="700" text-anchor="start">Garden</text>
+<line x1="375" y1="268" x2="450" y2="268" stroke="#dfaa55" stroke-width="5" stroke-linecap="round"/>
+<path d="M 438.5 274.0 L 450 268 L 438.5 262.0" fill="none" stroke="#dfaa55" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="481" y="192" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">제목 한 칸</text>
+<rect x="476" y="225" width="280" height="98" rx="9" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<text x="493" y="264" font-size="29" fill="#173e35" font-weight="700" text-anchor="start">Small Balcony</text>
+<text x="493" y="303" font-size="29" fill="#173e35" font-weight="700" text-anchor="start">Garden</text>
+<text x="478" y="389" font-size="27" fill="#173e35" font-weight="400" text-anchor="start">철자 · 순서 대조</text>
+</g></svg>

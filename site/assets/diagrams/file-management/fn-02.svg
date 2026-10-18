@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">FN02 · 원고 폴더 만들기 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">원고 폴더 만들기. 최상위 폴더 원고가 1개 있습니다. 교육용 도해 · 실제 화면 아님. 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">FN02</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">원고 폴더 만들기</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">최상위 폴더 원고가 1개 있습니다.</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / FN02</text>
+<text x="67" y="151" font-size="28" fill="#173e35" font-weight="700" text-anchor="start">연습공간</text>
+<line x1="74" y1="170" x2="74" y2="342" stroke="#173e35" stroke-width="3" stroke-linecap="round"/>
+<line x1="74" y1="226" x2="139" y2="226" stroke="#173e35" stroke-width="3" stroke-linecap="round"/>
+<path d="M148 200 V185 Q148 180 155 180 H232.0 L252.0 200 H341 Q348 200 348 207 V283 Q348 290 341 290 H155 Q148 290 148 283 Z" fill="#e5ece3" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="248.0" y="255.89999999999998" font-size="28" fill="#173e35" font-weight="700" text-anchor="middle">받은파일</text>
+<line x1="74" y1="342" x2="450" y2="342" stroke="#173e35" stroke-width="3" stroke-linecap="round"/>
+<path d="M450 299 V284 Q450 279 457 279 H546.6 L569.6 299 H673 Q680 299 680 306 V380 Q680 387 673 387 H457 Q450 387 450 380 Z" fill="#dfaa55" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="565.0" y="353.52" font-size="28" fill="#173e35" font-weight="700" text-anchor="middle">원고</text>
+<circle cx="383" cy="250" r="27" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="383" y="260" font-size="34" fill="#fffdf8" font-weight="400" text-anchor="middle">+</text>
+<text x="450" y="228" font-size="24" fill="#173e35" font-weight="700" text-anchor="start">연습공간 바로 아래</text>
+<text x="450" y="262" font-size="24" fill="#173e35" font-weight="400" text-anchor="start">새 폴더 1개</text>
+</g></svg>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">FN05 · 초안 폴더로 이동하기 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">초안 폴더로 이동하기. 받은파일에 있던 여행기 파일이 원고/초안에 있습니다. 교육용 도해 · 실제 화면 아님. 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">FN05</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">초안 폴더로 이동하기</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">받은파일에 있던 여행기 파일이 원고/초안에 있습니다.</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / FN05</text>
+<path d="M55 180 V165 Q55 160 62 160 H164.2 L190.20000000000002 180 H308 Q315 180 315 187 V373 Q315 380 308 380 H62 Q55 380 55 373 Z" fill="#e5ece3" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M485 180 V165 Q485 160 492 160 H594.2 L620.2 180 H738 Q745 180 745 187 V373 Q745 380 738 380 H492 Q485 380 485 373 Z" fill="#dfaa55" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="185" y="212" font-size="28" fill="#173e35" font-weight="700" text-anchor="middle">받은파일</text>
+<text x="615" y="212" font-size="28" fill="#173e35" font-weight="700" text-anchor="middle">원고 / 초안</text>
+<path d="M125 229 H201 L225 253 V347 H125 Z" fill="#fffdf8" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M201 229 V253 H225" fill="none" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="175.0" y="296.26" font-size="28" fill="#173e35" font-weight="700" text-anchor="middle">.md</text>
+<path d="M565 229 H641 L665 253 V347 H565 Z" fill="#f7f4ed" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M641 229 V253 H665" fill="none" stroke="#173e35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="615.0" y="296.26" font-size="28" fill="#173e35" font-weight="700" text-anchor="middle">.md</text>
+<line x1="240" y1="283" x2="550" y2="283" stroke="#173e35" stroke-width="6" stroke-linecap="round"/>
+<path d="M 538.5 289.0 L 550 283 L 538.5 277.0" fill="none" stroke="#173e35" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="331" y="217" width="133" height="42" rx="21" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<text x="397.5" y="246" font-size="26" fill="#173e35" font-weight="700" text-anchor="middle">이동</text>
+<text x="400" y="408" font-size="24" fill="#173e35" font-weight="400" text-anchor="middle">2026-10-14_여행기_v01.md</text>
+</g></svg>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">KP10 · AI 사용 경위를 구별하기 — 교육용 도해 / 실제 화면 아님</title>
+<desc id="diagram-desc">AI 사용 경위를 구별하기. 수정량만으로 AI 보조로 바꾸지 않습니다. 교육용 도해 · 실제 화면 아님. 교육용 도해이며 실제 프로그램 화면, 제품 캡처 또는 실제 파일 작업의 증거가 아닙니다.</desc>
+<g font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect x="0" y="0" width="800" height="520" rx="0" fill="#f7f4ed" stroke="none" stroke-width="2"/>
+<rect x="30" y="24" width="96" height="42" rx="21" fill="#173e35" stroke="none" stroke-width="2"/>
+<text x="78.0" y="53" font-size="22" fill="#fffdf8" font-weight="700" text-anchor="middle">KP10</text>
+<text x="145" y="49" font-size="30" fill="#173e35" font-weight="700" text-anchor="start">AI 사용 경위를 구별하기</text>
+<text x="32" y="86" font-size="18" fill="#51685e" font-weight="400" text-anchor="start">교육용 도해 · 실제 화면 아님</text>
+<line x1="32" y1="102" x2="768" y2="102" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<line x1="32" y1="430" x2="768" y2="430" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+<text x="32" y="461" font-size="21" fill="#173e35" font-weight="400" text-anchor="start">수정량만으로 AI 보조로 바꾸지 않습니다.</text>
+<text x="768" y="508" font-size="14" fill="#51685e" font-weight="400" text-anchor="end">한 걸음 실습실 / KP10</text>
+<line x1="208" y1="180" x2="295" y2="180" stroke="#173e35" stroke-width="4" stroke-linecap="round"/>
+<path d="M 283.5 186.0 L 295 180 L 283.5 174.0" fill="none" stroke="#173e35" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="498" y1="180" x2="570" y2="180" stroke="#173e35" stroke-width="4" stroke-linecap="round"/>
+<path d="M 558.5 186.0 L 570 180 L 558.5 174.0" fill="none" stroke="#173e35" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="208" y1="329" x2="295" y2="329" stroke="#173e35" stroke-width="4" stroke-linecap="round"/>
+<path d="M 283.5 335.0 L 295 329 L 283.5 323.0" fill="none" stroke="#173e35" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="498" y1="329" x2="570" y2="329" stroke="#173e35" stroke-width="4" stroke-linecap="round"/>
+<path d="M 558.5 335.0 L 570 329 L 558.5 323.0" fill="none" stroke="#173e35" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="50" y="162" font-size="27" fill="#173e35" font-weight="400" text-anchor="start">사람이 쓴</text>
+<text x="50" y="202" font-size="29" fill="#173e35" font-weight="700" text-anchor="start">본문</text>
+<rect x="313" y="152" width="182" height="42" rx="21" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<text x="404.0" y="181" font-size="22" fill="#173e35" font-weight="700" text-anchor="middle">AI 오탈자 교정</text>
+<rect x="592" y="152" width="155" height="42" rx="21" fill="#dfaa55" stroke="none" stroke-width="2"/>
+<text x="669.5" y="181" font-size="28" fill="#173e35" font-weight="700" text-anchor="middle">AI 보조</text>
+<text x="50" y="312" font-size="27" fill="#173e35" font-weight="400" text-anchor="start">AI가 만든</text>
+<text x="50" y="352" font-size="29" fill="#173e35" font-weight="700" text-anchor="start">초안</text>
+<rect x="313" y="301" width="182" height="42" rx="21" fill="#e5ece3" stroke="none" stroke-width="2"/>
+<text x="404.0" y="330" font-size="20" fill="#173e35" font-weight="700" text-anchor="middle">사람이 크게 수정</text>
+<rect x="592" y="301" width="155" height="42" rx="21" fill="#dfaa55" stroke="none" stroke-width="2"/>
+<text x="669.5" y="330" font-size="28" fill="#173e35" font-weight="700" text-anchor="middle">AI 생성</text>
+<line x1="49" y1="254" x2="748" y2="254" stroke="#cbd5c8" stroke-width="1" stroke-linecap="round"/>
+</g></svg>
