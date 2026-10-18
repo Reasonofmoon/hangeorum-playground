@@ -7,7 +7,14 @@ var STEP_COLS = ['tutorial_id', 'order', 'code', 'title', 'instruction', 'expect
 var MEDIA_COLS = ['media_id', 'drive_file_id', 'type', 'display', 'alt', 'caption', 'source', 'rights', 'public_url', 'uploaded_by', 'uploaded_at', 'used_in'];
 var STATES = ['초안', '검수중', '게시', '보관'];
 
-function doGet() {
+var REPO_RAW = 'https://raw.githubusercontent.com/Reasonofmoon/hangeorum-playground/main/content/';
+
+function doGet(e) {
+  var p = (e && e.parameter) || {};
+  if (p.action === 'import' && p.track) {
+    try { var r = importFromRepo(p.track); return HtmlService.createHtmlOutput('<p style="font:16px sans-serif">가져오기 완료: ' + r.added + '개 (초안). <a href="' + ScriptApp.getService().getUrl() + '" target="_top">관리자 화면으로</a></p>'); }
+    catch (err) { return HtmlService.createHtmlOutput('<p style="font:16px sans-serif;color:#b3261e">가져오기 실패: ' + String(err.message).replace(/[<>&]/g, '') + '</p>'); }
+  }
   return HtmlService.createTemplateFromFile('Index').evaluate()
     .setTitle('한 걸음 서재 관리자')
     .addMetaTag('viewport', 'width=device-width, initial-scale=1')
@@ -389,7 +396,20 @@ function recentAccess(n) {
   return sh.getRange(last - k + 1, 1, k, 8).getValues().reverse().map(function (r) { return { ts: String(r[0]).slice(0, 24), email: r[1], trace: r[2], action: r[3], tutorial: r[5], result: r[6], ms: r[7] }; });
 }
 
-// 가져오기: 새 실습 트랙 JSON(아이템 배열)을 초안으로 추가 (운영자, 편집기에서 실행)
+/** 저장소 content/<track>.json 을 초안으로 가져온다. 예: track=gw-track */
+function importFromRepo(track) {
+  need_('editor');
+  if (!/^[a-z0-9\-]+$/.test(track)) throw new Error('트랙 이름 형식 오류');
+  var r = UrlFetchApp.fetch(REPO_RAW + track + '.json', { muteHttpExceptions: true });
+  if (r.getResponseCode() !== 200) throw new Error('저장소에서 파일을 찾지 못했습니다: content/' + track + '.json');
+  var items = JSON.parse(r.getContentText());
+  if (!Array.isArray(items)) throw new Error('JSON은 튜토리얼 배열이어야 합니다.');
+  var res = importItems(items);
+  log_('import', track, res.added + '개');
+  return res;
+}
+
+// 가져오기: 새 실습 트랙 JSON(아이템 배열)을 초안으로 추가
 function importItems(items) {
   need_('editor');
   var added = 0;
