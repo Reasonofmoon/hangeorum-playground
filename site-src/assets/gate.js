@@ -22,7 +22,24 @@
     } catch (_) { return null; }
   }
   function setToken(t) { try { localStorage.setItem(TOKEN_KEY, t); } catch (_) {} }
-  function logout() { try { localStorage.removeItem(TOKEN_KEY); } catch (_) {} if (window.google?.accounts?.id) google.accounts.id.disableAutoSelect(); location.reload(); }
+  async function logout() { try { localStorage.removeItem(TOKEN_KEY); } catch (_) {} await idb.clear().catch(() => {}); if (window.google?.accounts?.id) google.accounts.id.disableAutoSelect(); location.reload(); }
+
+  // ---- 학습자 브라우저 보관함(IndexedDB): 큰 데이터 파일을 버전(etag)과 함께 둬두고, 바뀜 때만 다시 받는다 ----
+  const idb = (() => {
+    let dbp = null;
+    const open = () => dbp || (dbp = new Promise((res, rej) => { const r = indexedDB.open('hg-cache', 1); r.onupgradeneeded = () => r.result.createObjectStore('files'); r.onsuccess = () => res(r.result); r.onerror = () => rej(r.error); }));
+    const tx = async (mode, fn) => { const db = await open(); return new Promise((res, rej) => { const t = db.transaction('files', mode); const s = t.objectStore('files'); const out = fn(s); t.oncomplete = () => res(out && out.result); t.onerror = () => rej(t.error); }); };
+    return {
+      get: k => tx('readonly', s => s.get(k)),
+      put: (k, v) => tx('readwrite', s => s.put(v, k)),
+      clear: () => tx('readwrite', s => s.clear()),
+    };
+  })();
+  async function gunzipB64(b64) {
+    const bin = atob(b64); const u8 = new Uint8Array(bin.length); for (let i = 0; i < bin.length; i++) u8[i] = bin.charCodeAt(i);
+    const stream = new Blob([u8]).stream().pipeThrough(new DecompressionStream('gzip'));
+    return await new Response(stream).text();
+  }
 
   // ---- Google 로그인 ----
   let gisReady = null;
@@ -63,7 +80,7 @@
   // ---- 계정별 워터마크 ----
   function watermark(user) {
     if (!user || inFrame) return;
-    const text = `${user.email} · ${user.trace} · ${new Date().toISOString().slice(0, 10)}`;
+    const text = `${user.email} · ${user.trace} · ${new Date().toLocaleDateString('sv-SE')}`;
     const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='420' height='220'><text x='10' y='120' transform='rotate(-18 210 110)' font-family='sans-serif' font-size='14' fill='rgba(80,80,80,0.09)'>${text.replace(/[<&]/g, '')}</text></svg>`;
     const d = document.createElement('div'); d.className = 'hg-watermark'; d.setAttribute('aria-hidden', 'true');
     d.style.backgroundImage = `url("data:image/svg+xml;utf8,${encodeURIComponent(svg)}")`;
@@ -97,13 +114,26 @@
       return;
     }
     let res;
+    const have = {}, stored = {};
+    if (auth) {
+      for (const p of gateData) { try { const v = await idb.get(p); if (v && v.owner === auth.email) { have[p] = v.etag; stored[p] = v.text; } } catch (_) {} }
+    }
+    const slow = setTimeout(() => { const m = document.querySelector('.hg-gate-msg'); if (m) m.textContent = '처음 한 번은 자료를 내려받느라 시간이 조금 걸립니다. 다음부터는 빠르게 열립니다…'; }, 4000);
     try {
-      res = await callApi({ action: 'bundle', paths: gateData, main: gateMain, token: auth?.token || '', page: location.pathname });
+      res = await callApi({ action: 'bundle', paths: gateData, main: gateMain, token: auth?.token || '', page: location.pathname, have });
     } catch (e) {
+      clearTimeout(slow);
       lockMain('본문 서버에 연결하지 못했습니다. 잠시 뒤 새로고침해 주세요. (' + e.message + ')', null);
       return;
     }
+    clearTimeout(slow);
     if (res.tokenInvalid) { try { localStorage.removeItem(TOKEN_KEY); } catch (_) {} }
+    res.files = res.files || {};
+    for (const p of res.cached || []) if (stored[p] != null) res.files[p] = stored[p];
+    for (const [p, z] of Object.entries(res.packed || {})) {
+      try { res.files[p] = await gunzipB64(z); if (auth && res.etags?.[p]) idb.put(p, { etag: res.etags[p], text: res.files[p], owner: auth.email, at: Date.now() }).catch(() => {}); }
+      catch (e) { console.warn('압축 풀기 실패', p, e); }
+    }
     const user = res.user || null;
     renderAuth(user, res.level);
     if (res.level === 'full') watermark(user);

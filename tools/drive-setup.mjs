@@ -82,7 +82,7 @@ for (let i = 0; i < files.length; i += 6) {
   await Promise.all(files.slice(i, i + 6).map(async f => {
     const rel = path.relative(GATED, f).split(path.sep).join('/');
     const id = await upload({ key: 'src:' + rel, name: rel.replace(/\//g, '__'), parent: F.source, buf: fs.readFileSync(f), mime: mimeOf(rel), props: { path: rel.slice(0, 100) } });
-    manifest[rel] = { id, bytes: fs.statSync(f).size, binary: /\.(pdf|epub)$/i.test(rel) };
+    manifest[rel] = { id, bytes: fs.statSync(f).size, binary: /\.(pdf|epub)$/i.test(rel), v: state.files['src:' + rel].hash.slice(0, 12) };
     n++;
   }));
   if (i % 60 === 0) await refresh();

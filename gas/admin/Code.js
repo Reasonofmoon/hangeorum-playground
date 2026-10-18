@@ -59,6 +59,7 @@ function need_(min) {
 
 function getBootstrap() {
   var role = role_();
+  if (role === 'operator') { try { var s0 = ss_(); if (s0.getSpreadsheetTimeZone() !== 'Asia/Seoul') s0.setSpreadsheetTimeZone('Asia/Seoul'); } catch (e) {} }
   var st = role === 'none' ? {} : settings_();
   return {
     email: me_(), role: role, siteUrl: CFG.SITE_URL,
@@ -77,7 +78,7 @@ function listTutorials() {
   var steps = read_('steps').rows, count = {};
   steps.forEach(function (s) { count[s.tutorial_id] = (count[s.tutorial_id] || 0) + 1; });
   return read_('tutorials').rows.map(function (r) {
-    return { id: r.id, title: r.title, category: r.category, code: r.code, state: r.publish_state, mode: r.mode, steps: count[r.id] || 0, updated: String(r.updated_at || ''), conditional: String(r.conditional) === 'true' || r.conditional === true };
+    return { id: r.id, title: r.title, category: r.category, code: r.code, state: r.publish_state, mode: r.mode, steps: count[r.id] || 0, updated: fmt_(r.updated_at), conditional: String(r.conditional) === 'true' || r.conditional === true };
   });
 }
 
@@ -271,7 +272,8 @@ function publish(note) {
   } finally { lock.releaseLock(); }
 }
 
-function listVersions() { need_('reviewer'); return read_('versions').rows.reverse().map(function (r) { delete r._row; r.published_at = String(r.published_at); return r; }); }
+function fmt_(v) { return v instanceof Date ? Utilities.formatDate(v, 'Asia/Seoul', 'yyyy-MM-dd HH:mm') : String(v || ''); }
+function listVersions() { need_('reviewer'); return read_('versions').rows.reverse().map(function (r) { delete r._row; r.published_at = fmt_(r.published_at); return r; }); }
 function rollback(version) {
   need_('operator');
   var v = read_('versions').rows.filter(function (r) { return String(r.version) === String(version); })[0];
@@ -332,7 +334,7 @@ function syncRoster(courseId) {
 }
 
 // ---------- 학습자 명단 ----------
-function listLearners() { need_('editor'); return read_('learners').rows.map(function (r) { delete r._row; r.expires = r.expires ? String(r.expires).slice(0, 15) : ''; r.added_at = String(r.added_at).slice(0, 15); return r; }); }
+function listLearners() { need_('editor'); return read_('learners').rows.map(function (r) { delete r._row; r.expires = r.expires ? fmt_(r.expires).slice(0, 10) : ''; r.added_at = fmt_(r.added_at); return r; }); }
 function addLearners(o) {
   need_('operator');
   var have = {}; read_('learners').rows.forEach(function (r) { have[String(r.email).toLowerCase()] = 1; });
@@ -393,7 +395,7 @@ function recentAccess(n) {
   need_('editor');
   var sh = tab_('access_log'), last = sh.getLastRow(); if (last < 2) return [];
   var k = Math.min(n || 30, last - 1);
-  return sh.getRange(last - k + 1, 1, k, 8).getValues().reverse().map(function (r) { return { ts: String(r[0]).slice(0, 24), email: r[1], trace: r[2], action: r[3], tutorial: r[5], result: r[6], ms: r[7] }; });
+  return sh.getRange(last - k + 1, 1, k, 8).getValues().reverse().map(function (r) { return { ts: fmt_(r[0]), email: r[1], trace: r[2], action: r[3], tutorial: r[5], result: r[6], ms: r[7] }; });
 }
 
 /** 저장소 content/<track>.json 을 초안으로 가져온다. 예: track=gw-track */

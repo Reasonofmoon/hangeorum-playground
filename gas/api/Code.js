@@ -49,10 +49,19 @@ function bundle_(req, user, learner) {
     out.message = '짧은 시간에 조회가 많아 잠시 제한되었습니다. 몇 시간 뒤 다시 열어 주세요.';
     learner = false;
   }
+  var have = req.have || {};
+  out.packed = {}; out.etags = {}; out.cached = [];
   for (var i = 0; i < paths.length; i++) {
     var p = String(paths[i]);
     if (p === PLAYGROUND_PATH) { out.files[p] = playgroundJs_(learner); continue; }
-    if (learner) { var t = readGated_(p); if (t !== null) out.files[p] = t; }
+    if (!learner) continue;
+    var m = manifest_()[p];
+    if (!m || m.binary) continue;
+    var tag = etag_(m);
+    out.etags[p] = tag;
+    if (have[p] && have[p] === tag) { out.cached.push(p); continue; }
+    var z = readPacked_(p);
+    if (z !== null) out.packed[p] = z;
   }
   if (req.main) {
     if (learner) out.main = readGated_('__main__/' + req.main);
@@ -122,6 +131,21 @@ function manifest_() {
   return JSON.parse(text);
 }
 
+function etag_(m) { return (m.v || m.id) + ':' + m.bytes; }
+
+// gzip + base64 로 압축한 본문(큰 데이터 파일용). 브라우저가 DecompressionStream으로 푼다.
+function readPacked_(path) {
+  var m = manifest_()[path];
+  if (!m || m.binary) return null;
+  var key = 'z:' + etag_(m);
+  var hit = getBig_(key);
+  if (hit) return hit;
+  var blob = DriveApp.getFileById(m.id).getBlob();
+  var z = Utilities.base64Encode(Utilities.gzip(blob).getBytes());
+  putBig_(key, z);
+  return z;
+}
+
 function readGated_(path) {
   var m = manifest_()[path];
   if (!m || m.binary) return null;
@@ -136,8 +160,9 @@ function readGated_(path) {
 // 큰 문자열을 나눠서 캐시(값 하나당 100KB 제한)
 function putBig_(key, text, ttl) {
   try {
-    var size = 25000, parts = {}, n = Math.ceil(text.length / size);
-    if (n > 400) return;
+    var size = 90000, parts = {}, n = Math.ceil(text.length / size);
+    if (n > 300) return;
+    if (/[^\x00-\x7f]/.test(text)) { size = 25000; n = Math.ceil(text.length / size); if (n > 300) return; }
     for (var i = 0; i < n; i++) parts[key + ':' + i] = text.substr(i * size, size);
     parts[key + ':n'] = String(n);
     CacheService.getScriptCache().putAll(parts, ttl || 21600);
