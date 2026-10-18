@@ -3,7 +3,7 @@
 읽고 바로 해 보는 튜토리얼 사이트입니다. 이 저장소에는 **화면 코드와 자동화**만 있습니다.
 글·단계·원문은 Google Drive(소유자 `soundfury37@gmail.com`)에 있고, 로그인한 학습자에게만 API로 전달됩니다.
 
-- 사이트: https://reasonofmoon.github.io/hangeorum-playground/
+- 사이트: https://devlog.moonlang.com/hangeorum-playground/
 - 관리자 웹앱: `gas/admin/.exec-url` (Google 계정 로그인 필요, 권한은 Drive 공유로 결정)
 - 공개 읽기 API: `gas/api/.exec-url`
 

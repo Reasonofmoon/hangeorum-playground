@@ -6,7 +6,7 @@ var CFG = {
   PUBLISHED_ID: '1bxpYk9KXyJLthtIw4UPOdoeEZ5W87v5t',
   RESOURCES_LEARNERS_FOLDER: '1hvOcqigQIvqNiqPxHKDOipo5G_IObYtF',
   // Google 로그인(GIS) 웹 클라이언트 ID. 비어 있으면 로그인 검증을 하지 않는다.
-  CLIENT_IDS: [],
+  CLIENT_IDS: ['1053595098111-jam549bl38fr6nsouarq69cdkvfad8sq.apps.googleusercontent.com'],
   OWNER: 'soundfury37@gmail.com',
   PREVIEW_STEPS: 2,
   QUOTA_PER_6H: 120,

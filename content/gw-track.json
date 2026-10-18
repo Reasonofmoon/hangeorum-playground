@@ -920,7 +920,7 @@
       },
       {
         "title": "GW07.3",
-        "instruction": "제목을 적고 링크 첨부를 골라 튜토리얼 주소(예: https://reasonofmoon.github.io/hangeorum-playground/)를 붙여 넣은 뒤 게시합니다(첨부 버튼 이름 확인 필요).",
+        "instruction": "제목을 적고 링크 첨부를 골라 튜토리얼 주소(예: https://devlog.moonlang.com/hangeorum-playground/)를 붙여 넣은 뒤 게시합니다(첨부 버튼 이름 확인 필요).",
         "expected": "**Classwork**에 링크가 달린 자료가 보입니다.",
         "recovery": "링크가 열리지 않으면 주소 끝까지 복사됐는지 확인합니다.",
         "kind": "manual",

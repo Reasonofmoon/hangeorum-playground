@@ -2,7 +2,7 @@
 // 그래서 누가 무엇을 할 수 있는지는 Drive 공유 권한이 그대로 정한다.
 var CFG = {
   OWNER: 'soundfury37@gmail.com',
-  SITE_URL: 'https://reasonofmoon.github.io/hangeorum-playground/',
+  SITE_URL: 'https://devlog.moonlang.com/hangeorum-playground/',
   SHEET_ID: '1Pq9pAEkuHtjOgbIV6Gw3Wafy62GNrzQjQ2Gaj29KiOc',
   PUBLISHED_ID: '1bxpYk9KXyJLthtIw4UPOdoeEZ5W87v5t',
   FOLDERS: {

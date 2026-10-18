@@ -1,7 +1,7 @@
 // 사이트·API 상태 점검. 로그인 없이 호출해서 "미리보기만" 나오는지 확인한다.
 import fs from 'node:fs';
 const API = fs.readFileSync(new URL('../gas/api/.exec-url', import.meta.url), 'utf8').trim();
-const SITE = 'https://reasonofmoon.github.io/hangeorum-playground/';
+const SITE = 'https://devlog.moonlang.com/hangeorum-playground/';
 const fail = m => { console.error('실패:', m); process.exitCode = 1; };
 const post = async body => (await fetch(API, { method: 'POST', body: JSON.stringify(body), headers: { 'content-type': 'text/plain;charset=utf-8' } })).json();
 
