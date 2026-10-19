@@ -14,6 +14,17 @@
   const kindLabels = {manual:'직접 확인 · 자동 판정 없음',automatic:'실행기의 조건 확인',practice:'가상 공간에서 조작'};
   const categoryStyles = {'파일 관리':['file','▤'],'문서 작성':['document','¶'],'웹 제작':['web','</>'],'출판 준비':['publishing','▥'],'AI 도구':['ai','✳'],'디자인':['design','◒'],'구글 워크스페이스':['gws','G']};
   const total = item => item.stepCount || item.steps.length;
+  // **굵게**, `코드` 만 안전하게 표시 (HTML은 쓰지 않음)
+  function rich(el, text) {
+    el.replaceChildren();
+    const parts = String(text || '').split(/(\*\*[^*]+\*\*|`[^`]+`)/g);
+    for (const part of parts) {
+      if (!part) continue;
+      if (/^\*\*[^*]+\*\*$/.test(part)) el.append(node('strong','',part.slice(2,-2)));
+      else if (/^`[^`]+`$/.test(part)) el.append(node('code','',part.slice(1,-1)));
+      else el.append(document.createTextNode(part));
+    }
+  }
   function mediaNode(m) {
     if (!m || !m.url) return null;
     const fig = node('figure','step-media');
@@ -183,11 +194,11 @@
     const entry=state.entries[current.id];entry.step=boundedIndex(entry.step,current.steps.length);const step=current.steps[entry.step];
     $('step-list').replaceChildren();current.steps.forEach((s,i)=>{const li=node('li');const b=node('button',entry.read.includes(i)?'was-read':'',i+1);b.type='button';b.setAttribute('aria-label','단계 '+(i+1)+': '+s.title);if(i===entry.step)b.setAttribute('aria-current','step');b.addEventListener('click',()=>{entry.step=i;save();renderStep();});li.append(b);$('step-list').append(li);});
     $('step-counter').textContent='단계 '+(entry.step+1)+' / '+total(current)+' · 읽음 '+entry.read.length;
-    $('step-kind').textContent=kindLabels[step.kind]||kindLabels.manual;$('step-title').textContent=step.title;$('step-instruction').textContent=step.instruction;
-    $('step-expected').textContent=step.expected || '';$('expected-block').hidden=!step.expected;
+    $('step-kind').textContent=kindLabels[step.kind]||kindLabels.manual;$('step-title').textContent=step.title;rich($('step-instruction'),step.instruction);
+    rich($('step-expected'),step.expected || '');$('expected-block').hidden=!step.expected;
     {let box=$('hg-step-extra');if(!box){box=node('div','hg-step-extra');box.id='hg-step-extra';$('step-instruction').after(box);}box.replaceChildren();const mn=mediaNode(step.media);if(mn)box.append(mn);
       if(current.locked && entry.step===current.steps.length-1){const lock=node('div','hg-lock');lock.append(node('strong','','여기까지 미리보기입니다 ('+current.steps.length+' / '+total(current)+'단계)'),node('p','','나머지 단계와 원문, 실습 화면은 학습자로 로그인하면 열립니다.'));const slot=node('div');lock.append(slot);box.append(lock);if(window.HG)window.HG.renderLoginButton(slot);}}
-    $('step-recovery').textContent=step.recovery || '원문 수업에서 전체 설명과 예시를 확인해 보세요. 읽음 표시는 결과 통과를 뜻하지 않습니다.';$('recovery-details').open=false;
+    rich($('step-recovery'),step.recovery || '원문 수업에서 전체 설명과 예시를 확인해 보세요. 읽음 표시는 결과 통과를 뜻하지 않습니다.');$('recovery-details').open=false;
     let source=$('step-source');if(!source){source=node('a','step-source');source.id='step-source';$('active-step').append(source);}source.href=safeLocal(step.sourceUrl || current.sourceUrl)||'library.html';source.textContent=step.excerpted?'이 단계의 전체 원문 보기 ↗':'이 단계의 원문 보기 ↗';
     $('step-prev').disabled=entry.step===0;$('step-next').textContent=entry.step===current.steps.length-1?'이 단계 읽음 표시':'읽고 다음 →';
     $('detail-status').textContent='안내 '+(entry.step+1)+' / '+total(current)+(current.locked?' (미리보기)':'')+'\n읽음 기록 '+entry.read.length+'개';
