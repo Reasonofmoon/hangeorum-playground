@@ -146,7 +146,7 @@ function renderList(){
 $('#new-t').onclick=async()=>{if(!can('editor'))return toast('편집자 권한이 필요합니다.');
   const v=await ask('새 튜토리얼',[['id','ID (예: google-workspace/gw-08)','google-workspace/gw-'],['code','코드 (예: GW08)','GW'],['title','제목',''],['category','분류',B.categories[B.categories.length-1]]]);
   if(!v)return;cur={tutorial:{id:v.id,code:v.code,title:v.title,category:v.category,publish_state:'초안',mode:'guide',difficulty:'미지정',difficultyBasis:'새로 만든 실습. 난이도 등급 미지정.',timeBasis:'단일 행동 수 × 2분의 편집 추정. 실측 아님.',sourceKind:'workspace-track',status:'NEW',sourceStatus:'draft',conditional:false,simulation:false},steps:[{}],media:{},isNew:true};renderEditor();};
-async function openT(id){if(dirty&&!confirm('저장하지 않은 변경이 있습니다. 버릴까요?'))return;$('#editor').innerHTML='<div class="card muted">불러오는 중…</div>';cur=await run('getTutorial',id);cur.originalId=id;dirty=false;renderList();renderEditor();}
+async function openT(id){if(dirty&&!confirm('저장하지 않은 변경이 있습니다. 버릴까요?'))return;$('#editor').innerHTML='<div class="card muted">불러오는 중…</div>';try{cur=await run('getTutorial',id);}catch(e){$('#editor').innerHTML='';$('#editor').append(el('div',{className:'card'},'불러오지 못했습니다: '+(e.message||e)));return;}cur.originalId=id;dirty=false;renderList();renderEditor();}
 
 function field(obj,k,lab,type,opts){const ro=!can('editor');let n;
   if(type==='select'){n=el('select',{disabled:ro});for(const o of opts)n.append(el('option',{value:o,selected:String(obj[k])===o},o));}

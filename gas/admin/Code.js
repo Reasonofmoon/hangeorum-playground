@@ -91,8 +91,8 @@ function getTutorial(id) {
   read_('media').rows.forEach(function (m) { media[m.media_id] = m; });
   var used = {};
   steps.forEach(function (s) { if (s.media_id && media[s.media_id]) used[s.media_id] = mediaView_(media[s.media_id]); });
-  delete t._row; steps.forEach(function (s) { delete s._row; });
-  return { tutorial: t, steps: steps, media: used };
+  var plain = function (o) { var r = {}; for (var k in o) if (k !== '_row') r[k] = o[k] instanceof Date ? fmt_(o[k]) : o[k]; return r; };
+  return { tutorial: plain(t), steps: steps.map(plain), media: used };
 }
 
 function saveTutorial(payload) {
@@ -137,7 +137,7 @@ function duplicateTutorial(id, newId) {
 function mediaView_(m) {
   var thumb = '';
   try { var b = DriveApp.getFileById(m.drive_file_id).getThumbnail(); if (b) thumb = 'data:image/png;base64,' + Utilities.base64Encode(b.getBytes()); } catch (e) {}
-  return { media_id: m.media_id, type: m.type, display: m.display, alt: m.alt, caption: m.caption, source: m.source, rights: m.rights, drive_file_id: m.drive_file_id, thumb: thumb, public_url: m.public_url };
+  return { media_id: String(m.media_id), type: String(m.type), display: String(m.display), alt: String(m.alt || ''), caption: String(m.caption || ''), source: String(m.source || ''), rights: String(m.rights || ''), drive_file_id: String(m.drive_file_id), thumb: thumb, public_url: String(m.public_url || '') };
 }
 function uploadMedia(o) {
   need_('editor');
