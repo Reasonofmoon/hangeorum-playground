@@ -152,6 +152,26 @@ function uploadMedia(o) {
   log_('upload', id, o.name + ' ' + bytes.length + 'B');
   return mediaView_(row);
 }
+/** 20_미디어_초안 폴더에 직접 넣은 파일 중 아직 media 탭에 없는 것을 등록한다(대체 텍스트는 비워 둠 → 게시 검사에서 막힘). */
+function scanDraftFolder() {
+  need_('editor');
+  var known = {};
+  read_('media').rows.forEach(function (m) { known[m.drive_file_id] = 1; });
+  var it = DriveApp.getFolderById(CFG.FOLDERS.MEDIA_DRAFT).getFiles(), rows = [], out = [];
+  while (it.hasNext()) {
+    var f = it.next(), mime = f.getMimeType();
+    if (known[f.getId()] || !/^(image|video)\//.test(mime)) continue;
+    if (f.getSize() > CFG.MAX_UPLOAD_MB * 1048576) continue;
+    var id = 'm-' + Utilities.formatDate(new Date(), 'Asia/Seoul', 'yyMMddHHmmss') + '-' + (rows.length + 100);
+    var type = /gif$/i.test(mime) ? 'gif' : /^video\//.test(mime) ? 'video' : 'image';
+    var row = { media_id: id, drive_file_id: f.getId(), type: type, display: type === 'video' ? 'drive-preview' : 'image', alt: '', caption: '', source: 'Drive 폴더', rights: '확인 필요', public_url: '', uploaded_by: me_(), uploaded_at: now_(), used_in: '' };
+    rows.push(toRow_(MEDIA_COLS, row)); out.push(row.media_id + ' · ' + f.getName());
+  }
+  if (rows.length) tab_('media').getRange(tab_('media').getLastRow() + 1, 1, rows.length, MEDIA_COLS.length).setValues(rows);
+  log_('scan', 'media', rows.length + '개');
+  return { added: rows.length, items: out };
+}
+
 function listMedia() {
   need_('reviewer');
   return read_('media').rows.reverse().slice(0, 60).map(mediaView_);

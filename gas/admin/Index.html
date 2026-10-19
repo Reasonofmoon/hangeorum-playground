@@ -57,7 +57,8 @@ dialog{border:1px solid var(--line);border-radius:12px;max-width:560px;width:92%
   <div id="editor"><div class="card muted">왼쪽에서 튜토리얼을 고르거나 새로 만드세요.</div></div>
  </div>
 </section>
-<section class="panel" data-tab="미디어"><div class="card"><p class="muted">업로드한 이미지·GIF입니다. 게시할 때 쓰인 파일만 공개 폴더로 옮겨집니다. 대체 텍스트와 출처를 꼭 채워 주세요.</p><div class="mgrid" id="m-grid"></div></div></section>
+<section class="panel" data-tab="미디어"><div class="card"><p class="muted">업로드한 이미지·GIF입니다. 게시할 때 쓰인 파일만 공개 폴더로 옮겨집니다. 대체 텍스트와 출처를 꼭 채워 주세요.</p>
+ <div class="bar"><button class="btn" id="m-scan">Drive 폴더에서 가져오기</button><span class="muted">Drive의 <b>20_미디어_초안</b> 폴더에 파일을 넣고 누르면 새 파일이 등록됩니다. 등록 뒤 대체 텍스트를 채우고, 단계의 "미디어 ID" 칸에 ID를 넣으세요.</span></div><div class="mgrid" id="m-grid"></div></div></section>
 <section class="panel" data-tab="공유">
  <div class="card"><label>튜토리얼</label><select id="s-tut"></select>
   <div class="bar"><button class="btn primary" id="s-make">링크 만들기</button><button class="btn" id="s-copy" disabled>복사</button></div>
@@ -183,7 +184,7 @@ function stepCard(s,i){
   box.addEventListener('drop',e=>{const from=e.dataTransfer.getData('text/step');if(from==='')return;e.preventDefault();const [m]=cur.steps.splice(Number(from),1);cur.steps.splice(i,0,m);dirty=true;renderEditor();});
   const mv=(d)=>{const j=i+d;if(j<0||j>=cur.steps.length)return;[cur.steps[i],cur.steps[j]]=[cur.steps[j],cur.steps[i]];dirty=true;renderEditor();};
   box.append(el('h4',{},(cur.tutorial.code||'')+'.'+(i+1),el('span',{className:'sp'}),ro?null:el('button',{className:'btn',on:{click:()=>mv(-1)}},'↑'),ro?null:el('button',{className:'btn',on:{click:()=>mv(1)}},'↓'),ro?null:el('button',{className:'btn danger',on:{click:()=>{if(confirm('이 단계를 지울까요?')){cur.steps.splice(i,1);dirty=true;renderEditor();}}}},'삭제')));
-  box.append(field(s,'instruction','할 일 (행동 하나)','textarea'),el('div',{className:'cols'},field(s,'expected','성공하면 보이는 것','textarea'),field(s,'recovery','다를 때 할 일','textarea')),el('div',{className:'cols'},field(s,'sourceType','종류','select',['read','action','input','click']),field(s,'kind','확인 방식','select',['manual','practice','automatic'])));
+  box.append(field(s,'instruction','할 일 (행동 하나)','textarea'),el('div',{className:'cols'},field(s,'media_id','미디어 ID (미디어 탭에서 복사)'),field(s,'media_caption','그림 설명 문구')),el('div',{className:'cols'},field(s,'expected','성공하면 보이는 것','textarea'),field(s,'recovery','다를 때 할 일','textarea')),el('div',{className:'cols'},field(s,'sourceType','종류','select',['read','action','input','click']),field(s,'kind','확인 방식','select',['manual','practice','automatic'])));
   const mbox=el('div',{className:'media'});const m=s.media_id&&cur.media[s.media_id];
   if(m)mbox.append(m.thumb||m._local?el('img',{src:m._local||m.thumb,alt:m.alt}):el('span',{className:'muted'},'('+m.type+')'),el('div',{},el('div',{},el('strong',{},m.media_id)),el('div',{className:'muted'},'대체 텍스트: '+m.alt),ro?null:el('button',{className:'btn',on:{click:()=>{s.media_id='';dirty=true;renderEditor();}}},'빼기')));
   box.append(mbox);
@@ -244,6 +245,7 @@ async function loadVersions(){const vs=await run('listVersions');$('#ver-table')
 $('#a-load').onclick=e=>busy(e.target,async()=>{const r=await run('recentAccess',40);$('#a-table').replaceChildren(el('tr',{},...['시각','계정','추적','요청','튜토리얼','결과','ms'].map(h=>el('th',{},h))),...r.map(a=>el('tr',{},...[a.ts,a.email||'(비로그인)',a.trace,a.action,a.tutorial,a.result,a.ms].map(x=>el('td',{},String(x))))));});
 $('#g-save').onclick=e=>busy(e.target,async()=>{if(!can('operator'))return toast('운영자만 바꿀 수 있습니다.');if($('#g-key').value)await run('setGeminiKey',$('#g-key').value);if($('#g-model').value)await run('setSetting','gemini_model',$('#g-model').value);$('#g-key').value='';B.hasGeminiKey=B.hasGeminiKey||true;$('#g-state').textContent='저장됨';toast('저장했습니다');});
 $('#r-block').onchange=e=>run('setSetting','block_unreviewed_rights',e.target.checked?'TRUE':'FALSE').then(()=>toast('게시 규칙을 바꿨습니다')).catch(err=>{toast('오류: '+err.message);e.target.checked=!e.target.checked;});
+$('#m-scan').onclick=e=>busy(e.target,async()=>{const r=await run('scanDraftFolder');toast(r.added?r.added+'개 등록: '+r.items.join(', '):'새 파일이 없습니다.',8000);loadMedia();});
 $('#imp-go').onclick=e=>busy(e.target,async()=>{const r=await run('importFromRepo',$('#imp-name').value.trim());toast(r.added+'개를 초안으로 가져왔습니다.');await loadList();});
 window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue='';}});
 boot().catch(e=>{document.querySelector('main').innerHTML='<div class="card">불러오지 못했습니다: '+(e.message||e)+'</div>';});
