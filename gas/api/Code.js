@@ -4,6 +4,7 @@
  * POST body(JSON, text/plain):
  *   {action:'bundle', paths:[...], main:'lessons/x.html', token:'<Google ID token>'}
  *   {action:'file', path:'materials/...', token}
+ *   {action:'media', paths:['assets/supplements/..jpg', ...], have:{path:etag}, token}  (학습자만, 원문 이미지)
  * GET ?action=health
  *
  * 규칙
@@ -30,13 +31,15 @@ function doPost(e) {
   try {
     if (req.action === 'bundle') res = bundle_(req, user, learner);
     else if (req.action === 'file') res = file_(req, user, learner);
+    else if (req.action === 'media') res = media_(req, user, learner);
     else res = { ok: false, message: '알 수 없는 요청' };
   } catch (err) {
     res = { ok: false, message: '서버 오류: ' + err.message };
   }
   if (user) { user.trace = learner ? trace_(user.email) : ''; res.user = user; }
   if (auth.invalid) res.tokenInvalid = true;
-  logAccess_(user, req, res, Date.now() - t0);
+  // 이미지 요청은 본문 조회(bundle) 때 이미 기록되므로, 거절된 경우만 남긴다
+  if (req.action !== 'media' || res.ok === false) logAccess_(user, req, res, Date.now() - t0);
   return json_(res);
 }
 
@@ -56,7 +59,7 @@ function bundle_(req, user, learner) {
     if (p === PLAYGROUND_PATH) { out.files[p] = playgroundJs_(learner); continue; }
     if (!learner) continue;
     var m = manifest_()[p];
-    if (!m || m.binary) continue;
+    if (!m || m.binary || m.image) continue;
     var tag = etag_(m);
     out.etags[p] = tag;
     if (have[p] && have[p] === tag) { out.cached.push(p); continue; }
@@ -78,9 +81,41 @@ function file_(req, user, learner) {
   if (!learner) return { ok: false, message: user ? '학습자 명단에 없는 계정입니다.' : '학습자로 로그인하면 볼 수 있습니다.' };
   if (!quotaOk_(user.email)) return { ok: false, result: 429, message: '조회 한도를 넘었습니다. 몇 시간 뒤 다시 시도해 주세요.' };
   var m = manifest_()[p];
-  if (!m) return { ok: false, message: '없는 자료입니다.' };
+  if (!m || m.image) return { ok: false, message: '없는 자료입니다.' };
   if (m.binary) return { ok: true, kind: 'binary', driveUrl: 'https://drive.google.com/drive/folders/' + CFG.RESOURCES_LEARNERS_FOLDER };
   return { ok: true, kind: 'text', text: readGated_(p) };
+}
+
+// 원문 이미지: 학습자에게만 base64로 준다. 브라우저가 Blob으로 바꿔 표시하고 보관한다.
+var MEDIA_PREFIX = 'assets/supplements/';
+function media_(req, user, learner) {
+  if (!learner) return { ok: false, message: user ? '학습자 명단에 없는 계정입니다.' : '학습자로 로그인하면 볼 수 있습니다.' };
+  var paths = (req.paths || []).slice(0, CFG.MEDIA_PER_REQUEST);
+  if (!mediaQuotaOk_(user.email, paths.length)) return { ok: false, result: 429, message: '그림 조회가 많아 잠시 제한되었습니다. 몇 시간 뒤 다시 열어 주세요.' };
+  var have = req.have || {}, man = manifest_();
+  var out = { ok: true, files: {}, etags: {}, cached: [] };
+  paths.forEach(function (raw) {
+    var p = String(raw);
+    if (p.indexOf(MEDIA_PREFIX) !== 0 || p.indexOf('..') >= 0) return;
+    var m = man[p];
+    if (!m || !m.image) return;
+    var tag = etag_(m);
+    out.etags[p] = tag;
+    if (have[p] && have[p] === tag) { out.cached.push(p); return; }
+    var key = 'img:' + tag;
+    var b64 = getBig_(key);
+    if (!b64) { b64 = Utilities.base64Encode(DriveApp.getFileById(m.id).getBlob().getBytes()); putBig_(key, b64); }
+    out.files[p] = { type: m.mime || 'image/jpeg', b64: b64 };
+  });
+  return out;
+}
+
+function mediaQuotaOk_(email, n) {
+  var c = CacheService.getScriptCache();
+  var k = 'mq:' + email + ':' + Math.floor(Date.now() / 21600000);
+  var used = Number(c.get(k) || 0) + n;
+  c.put(k, String(used), 21600);
+  return used <= CFG.MEDIA_QUOTA_PER_6H;
 }
 
 // ---------- 플레이그라운드 데이터 ----------

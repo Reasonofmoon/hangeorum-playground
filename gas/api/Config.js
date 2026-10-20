@@ -10,5 +10,8 @@ var CFG = {
   OWNER: 'soundfury37@gmail.com',
   PREVIEW_STEPS: 2,
   QUOTA_PER_6H: 120,
-  VERSION: '2026-10-19.1'
+  // 원문 이미지: 한 번에 받는 수, 6시간당 한도(본문 120회 × 평균 10장 정도)
+  MEDIA_PER_REQUEST: 4,
+  MEDIA_QUOTA_PER_6H: 1500,
+  VERSION: '2026-10-20.1'
 };
