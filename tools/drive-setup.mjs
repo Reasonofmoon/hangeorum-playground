@@ -17,10 +17,12 @@ async function refresh() {
     body: new URLSearchParams({ client_id: rc.client_id, client_secret: rc.client_secret, refresh_token: rc.refresh_token, grant_type: 'refresh_token' }) });
   const d = await r.json(); if (!d.access_token) throw new Error('토큰 갱신 실패: ' + d.error); TOKEN = d.access_token;
 }
-async function api(url, opt = {}, retry = 3) {
+async function api(url, opt = {}, retry = 6) {
   const r = await fetch(url, { ...opt, headers: { Authorization: 'Bearer ' + TOKEN, ...(opt.headers || {}) } });
-  if ((r.status === 429 || r.status >= 500) && retry) { await new Promise(s => setTimeout(s, 1500)); return api(url, opt, retry - 1); }
-  const t = await r.text(); if (!r.ok) throw new Error(`${r.status} ${url}\n${t.slice(0, 400)}`);
+  const t = await r.text();
+  const rateLimited = r.status === 429 || (r.status === 403 && /rateLimitExceeded|userRateLimitExceeded/.test(t));
+  if ((rateLimited || r.status >= 500) && retry) { await new Promise(s => setTimeout(s, 2000 * 2 ** (6 - retry))); return api(url, opt, retry - 1); }
+  if (!r.ok) throw new Error(`${r.status} ${url}\n${t.slice(0, 400)}`);
   return t ? JSON.parse(t) : {};
 }
 async function folder(key, name, parent) {
@@ -52,8 +54,8 @@ async function upload({ key, name, parent, buf, mime, convertTo, props }) {
 async function anyoneReader(id) {
   await api(`https://www.googleapis.com/drive/v3/files/${id}/permissions`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ role: 'reader', type: 'anyone' }) });
 }
-const mimeOf = p => ({ '.js': 'text/javascript', '.json': 'application/json', '.html': 'text/html', '.md': 'text/markdown', '.csv': 'text/csv', '.txt': 'text/plain', '.py': 'text/x-python', '.yaml': 'text/yaml', '.conf': 'text/plain', '.pdf': 'application/pdf', '.epub': 'application/epub+zip' }[path.extname(p).toLowerCase()] || 'application/octet-stream');
-const walk = d => fs.readdirSync(d, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walk(path.join(d, e.name)) : [path.join(d, e.name)]);
+const mimeOf = p => ({ '.js': 'text/javascript', '.json': 'application/json', '.html': 'text/html', '.md': 'text/markdown', '.csv': 'text/csv', '.txt': 'text/plain', '.py': 'text/x-python', '.yaml': 'text/yaml', '.conf': 'text/plain', '.pdf': 'application/pdf', '.epub': 'application/epub+zip', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.png': 'image/png', '.gif': 'image/gif', '.webp': 'image/webp' }[path.extname(p).toLowerCase()] || 'application/octet-stream');
+const walk = d => fs.readdirSync(d, { withFileTypes: true }).filter(e => !e.name.startsWith('.')).flatMap(e => e.isDirectory() ? walk(path.join(d, e.name)) : [path.join(d, e.name)]);
 
 await refresh();
 const ROOT = await folder('root', '한 걸음 서재 CMS');
@@ -78,11 +80,12 @@ const sheetId = await upload({ key: 'sheet', name: '한걸음서재_원본', par
 const manifest = {};
 const files = walk(GATED);
 let n = 0;
-for (let i = 0; i < files.length; i += 6) {
-  await Promise.all(files.slice(i, i + 6).map(async f => {
+for (let i = 0; i < files.length; i += 3) {
+  await Promise.all(files.slice(i, i + 3).map(async f => {
     const rel = path.relative(GATED, f).split(path.sep).join('/');
     const id = await upload({ key: 'src:' + rel, name: rel.replace(/\//g, '__'), parent: F.source, buf: fs.readFileSync(f), mime: mimeOf(rel), props: { path: rel.slice(0, 100) } });
-    manifest[rel] = { id, bytes: fs.statSync(f).size, binary: /\.(pdf|epub)$/i.test(rel), v: state.files['src:' + rel].hash.slice(0, 12) };
+    const image = /^image\//.test(mimeOf(rel));
+    manifest[rel] = { id, bytes: fs.statSync(f).size, binary: /\.(pdf|epub)$/i.test(rel), v: state.files['src:' + rel].hash.slice(0, 12), ...(image ? { image: true, mime: mimeOf(rel) } : {}) };
     n++;
   }));
   if (i % 60 === 0) await refresh();

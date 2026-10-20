@@ -103,6 +103,51 @@
     if (!r.ok) throw new Error('API 응답 ' + r.status);
     return r.json();
   }
+  // ---- 원문 그림: 공개 사이트에 없고, 학습자에게만 API로 보낸다 ----
+  const MEDIA_RE = /\b(src|href)="((?:\.\.\/)*assets\/supplements\/[^"?#]+)"/g;
+  function deferMedia(html) { return html.replace(MEDIA_RE, (m, attr, p) => `data-hg-${attr}="${p}"`); }
+  const rootUrl = new URL(root || './', location.href).href;
+  const relOf = p => { const u = new URL(p, location.href).href; return u.startsWith(rootUrl) ? u.slice(rootUrl.length) : null; };
+  async function hydrateMedia(host, auth) {
+    const els = [...host.querySelectorAll('[data-hg-src],[data-hg-href]')];
+    if (!els.length) return;
+    const want = new Map(); // rel -> [{el, attr}]
+    for (const el of els) for (const attr of ['src', 'href']) {
+      const v = el.getAttribute('data-hg-' + attr); if (!v) continue;
+      const rel = relOf(v); if (!rel) continue;
+      if (!want.has(rel)) want.set(rel, []);
+      want.get(rel).push({ el, attr });
+    }
+    const urls = new Map();
+    const apply = (rel, blob) => {
+      if (!urls.has(rel)) urls.set(rel, URL.createObjectURL(blob));
+      for (const { el, attr } of want.get(rel) || []) { el.setAttribute(attr, urls.get(rel)); el.removeAttribute('data-hg-' + attr); }
+    };
+    const stored = {};
+    for (const rel of want.keys()) { try { const v = await idb.get('m:' + rel); if (v && v.owner === auth.email && v.blob) stored[rel] = v; } catch (_) {} }
+    const order = [...want.keys()];
+    const batches = []; for (let i = 0; i < order.length; i += 4) batches.push(order.slice(i, i + 4));
+    let failed = 0;
+    async function run(batch) {
+      const have = {}; for (const r of batch) if (stored[r]) have[r] = stored[r].etag;
+      let res;
+      try { res = await callApi({ action: 'media', paths: batch, have, token: auth.token, page: location.pathname }); }
+      catch (_) { failed += batch.length; return; }
+      if (!res.ok) { failed += batch.length; return; }
+      for (const r of res.cached || []) if (stored[r]) apply(r, stored[r].blob);
+      for (const [r, f] of Object.entries(res.files || {})) {
+        const bin = atob(f.b64); const u8 = new Uint8Array(bin.length); for (let i = 0; i < bin.length; i++) u8[i] = bin.charCodeAt(i);
+        const blob = new Blob([u8], { type: f.type });
+        apply(r, blob);
+        if (res.etags?.[r]) idb.put('m:' + r, { etag: res.etags[r], blob, owner: auth.email, at: Date.now() }).catch(() => {});
+      }
+    }
+    // 화면 위쪽 그림부터, 동시에 3묶음씩
+    let next = 0;
+    await Promise.all([0, 1, 2].map(async () => { while (next < batches.length) await run(batches[next++]); }));
+    if (failed) console.warn('그림 ' + failed + '개를 불러오지 못했습니다');
+  }
+
   const loadScript = src => new Promise((res, rej) => { const s = document.createElement('script'); s.src = src; s.async = false; s.onload = res; s.onerror = () => rej(new Error('스크립트 실패: ' + src)); document.body.append(s); });
   window.HG_API = callApi;
 
@@ -140,7 +185,8 @@
     if (gateMain) {
       if (res.main) {
         const host = document.getElementById('main');
-        host.innerHTML = res.main;
+        host.innerHTML = deferMedia(res.main);
+        if (auth && res.level === 'full') hydrateMedia(host, auth).catch(e => console.warn('그림 불러오기 실패', e));
       } else {
         lockMain(res.message || '이 본문은 학습자로 로그인하면 볼 수 있습니다.', user);
       }

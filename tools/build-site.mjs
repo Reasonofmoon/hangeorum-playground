@@ -14,6 +14,7 @@ const KEEP_PUBLIC_OVERRIDES = path.join(repo, 'site-src'); // 우리가 고친 �
 // 보호 대상 판정 (루트 기준 경로)
 const isGatedFile = rel =>
   /^data\//.test(rel) ||
+  /^assets\/supplements\//.test(rel) ||   // 원문 그림: 학습자에게만 API(media)로 전달
   /^review\//.test(rel) ||
   /^apps\/(file-management|publishing|web)\/lesson\.js$/.test(rel) ||
   /^apps\/ai50\/samples\.js$/.test(rel) ||
@@ -26,7 +27,7 @@ function rewriteGatedLinks(html, rel) {
   return html.replace(/\bhref="([^"#?]+)([#?][^"]*)?"/g, (m, href, tail) => {
     if (/^(https?:|mailto:|#|data:|javascript:)/.test(href)) return m;
     const abs = path.posix.normalize(path.posix.join(path.posix.dirname(rel), href));
-    if (!isGatedFile(abs) || /\.js$/.test(abs)) return m;
+    if (!isGatedFile(abs) || /\.js$/.test(abs) || /^assets\/supplements\//.test(abs)) return m; // 그림 링크는 gate.js가 처리
     return `href="${root}view.html?path=${encodeURIComponent(abs)}"`;
   });
 }

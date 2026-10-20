@@ -24,6 +24,7 @@ jobs:
           set -e
           test ! -d site/data || (echo "site/data 는 공개하면 안 됩니다" && exit 1)
           test ! -d site/review || (echo "site/review 는 공개하면 안 됩니다" && exit 1)
+          test ! -d site/assets/supplements || (echo "원문 그림(site/assets/supplements)은 공개하면 안 됩니다" && exit 1)
           ! ls site/apps/*/lesson.js 2>/dev/null
           ! find site -name '*.md' -o -name 'lesson.json' | grep -q .
           echo "검사 통과"

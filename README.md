@@ -66,16 +66,18 @@ cd gas/admin; clasp push --force   # 또는 main에 push하면 Actions가 배포
 ```powershell
 node tools/build-site.mjs ..\_mirror ..\_gated
 python tools/watermark.py site
+python tools/watermark.py ..\_gated          # 원문 그림(assets/supplements)은 _gated로 간다
 node tools/drive-setup.mjs ..\_gated ..\_build\sheet.xlsx ..\_build\drive-state.json   # 원문 갱신
 ```
 
 ## 복제 방지 장치
 
 - 공개 저장소·사이트에는 원문과 데이터 파일이 없습니다(빌드와 `pages.yml`이 검사).
+- 원문 그림 766장도 Drive `50_원문`에만 있고, 학습자에게만 API(`media`)로 전달됩니다(6시간당 1,500장 한도).
 - 비로그인 방문자는 튜토리얼마다 앞 2단계만 받습니다. 힌트·정답 기준은 빠집니다.
 - 학습자 화면에는 계정과 추적 번호가 흐리게 깔립니다. 모든 조회는 `access_log`에 남습니다.
 - 6시간당 조회 한도(기본 120회)를 넘으면 잠시 막힙니다.
-- 스크린샷 806장에 워터마크가 들어 있고, 새로 올리는 PNG·JPG도 자동으로 들어갑니다.
+- 스크린샷 806장(공개 40 + 학습자 전용 766)에 워터마크가 들어 있고, 새로 올리는 PNG·JPG도 자동으로 들어갑니다.
 - 인쇄하면 안내 문구만 나옵니다. 완전한 차단은 불가능하며, 목적은 대량 복제를 어렵게 하고 출처를 남기는 것입니다.
 
-© 2026 한 걸음 서재. 코드 외 콘텐츠의 무단 복제·재배포를 금지합니다.
+© 2026 한 걸음 서재. 모든 권리 보유. 자세한 내용은 [LICENSE](LICENSE)를 보세요.

@@ -17,4 +17,7 @@ console.log('preview items', cat.items.length, 'level', b.level);
 if (b.level !== 'preview' || over.length) fail('비로그인 응답에 전체 단계가 들어 있습니다');
 const g = await post({ action: 'bundle', paths: ['data/catalog.js'], main: 'lessons/document/dc-01.html' });
 if (g.main || Object.keys(g.files || {}).length) fail('비로그인 응답에 원문이 들어 있습니다');
+const img = await fetch(SITE + 'assets/supplements/AI04/1-fca45006e0bb.jpg'); if (img.status !== 404) fail('공개 사이트에 원문 그림이 있습니다 (' + img.status + ')');
+const md = await post({ action: 'media', paths: ['assets/supplements/AI04/1-fca45006e0bb.jpg'] });
+if (md.ok !== false || Object.keys(md.files || {}).length) fail('비로그인 응답에 원문 그림이 들어 있습니다');
 console.log(process.exitCode ? '점검 실패' : '점검 통과');
